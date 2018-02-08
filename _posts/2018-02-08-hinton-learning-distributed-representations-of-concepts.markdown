@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Learning Distributed Representations of Concepts - Hinton (1986)"
-date: 2018-02-08
+date: 2018-02-07
 categories: neural-nets kb classic
 ---
 
