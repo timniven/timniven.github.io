@@ -7,6 +7,34 @@ categories: neural-nets kb classic
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+Summary
+-------
+
+If we take a conceptual relation such as "born-in", we find that the two
+entities participating in the relation should have common features: we
+have a person and a place.
+
+The idea in this paper is to represent the concepts that participate in
+this kind of relation with a set of features. We let neural nets figure
+out what those features should be by partitioning the space of entities
+in such a way as to express the regularities of the domain. We use an
+extra set of neurons to perform these "micro-inferences". The example
+given is: suppose we see a person with activated feature "old", and the
+relation "husband-of", and suppose the regularities of our domain are
+such that people are married to those of roughly the same age. From this
+we should be able to infer that the other person in the relation should
+also have "old" activated. The partition found is then that of "old" people.
+Also, note that we can in this way handle lossy input and recall relevant
+information.
+
+An interesting theoretical insight into meaning and truth conditions follows
+from this partitioning view. Philosophically, we don't know what a meaning
+is. However, truth values get us at least some of the way. It is possible
+to ask: yes, the neuron fires for old, but does the network really know what old
+means? In response, if we can say that it partitions the set of all
+entities along lines we recognize, then it has captured this important
+aspect of the meaning of old.
+
 Two Theories of Representation
 ---
 
