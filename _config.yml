@@ -25,6 +25,7 @@ github_username:  timniven
 
 # Build settings
 markdown: kramdown
+mathjax: true
 theme: minima
 gems:
   - jekyll-feed
