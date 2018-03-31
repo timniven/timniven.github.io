@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="" />
+    <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/_posts/2018-03-31-Pypi-Package-Upload" afterPath="$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +15,23 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="2018-03-30-Pypi-Package-Upload" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="54">
+                <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,6 +61,7 @@
         <option value="$PROJECT_DIR$/_posts/2018-02-09-Maximum-Entropy-Modeling-Berger.markdown" />
         <option value="$PROJECT_DIR$/_drafts/2018-02-09-lab-syllabus.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-02-09-hierarchical-probabilistic-neural-network-language-model.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-03-31-Pypi-Package-Upload" />
       </list>
     </option>
   </component>
@@ -470,6 +489,19 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="54">
+            <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor>
