@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Tim Niven
-email: tim.niven.public@outlook.com
+#email: tim.niven.public@outlook.com
 description: > # this means to ignore newlines until "baseurl:"
   I maintain this blog to share information pertaining to my research that may
   be of interest to others, as well as generally useful information I wish to
