@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "ArgMin17: Analyzing Semantic Types of Claims and Premises"
+title: "[Paper] ArgMin17: Analyzing Semantic Types of Claims and Premises"
 date: 2017-12-28
-categories: argument_mining argmin17
+categories: argument_mining argmin17 papers
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

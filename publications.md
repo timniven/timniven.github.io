@@ -4,7 +4,7 @@ title: Publications
 permalink: /publications/
 ---
 
-## 2018
+### 2018
 
 Niven and Kao (2018),
 [NLITrans at SemEval-2018 Task 12: Transfer of Semantic Knowledge for Argument Comprehension][1],

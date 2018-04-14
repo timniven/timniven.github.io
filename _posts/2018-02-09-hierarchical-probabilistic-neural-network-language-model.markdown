@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Hierarchical Probabilistic Neural Network Language Model - Morin and Bengio (2005)"
+title: "[Paper] Hierarchical Probabilistic Neural Network Language Model - Morin and Bengio (2005)"
 date: 2018-02-09
-categories: language-model
+categories: language-model papers
 ---
 
 Reading for rough understanding and getting the flavour of their style of thinking

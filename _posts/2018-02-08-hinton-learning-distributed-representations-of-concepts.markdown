@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Learning Distributed Representations of Concepts - Hinton (1986)"
+title: "Paper: Learning Distributed Representations of Concepts - Hinton (1986)"
 date: 2018-02-07
-categories: neural-nets kb classic
+categories: neural-nets kb classic papers
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

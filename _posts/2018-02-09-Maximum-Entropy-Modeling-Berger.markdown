@@ -5,7 +5,7 @@ date: 2018-02-09
 categories: maxent
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 The following notes taken from <a href="http://www.cs.cmu.edu/afs/cs/user/aberger/www/html/tutorial/node2.html">this tutorial</a>.
 
