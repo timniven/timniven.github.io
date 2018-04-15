@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper: Learning Distributed Representations of Concepts - Hinton (1986)"
+title: "[Paper] Learning Distributed Representations of Concepts - Hinton (1986)"
 date: 2018-02-07
 categories: neural-nets kb classic papers
 ---
