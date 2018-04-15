@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[Paper] Contextual Pattern Embeddings"
-date: 2018-02-09
-categories: maxent
+date: 2018-03-23
+categories: papers relation-extraction
 ---
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
