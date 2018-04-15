@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-12-tracking-the-world-state-with-recurrent-entity-networks.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-23-contextual-pattern-embeddings.markdown" afterPath="$PROJECT_DIR$/_posts/2018-03-23-contextual-pattern-embeddings.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-25-relation-extraction-with-matrix-facorization-and-universal-schemas.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +19,23 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="54">
+                <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,6 +69,10 @@
         <option value="$PROJECT_DIR$/_posts/2017-12-26-200k-chilean-political-arguments.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-03-23-contextual-pattern-embeddings.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-03-12-tracking-the-world-state-with-recurrent-entity-networks.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-03-25-relation-extraction-with-matrix-facorization-and-universal-schemas.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" />
       </list>
     </option>
   </component>
@@ -278,8 +301,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42533693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42533693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -633,6 +657,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-12-tracking-the-world-state-with-recurrent-entity-networks.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="72">
+            <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-03-23-contextual-pattern-embeddings.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -646,11 +683,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-03-12-tracking-the-world-state-with-recurrent-entity-networks.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="72">
-            <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+            <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="54">
+            <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-25-relation-extraction-with-matrix-facorization-and-universal-schemas.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="54">
+            <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor>
