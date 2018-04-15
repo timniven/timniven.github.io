@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-25-relation-extraction-with-matrix-facorization-and-universal-schemas.markdown" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-01-indirect-supervision-for-relation-extraction-using-question-answer-pairs.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-03-translational-embeddings-for-modelling-multi-relational-data.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-05-multimodal-word-distributions.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-10-word-representation-via-gaussian-embedding.markdown" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload" afterPath="$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,12 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown">
+      <file leaf-file-name="2018-04-10-word-representation-via-gaussian-embedding.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-04-10-word-representation-via-gaussian-embedding.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="54">
-                <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <first_editor relative-caret-position="72">
+                <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -73,6 +74,10 @@
         <option value="$PROJECT_DIR$/_posts/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown" />
         <option value="$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-01-indirect-supervision-for-relation-extraction-using-question-answer-pairs.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-05-multimodal-word-distributions.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-03-translational-embeddings-for-modelling-multi-relational-data.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-10-word-representation-via-gaussian-embedding.markdown" />
       </list>
     </option>
   </component>
@@ -364,10 +369,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload">
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload.markdown">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -503,23 +509,6 @@
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-489">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="144">
-            <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           </first_editor>
           <second_editor>
             <js_state />
@@ -722,11 +711,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="144">
+            <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="54">
-            <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-01-indirect-supervision-for-relation-extraction-using-question-answer-pairs.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-05-multimodal-word-distributions.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-03-translational-embeddings-for-modelling-multi-relational-data.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-10-word-representation-via-gaussian-embedding.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="72">
+            <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             <folding />
           </first_editor>
           <second_editor>
