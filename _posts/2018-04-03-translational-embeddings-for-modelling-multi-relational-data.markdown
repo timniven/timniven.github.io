@@ -5,11 +5,6 @@ date: 2018-04-03
 categories: papers entity-embeddings
 ---
 
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
 [Bordes et al. (2013). NIPS](https://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf)
 
 ## Problem
