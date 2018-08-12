@@ -80,9 +80,10 @@ $$
 
 - Given the variety of phenomena that can come into consciousness, I was
   originally struggling to see how a low-dimensional space could handle
-  everything required of it. However I am still struggling to conceive
-  how this works, though the principles seem to be very well motivated
-  and exciting.
+  everything required of it. If it is instead thought of as simply
+  attending to a handful of dimensions in the representation space then
+  that makes more sense. However I am still struggling to conceive
+  how this works.
 - It would be nice to see some concrete examples.
 
 ## Of Personal Interest
