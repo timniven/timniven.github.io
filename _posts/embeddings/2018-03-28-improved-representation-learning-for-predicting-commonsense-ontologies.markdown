@@ -2,7 +2,7 @@
 layout: post
 title: "[Paper] Improved Representation Learning for Predicting Commonsense Ontologies"
 date: 2018-03-28
-categories: papers relation-extraction
+categories: embeddings re papers
 ---
 
 # Improved Representation Learning for Predicting Commonsense Ontologies

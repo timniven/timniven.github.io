@@ -2,7 +2,7 @@
 layout: post
 title: "[Paper] Word Representation Via Gaussian Embedding"
 date: 2018-04-03
-categories: papers word-embeddings
+categories: embeddings papers
 ---
 
 

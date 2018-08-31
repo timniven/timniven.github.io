@@ -2,7 +2,7 @@
 layout: post
 title: "[Paper] Multimodal Word Distributions"
 date: 2018-04-05
-categories: papers word-embedding gaussian-mixture
+categories: embeddings papers
 ---
 
 # Multimodal Word Distributions

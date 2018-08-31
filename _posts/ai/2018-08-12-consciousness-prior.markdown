@@ -2,7 +2,7 @@
 layout: post
 title: "[Paper] The Consciousness Prior"
 date: 2018-08-12
-categories: ai
+categories: ai papers
 ---
 
 [Bengio (2017)](https://arxiv.org/pdf/1709.08568)

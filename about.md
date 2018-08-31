@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
-I am currently a PhD student in the Intelligent Knowledge Management lab
-  at National Cheng Kung University in Tainan, Taiwan.
+I am currently a PhD student in the Intelligent Knowledge Management
+  lab at National Cheng Kung University in Tainan, Taiwan.
 I was born in New Zealand and also spent many years in Australia,
   where I originally studied philosophy.
 I spent some years as a software engineer, then moved to Taiwan to study
@@ -13,15 +13,11 @@ I spent some years as a software engineer, then moved to Taiwan to study
 
 My research focuses on natural language understanding particularly
   related to computational argumentation.
-My goal is to create an argument-based retrieval system for scientific and
-  academic knowledge, backed by a map of the argumentative terrain of
+My goal is to create an argument-based retrieval system for scientific
+  and academic knowledge, backed by a map of the argumentative terrain
   of all scientific knowledge.
-For example, a researcher can input a hypothesis and retrieve not only specific
-  documents, but specific arguments for or against that hypothesis.
+For example, a researcher can input a hypothesis and retrieve not only
+  specific documents, but specific arguments for or against that
+  hypothesis.
 It is my hope that such a system will be able to accelerate the
   advancement of knowledge.
-
-Needless to say, this goal is a way off yet.
-However, I believe I can see at least a way to proceed towards that goal
-  which I will attempt to outline progressively in my blog posts
-  and research papers.

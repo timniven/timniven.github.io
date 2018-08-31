@@ -2,7 +2,7 @@
 layout: post
 title: "[Paper] Tracking the World State with Recurrent Entity Networks"
 date: 2018-03-08
-categories: papers memory-networks
+categories: ai memory-networks papers
 ---
 
 

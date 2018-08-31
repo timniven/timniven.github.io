@@ -76,13 +76,13 @@ $$
 
 Score the plausibility of new entity relationships missing from Freebase. Learn vectors of entities and relations. Based on TransE model (I've written up elsewhere), which they write as
 
-$$S_{kb}(h, r, t) = - \lVert h + r - t \rVert_2^2$$
+$$S_{kb_ie}(h, r, t) = - \lVert h + r - t \rVert_2^2$$
 
 They train a ranking loss over corruptions in all three positions of the relation.
 
 At test time, recalibration of scores over pairs might be required - they therefore simplify to a function of the rank of $r$:
 
-$$\tilde{S}_{kb}(h, r, t) = \phi \left( \sum_{r' \neq r} \delta(S_{kb}(h, r, t) \gt S_{kb}(h, r', t)) \right)$$
+$$\tilde{S}_{kb_ie}(h, r, t) = \phi \left( \sum_{r' \neq r} \delta(S_{kb_ie}(h, r, t) \gt S_{kb_ie}(h, r', t)) \right)$$
 
 where
 
@@ -98,7 +98,7 @@ $$\hat{r}_{h, t} = \arg \max_{r \in \mathcal{R}} \sum_{m \in \mathcal{M}_{h,r}} 
 
 At this point the predicted relation could be $NA$, in which case this is returned. Otherwise agreement is sought with the KB and a composite score is calculated as
 
-$$S_{m2r + kb}(h, \hat{r}_{h,t}, t) = \sum_{m \in \mathcal{M}_{h,t}} S_{m2r}(m, \hat{r}_{h,t}) + \tilde{S}_{kb}(h, \hat{r}_{h,t}, t)$$
+$$S_{m2r + kb_ie}(h, \hat{r}_{h,t}, t) = \sum_{m \in \mathcal{M}_{h,t}} S_{m2r}(m, \hat{r}_{h,t}) + \tilde{S}_{kb_ie}(h, \hat{r}_{h,t}, t)$$
 
 ## Background Knowledge and Related Work
 

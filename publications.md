@@ -13,4 +13,4 @@ to appear in NAACL 2018.
 
 
 
-[1]:{{ site.url }}/download/nlitrans-semeval-2018 -CAMERA.pdf
+[1]:https://arxiv.org/abs/1804.08266
