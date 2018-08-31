@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Paper] Neural End-to-End Learning for Computational Argumentation Mining
+title: "[Paper] Neural End-to-End Learning for Computational Argumentation Mining"
 date: 2018-08-31
 categories: argmin papers
 ---

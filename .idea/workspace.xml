@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_includes/footer.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-12-26-200k-chilean-political-arguments.markdown" afterPath="$PROJECT_DIR$/_posts/argmin/2017-12-26-200k-chilean-political-arguments.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-12-28-analyzing-claim-premise-types.markdown" afterPath="$PROJECT_DIR$/_posts/argmin/2017-12-28-analyzing-claim-premise-types.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-01-05-ubuntu-boot-partition-full.markdown" afterPath="$PROJECT_DIR$/_posts/instructions/2018-01-05-ubuntu-boot-partition-full.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-02-08-hinton-learning-distributed-representations-of-concepts.markdown" afterPath="$PROJECT_DIR$/_posts/ai/2018-02-08-hinton-learning-distributed-representations-of-concepts.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-02-09-Maximum-Entropy-Modeling-Berger.markdown" afterPath="$PROJECT_DIR$/_posts/tutorial/2018-02-09-Maximum-Entropy-Modeling-Berger.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-02-09-hierarchical-probabilistic-neural-network-language-model.markdown" afterPath="$PROJECT_DIR$/_posts/nlp/2018-02-09-hierarchical-probabilistic-neural-network-language-model.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-12-tracking-the-world-state-with-recurrent-entity-networks.markdown" afterPath="$PROJECT_DIR$/_posts/ai/2018-03-12-tracking-the-world-state-with-recurrent-entity-networks.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-23-contextual-pattern-embeddings.markdown" afterPath="$PROJECT_DIR$/_posts/embeddings/2018-03-23-contextual-pattern-embeddings.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-25-relation-extraction-with-matrix-facorization-and-universal-schemas.markdown" afterPath="$PROJECT_DIR$/_posts/kb_ie/2018-03-25-relation-extraction-with-matrix-facorization-and-universal-schemas.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown" afterPath="$PROJECT_DIR$/_posts/kb_ie/2018-03-26-connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown" afterPath="$PROJECT_DIR$/_posts/kb_ie/2018-03-27-a-semantic-matching-energy-function-for-learning-with-multi-relational-data.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" afterPath="$PROJECT_DIR$/_posts/embeddings/2018-03-28-improved-representation-learning-for-predicting-commonsense-ontologies.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-03-30-Pypi-Package-Upload.markdown" afterPath="$PROJECT_DIR$/_posts/instructions/2018-03-30-Pypi-Package-Upload.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-04-01-indirect-supervision-for-relation-extraction-using-question-answer-pairs.markdown" afterPath="$PROJECT_DIR$/_posts/kb_ie/2018-04-01-indirect-supervision-for-relation-extraction-using-question-answer-pairs.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-04-03-translational-embeddings-for-modelling-multi-relational-data.markdown" afterPath="$PROJECT_DIR$/_posts/kb_ie/2018-04-03-translational-embeddings-for-modelling-multi-relational-data.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-04-05-multimodal-word-distributions.markdown" afterPath="$PROJECT_DIR$/_posts/embeddings/2018-04-05-multimodal-word-distributions.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-04-10-word-representation-via-gaussian-embedding.markdown" afterPath="$PROJECT_DIR$/_posts/embeddings/2018-04-10-word-representation-via-gaussian-embedding.markdown" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-08-12-consciousness-prior.markdown" afterPath="$PROJECT_DIR$/_posts/ai/2018-08-12-consciousness-prior.markdown" />
-      <change beforePath="$PROJECT_DIR$/about.md" afterPath="$PROJECT_DIR$/about.md" />
-      <change beforePath="$PROJECT_DIR$/publications.md" afterPath="$PROJECT_DIR$/publications.md" />
+      <change beforePath="$PROJECT_DIR$/_posts/argmin/2018-08-31-neural-end-to-end-learning-for-computational-argument-mining.markdown" afterPath="$PROJECT_DIR$/_posts/argmin/2018-08-31-neural-end-to-end-learning-for-computational-argument-mining.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +20,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/argmin/2018-08-31-neural-end-to-end-learning-for-computational-argument-mining.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="2448">
-                <caret line="136" column="22" lean-forward="false" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
+              <first_editor relative-caret-position="36">
+                <caret line="2" column="82" lean-forward="false" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -866,7 +845,7 @@
     <entry file="file://$PROJECT_DIR$/_posts/kb_ie/2018-04-03-translational-embeddings-for-modelling-multi-relational-data.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-853">
+          <first_editor relative-caret-position="144">
             <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
             <folding />
           </first_editor>
@@ -879,8 +858,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/argmin/2018-08-31-neural-end-to-end-learning-for-computational-argument-mining.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2448">
-            <caret line="136" column="22" lean-forward="false" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="82" lean-forward="false" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
             <folding />
           </first_editor>
           <second_editor>
