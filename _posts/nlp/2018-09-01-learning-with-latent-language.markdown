@@ -200,7 +200,7 @@ $$
 
 At language learning time it is assumed to have natural language
 descriptions of the target locations provided by human annotators and
-expert policies for navigating there (why the latter?).
+expert policies for navigating there.
 
 Learning proceeds by:
 - sampling a fixed number of descriptions $$w$$ from $$q$$
@@ -210,7 +210,11 @@ Learning proceeds by:
 At language learning time the agent has access to 250 environments and
 is evaluated on a further 50.
 
-Results indeed show faster learning and prove the hypothesis.
+Results indeed show faster learning and "show that the model has used
+the structure provided by language to *learn* a better representation
+space for policies - one that allows it to sample from a distribution
+over interesting and meaningful behaviors rather than sequences of
+random actions."
 
 ## Datasets
 
@@ -287,15 +291,31 @@ Using natural language at concept learning time for RL agents for
 - environment dynamics: Narasimhan et al. (2017)
 - exploration: Harrison et al. (2017)
 
+Dataset augmentation strategy used in Navigation and Regex datasets
+- Jia and Liang (2016)
+
+Automatic template induction system (again data augmentation)
+- Kwiakowski et al. (2011)
+
 ## Discussion
 
-Outstanding questions:
-- Do they use the same language learning data for all tasks?
-
-I am thinking about Bengio's Consciousness Prior, wherein he argued
-convincingly in my view for the benefits of having hidden units mapped
-to words or phrases. ...
-
-I am also thinking about recent work I've read (and must review) about
-learning a more explicit space using words - again linking up to this
-and the consciousness prior argument.
+- Via their comparisons they make the case that this is a feasible
+  technique, which is very interesting. However, I have not seen any
+  specific discussion of they hypothesis that the performance increase
+  is due to discovery of compositional concepts. It is a tantalizing
+  hypothesis and I would like more said, or more investigation into
+  this aspect (unless I have missed it). Insofar as it is discussed it
+  seems to be a given from the nature of language itself. It would be
+  nice to see examples of learned behavior demonstrating this.
+- The vocabulary used in these datasets is very small (see appendix).
+  This work is meant to be an initial exploration on smaller, toy tasks,
+  which I am totally on board with. But of course the next step is to
+  wonder how it could work with much larger and more complicated
+  natural language. Will their particular techniques be scalable? Have
+  we the datasets to do it?
+- Relatedly, I am thinking about Bengio's Consciousness Prior, wherein
+  he argued convincingly in my view for the benefits of having hidden
+  units mapped to words or phrases.
+- I am also thinking about recent work I've read (and must review) about
+  learning a more explicit space using words - again linking up to this
+  and the consciousness prior argument.
