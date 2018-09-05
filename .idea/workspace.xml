@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown" afterPath="$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +21,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="817">
-                <caret line="321" column="0" lean-forward="true" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
+              <first_editor relative-caret-position="655">
+                <caret line="324" column="46" lean-forward="true" selection-start-line="324" selection-start-column="46" selection-end-line="324" selection-end-column="46" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -865,8 +866,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="817">
-            <caret line="321" column="0" lean-forward="true" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
+          <first_editor relative-caret-position="655">
+            <caret line="324" column="46" lean-forward="true" selection-start-line="324" selection-start-column="46" selection-end-line="324" selection-end-column="46" />
             <folding />
           </first_editor>
           <second_editor>

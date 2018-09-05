@@ -313,9 +313,23 @@ Automatic template induction system (again data augmentation)
   wonder how it could work with much larger and more complicated
   natural language. Will their particular techniques be scalable? Have
   we the datasets to do it?
+- It seems the same function $$f(x, \eta, w)$$ is used at both language
+  and concept learning time. It feels like this is restricting - it
+  seems the problems need to be the same, because the parameters are
+  the same. E.g., if as in the example we have a model rating how well
+  an image matches a description, how do we then use that for the
+  regex task? We are mapping from an image to a scalar in the first
+  case - that is what $$\eta$$ has learned to do. It doesn't seem like
+  we can then use the same function for a different task.
+- How can we generalize if we don't have a complete set of natural
+  language strings at language learning time? 
 - Relatedly, I am thinking about Bengio's Consciousness Prior, wherein
   he argued convincingly in my view for the benefits of having hidden
-  units mapped to words or phrases.
+  units mapped to words or phrases. The idea here seems to be somewhat
+  different, although some of the motivations align a little bit. I
+  don't think this paper qualifies as progress towards Bengio's idea,
+  but does further demonstrate that it is a good one.
+- It also seems that the optimization step over natural language strings
+  is not ideal.
 - I am also thinking about recent work I've read (and must review) about
-  learning a more explicit space using words - again linking up to this
-  and the consciousness prior argument.
+  learning a more explicit space using words...
