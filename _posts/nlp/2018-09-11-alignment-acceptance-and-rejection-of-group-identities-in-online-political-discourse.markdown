@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Paper] Alignment, Acceptance, and Rejection of Group Identities in Online Political Discourse"
-date: 2018-08-31
+date: 2018-09-11
 categories: nlp papers
 ---
 
@@ -113,11 +113,11 @@ Define
 Infer two parameters in logit-space, conditioned on a hierarchy of Gaussian
 priors: the baseline
 
-$$\eta_{\text{base}} = \log p(B|\text{not} A)&&
+$$\eta_{\text{base}} = \log p(B|\text{not} A)$$
 
 and alignment values
 
-$$\eta_{\text{align}} = \log \frac{p(B|A)}{p(B|\text{not} A}&&
+$$\eta_{\text{align}} = \log \frac{p(B|A)}{p(B|\text{not} A}$$
 
 The conditional probabilities express the likelihood of a word category being
 used if the previous message does or does not contain that category.

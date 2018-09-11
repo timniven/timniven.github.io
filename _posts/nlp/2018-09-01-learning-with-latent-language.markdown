@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Paper] Learning with Latent Language"
-date: 2018-08-31
+date: 2018-09-01
 categories: nlp papers
 ---
 

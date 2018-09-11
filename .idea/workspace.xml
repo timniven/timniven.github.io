@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad8d258-14db-46f3-8b59-1985ce0cd2bf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown" afterPath="$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown" />
+      <change beforePath="$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown" afterPath="$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +17,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="2018-09-01-learning-with-latent-language.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="54">
+                <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,8 +99,8 @@
         <option value="$PROJECT_DIR$/_includes/footer.html" />
         <option value="$PROJECT_DIR$/_posts/argmin/2018-08-31-neural-end-to-end-learning-for-computational-argument-mining.markdown" />
         <option value="$PROJECT_DIR$/_posts/argmin/2018-09-03-argumentation-mining-on-the-web-from-information-seeking-perspective.markdown" />
-        <option value="$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown" />
         <option value="$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.py" />
+        <option value="$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown" />
         <option value="$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown" />
       </list>
     </option>
@@ -852,8 +866,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/nlp/2018-09-01-learning-with-latent-language.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="126">
-            <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="61" />
+          <first_editor relative-caret-position="54">
+            <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor>
@@ -864,8 +878,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/nlp/2018-09-11-alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding />
         </state>
       </provider>
