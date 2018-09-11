@@ -322,7 +322,7 @@ Automatic template induction system (again data augmentation)
   case - that is what $$\eta$$ has learned to do. It doesn't seem like
   we can then use the same function for a different task.
 - How can we generalize if we don't have a complete set of natural
-  language strings at language learning time? 
+  language strings at language learning time?
 - Relatedly, I am thinking about Bengio's Consciousness Prior, wherein
   he argued convincingly in my view for the benefits of having hidden
   units mapped to words or phrases. The idea here seems to be somewhat
