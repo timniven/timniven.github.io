@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Neural End-to-End Learning for Computational Argumentation Mining</title>
+  <meta name="description" content="Eger et al. ACL 2017">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/argmin/papers/2018/08/31/neural-end-to-end-learning-for-computational-argument-mining.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Neural End-to-End Learning for Computational Argumentation Mining</h1>
+    <p class="post-meta"><time datetime="2018-08-31T00:00:00+08:00" itemprop="datePublished">Aug 31, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://arxiv.org/abs/1704.06104">Eger et al. ACL 2017</a></p>
+
+<h2 id="key-findings">Key Findings</h2>
+
+<ul>
+  <li>Framing AM as token-based dependency parsing is subpar relative to
+token-based sequence tagging</li>
+  <li>Multi-task learning improves performance</li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+
+<p>This paper aims to address end-to-end argumentation mining.</p>
+
+<h2 id="dependency-parsing-based-model">Dependency Parsing Based Model</h2>
+
+<ul>
+  <li>They use the model of Miwa and Bansal (2016) <strong>LSTM-ER</strong> with their
+own formulation of the AM problem</li>
+  <li>Entity detection and relation classification are decoupled, although
+with shared parameters - more modular than sequence tagging model
+(although that can be recovered with MTL architecture specified below)</li>
+  <li>Pretraining on entities (?) and scheduled sampling
+(Bengio et al. 2015) prevent low performance at early training stages</li>
+  <li>The model uses a TreeLSTM with dependency parse information for
+relation classification.  <strong>How can this work across sentences?
+How is it actually implemented?</strong></li>
+  <li>This model can in principle model any kind of relations between
+argument components - in contrast to the sequence tagging model that
+is constrained such that each component can only relate to one other</li>
+</ul>
+
+<h2 id="sequence-tagging-based-model">Sequence Tagging Based Model</h2>
+
+<p>Each token will be tagged with a four-tuple</p>
+<ul>
+  <li>$b \in {B, I, O}$ for component tagging</li>
+  <li>$t \in {\text{Premise}, \text{Claim}, text{Major Claim}, \bot}$
+for component types</li>
+  <li>$d \in {\dots, -2, -1, 1, 2, \dots, \bot}$ for position relative to
+connected component</li>
+  <li>$s \in {\text{Support}, \text{Attack}, \text{For}, \text{Ag}, \bot}$
+for relation type</li>
+</ul>
+
+<p>They use a BiLSTM-CRF-CNN.</p>
+
+<h2 id="multi-task-learning">Multi-Task Learning</h2>
+
+<p>Following the framework of Sogaard and Goldber (2016) MTL is seen as
+multiple layers of LSTMs each responsible for one of the tasks. This
+works best when the tasks are hierarchical.</p>
+
+<p>The auxiliary tasks are</p>
+<ul>
+  <li>$C$: predicting $(b, t)$ from the four-tuple</li>
+  <li>$R$: predicting $(d, s)$</li>
+</ul>
+
+<p>Findings:</p>
+<ul>
+  <li>Hierarchical ordering didn’t help</li>
+  <li>$C$ more helpful than $R$</li>
+</ul>
+
+<h2 id="comparison-and-analysis">Comparison and Analysis</h2>
+
+<p>Evaluation metric details from</p>
+<ul>
+  <li>Persing and Ng (2016)</li>
+</ul>
+
+<p>They hypothesize that the LSTM-Parser’s good relative performance is a
+result of encoding its whole stack history rather than just the top
+elements on the stack, which makes it aware of much larger contexts.</p>
+
+<p>The LSTM-ER model deteriorates rapidly from paragraph level to essay
+level prediction - they hypothesize this is because at essay level the
+search space for the tree is so much larger.</p>
+
+<p>In contrast the strength of the sequence tagging model is seen to come
+from its simplicity (less overfitting) and the fact it can deal with
+longer sequences being “largely invariant to length”.</p>
+
+<p>The relatively good performance of LSTM-ER is attributed to decoupling
+of component identification and relation prediction. Similar results can
+be achieved with the tagging model by using the MTL setting (effectively
+decoupling).</p>
+
+<p>The tagging model performs better as it explicitly considers the
+distance between components - it is therefore able to reflect the
+distribution.</p>
+
+<p>The tagger performance has a lower standard deviation than the parser
+over random initializations.</p>
+
+<p>As for training data - the parser only sees 322 trees whereas the tagger
+is trained on 120K tokens.</p>
+
+<p>A big source of error is accurately determining component spans.</p>
+
+<h2 id="background-and-related-work">Background and Related Work</h2>
+
+<p>Two recent approaches to end-to-end learning for AM</p>
+<ul>
+  <li>Persing and Ng (2016)</li>
+  <li>Stab and Gurevych (2017)</li>
+</ul>
+
+<p>The notion of “argument” critically relies on the underlying argument
+theory</p>
+<ul>
+  <li>Reed et al. (2008)</li>
+  <li>Biran and Rambow (2011)</li>
+  <li>Habernal and Gurevych (2015)</li>
+  <li>Stab and Gurevych (2017)</li>
+</ul>
+
+<p>Discourse parsing (Muller et al. 2012) for AM</p>
+<ul>
+  <li>Pedszus and Stede (2015)</li>
+</ul>
+
+<p>BIO tagging for component idenfitification</p>
+<ul>
+  <li>Habernal and Gurevych (2016)</li>
+</ul>
+
+<p>A model that combines sequential (entity) and tree structure (relation)
+information so as to be in principle applicable to any problem where
+the aim is to extract entities and their relations</p>
+<ul>
+  <li>Miwa and Bansal (2016) *could be relevant to FEVER idea</li>
+</ul>
+
+<p>AM and analysis of scientific papers</p>
+<ul>
+  <li>Kirschner et al. (2015)</li>
+</ul>
+
+<p>Other MTL</p>
+<ul>
+  <li>Sogaard and Goldberg (2016) *most interesting</li>
+  <li>Peng and Dredze (2016)</li>
+  <li>Yang et al. (2016)</li>
+  <li>Rusu et al. (2016)</li>
+  <li>Hector and Plank (2017)</li>
+</ul>
+
+<p>Even humans struggle to determine component spans</p>
+<ul>
+  <li>Persing and Ng (2016)</li>
+  <li>Yang and Cardie (2013)</li>
+</ul>
+
+<p>Use of encoder-decoder framing for AM investigated in</p>
+<ul>
+  <li>Potash et al. (2016)</li>
+</ul>
+
+<h2 id="datasets">Datasets</h2>
+
+<p>To the authors’ best knowledge, the only dataset of quality that
+annotates AM in its entire complexity (token-level annotation of
+components, their types, and relations and their types)</p>
+<ul>
+  <li>Stab and Gurevych (2017)</li>
+</ul>
+
+<p>Notes</p>
+<ul>
+  <li>This is the persuasive essay corpus</li>
+  <li>Huge imbalance: &gt;90% of relations are supporting</li>
+  <li>Prediction on the paragraph level is easier than on the essay level
+because the number of potential configurations of components is
+fewer</li>
+  <li>~30% of relations are next to each other; 66% in ${-2, -1, 1}$;
+but values of $-11$ and $+10$ are observed</li>
+  <li>~92% of relations are inter-sentence</li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>Interesting point made in the paper: a model that enforces a constraint
+does not necessarily mean it is more suitable for a task. It has
+frequently been observed that models tend to produce output consistent
+with the constraints in their training data in such situations; thus
+they have learned the constraints</p>
+<ul>
+  <li>Zhang et al. (2017)</li>
+  <li>Hector and Plank (2017)</li>
+</ul>
+
+<p>One question, which the paper does also raise, is whether the
+dependency parsing based model is weaker due to a lack of data. The
+authors seems to think so. A question then arises: would a dependency
+parsing based model overtake a sequence tagging based model with
+enough data? Yes, data efficiency is good. But are we in the zone here
+where the data really is that small such that general conclusions like
+“dependency parsing is worse than sequence tagging” can’t be properly
+made?</p>
+
+<p>Reading the paper it is hard to know how to implement the LSTM-ER model.
+Yes, we must refer to the original author’s paper. But because the
+TreeLSTM doesn’t seem to apply to their problem, the question remains as
+to whether they used it as is or modified it somehow.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

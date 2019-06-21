@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Translational Embeddings for Modelling Multi-Relational Data</title>
+  <meta name="description" content="Bordes et al. (2013). NIPS">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/papers/entity-embeddings/2018/04/03/translational-embeddings-for-modelling-multi-relational-data.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Translational Embeddings for Modelling Multi-Relational Data</h1>
+    <p class="post-meta"><time datetime="2018-04-03T00:00:00+08:00" itemprop="datePublished">Apr 3, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf">Bordes et al. (2013). NIPS</a></p>
+
+<h2 id="problem">Problem</h2>
+
+<ul>
+  <li>Goal is to model multi-relational data from KBs for provision of
+efficient tool to complete them by adding new facts without requiring
+extra knowledge</li>
+  <li>Modeling involves extracting local or global connectivity patterns in
+the knowledge graph, and using these to generalize</li>
+  <li>For single relational data this can be easier, such as the friend of
+my friend is my friend</li>
+  <li>However these patterns can get more complicated, such as considering
+whether my friend’s friend and I share various interests</li>
+  <li>This obviously greatly increases the complexity of potential patterns</li>
+  <li>Prior work had focused on increasing the expressivity of the models,
+but over- (and under-) fitting have been problems, as well as model
+interpretibility and computational complexity</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<ul>
+  <li>Energy-based model for learning low-dimensional embeddings of entities</li>
+  <li>If <script type="math/tex">(h, l, t)</script> holds, then the embedding for tail <script type="math/tex">t</script> should be
+close to the vector for head <script type="math/tex">h</script> plus some vector that depends on
+the relationship <script type="math/tex">l</script></li>
+  <li>Motivated by considering that hierarchy is ubiquitous in KBs, and
+noting that trees have this property: children’s relative position to
+parent is a translation on the y-axis</li>
+  <li>This may also work well with the kinds of linear regularities
+exhibited by word2vec embeddings</li>
+  <li>Reduced parameters follows from learning just one low-dimensional
+embedding for each entity</li>
+</ul>
+
+<h2 id="model-details">Model Details</h2>
+
+<ul>
+  <li>If <script type="math/tex">(h, l, t)</script> holds, then we want <script type="math/tex">h + l \approx t</script> to hold, i.e.
+we want <script type="math/tex">t</script> to be a nearest neighbour to <script type="math/tex">h + l</script>, and the others
+far away</li>
+  <li>Energy is given by distance <script type="math/tex">d(h + l, t)</script>, taken to be the L1 or L2
+norm</li>
+  <li>Corrupted pairs are used to provide negative examples, then a margin
+based ranking loss is used to learn the embeddings</li>
+</ul>
+
+<script type="math/tex; mode=display">\mathcal{L} = \sum_{(h, l, t) \in S} \sum_{(h', l, t') \in S'} \left[ \gamma + d(h + l, t) - d(h' + l, t') \right]_+</script>
+
+<ul>
+  <li><script type="math/tex">[x]_+</script> denotes the positive part of <script type="math/tex">x</script></li>
+  <li><script type="math/tex">\gamma \gt 0</script> is the margin hyperparameter</li>
+  <li><script type="math/tex">S'</script> is the set of corrupted triples where either the head or tail
+(but not both) are replaced by a random entity for an untrue relation</li>
+  <li>Entity embeddings (but not relations) are limited to have norm 1 to
+prevent the model from artificially reducing loss by increasing
+embedding norms</li>
+</ul>
+
+<h2 id="training-details">Training Details</h2>
+
+<ul>
+  <li>See p.3, last paragraph before section 3</li>
+</ul>
+
+<h2 id="comparisons">Comparisons</h2>
+
+<ul>
+  <li>Main models compared to are:
+    <ul>
+      <li>Bordes et al. (2011) Learning structured embeddings of knowledge
+bases</li>
+      <li>Socher et al. (2013) Learning new facts from knowledge bases with
+neural tensor networks and semantic word vectors</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background-knowledge-and-related-work">Background Knowledge and Related Work</h2>
+
+<ul>
+  <li>Latent factor models: Jenatton et al. (2012)</li>
+  <li>Non-parametric Bayesian extensions of the stochastic blockmodel: Zhu
+(2012), Miller et al. (2009), Kemp et al. (2006)</li>
+  <li>Tensor factorization models: Harshman and Lundy (1994)</li>
+  <li>Collective matrix factorization: [13, 11, 12]</li>
+  <li>Bayesian clustering frameworks: [15]</li>
+  <li>Energy-based frameworks for learning embeddings of entities: [3, 15,
+2, 14]</li>
+  <li>Relation extraction [2, 16]</li>
+</ul>
+
+<h2 id="datasets">Datasets</h2>
+
+<ul>
+  <li>WordNet</li>
+  <li>Freebase</li>
+  <li>Kinships</li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<ul>
+  <li>They note their model can’t handle ternary relationship as in the
+Kinship dataset; however they deal with less complicated relationships
+better on the real world Freebase</li>
+  <li>They didn’t compare to Socher’s neural tensor network, so that needs
+to be looked at</li>
+  <li>I’m more interested in relation extraction at this point, so need to
+follow the links [2, 16].</li>
+</ul>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

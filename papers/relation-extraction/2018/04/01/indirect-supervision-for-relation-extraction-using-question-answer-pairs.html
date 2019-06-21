@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Indirect Supervision for Relation Extraction using Question-Answer Pairs</title>
+  <meta name="description" content="Indirect Supervision for Relation Extraction using Question-Answer Pairs">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/papers/relation-extraction/2018/04/01/indirect-supervision-for-relation-extraction-using-question-answer-pairs.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Indirect Supervision for Relation Extraction using Question-Answer Pairs</h1>
+    <p class="post-meta"><time datetime="2018-04-01T00:00:00+08:00" itemprop="datePublished">Apr 1, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="indirect-supervision-for-relation-extraction-using-question-answer-pairs">Indirect Supervision for Relation Extraction using Question-Answer Pairs</h1>
+
+<p>Wu et al. (2017), WSDM</p>
+
+<p>https://arxiv.org/pdf/1710.11169v2.pdf</p>
+
+<h2 id="problem">Problem</h2>
+
+<ul>
+  <li>RE systems usually rely on costly and noisy human annotations</li>
+  <li>This motivated the move to distant supervision with an existing KB</li>
+  <li>Pipeline
+    <ol>
+      <li>detect entity mentions in text</li>
+      <li>map detected entity mentions to entities in KB</li>
+      <li>assign, to the candidate type set of each entity mention pair, all KB relation types between their KB-mapped entities</li>
+    </ol>
+  </li>
+  <li>Two sources of error:
+    <ul>
+      <li>incomplete KB (false negatives)</li>
+      <li>context-agnostic labelling process (false positives): two entities are mentioned in a sentence (e.g. Trump flew back to United States), but due to (3) in the process above, relation types that are not expressed are labeled</li>
+    </ul>
+  </li>
+  <li>Previous work focuses on minimizing either false positives or false negatives, not both</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<ul>
+  <li>Indirect external supervision from QA task</li>
+  <li>Have text from some specific domain, and also a QA set</li>
+  <li>Question sentences map to positive and negative sentences (where answers can and cannot be found)</li>
+  <li>Positive pairs are enforced to be similar, negative dissimilar</li>
+  <li>Generate a graph automatically from mentions, relations, and entity types</li>
+  <li>Use a QA set to also construct another graph</li>
+  <li>Merge the graphs based on similarity in some way</li>
+</ul>
+
+<h2 id="details">Details</h2>
+
+<ul>
+  <li>Relation vector space
+    <ul>
+      <li>objects whose types are close to each other should have a similar representation</li>
+      <li>what are types?</li>
+    </ul>
+  </li>
+  <li>QA pair vector space
+    <ul>
+      <li>Positive answers sharing the same question should be close to each other</li>
+      <li>what about questions worded differently that essentially have the same meaning? How much noise will this introduce?</li>
+    </ul>
+  </li>
+  <li>Shared features between relation mentions and QA pairs connect the two vector spaces
+    <ul>
+      <li>Linguistic features? How does that work?</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="text-feature-extraction">Text Feature Extraction</h3>
+
+<p>Extract features such as head token and bigram from POS-tagged corpus.</p>
+
+<ul>
+  <li>$\mathcal{F}_Z$ is the set of features extracted from relation mentions</li>
+  <li>$\mathcal{F}_{QA}$ is the set extracted from QA pairs</li>
+  <li>$\mathcal{F}$ is the combined set</li>
+</ul>
+
+<p>The overlap between the relation mention and QA pair features is the bridge between the embedding spaces.</p>
+
+<p>Question: what does a feature vector actually represent? Is it a collection of feature values, or is it a vector representation of a single feature?</p>
+
+<h3 id="modeling-types-of-relation-mentions">Modeling Types of Relation Mentions</h3>
+
+<p>The idea is to model co-occurences between linguistic surface features and relation mentions. The intuition is that if the same features co-occur with the same relations, then they should have similar embeddings; whilst relations that share similar surface linguistic features should be close in embedding space.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\mathcal{L}_{ZF} &= - \sum_{z_i \in \mathcal{Z}} \sum_{f_i \in \mathcal{F}_z} w_{ij} \log p(f_i|z_i) \\
+&= - \sum_{z_i \in \mathcal{Z}} \sum_{f_i \in \mathcal{F}_z} w_{ij} \log \sigma(z_i^\top c_j) + \sum_{v=1}^V \Bbb{E}_{f_j \sim P_n(F)} [ \log \sigma(-z_i^\top c_{j'}]
+\end{align*} %]]></script>
+
+<ul>
+  <li>$z_i$ is the relation mention vector and $c_j$ is the text feature vector (still unclear what a feature vector represents)</li>
+  <li>in the final form, the first term models observed co-occurrence whilst the second term is negative sampling with $V$ negative samples</li>
+</ul>
+
+<p>In the automatically labeled dataset, some mentions are associated with relations they shouldn’t be (false positives). To deal with this, they enforce the relation mention’s embedding vector to be closest to the most relevant relation.</p>
+
+<p>Question: how to define the most relevant relation?</p>
+
+<p>The partial loss for each relation mention is then</p>
+
+<script type="math/tex; mode=display">l_i = \max \left\{ 0, 1 - \left[ \max_{r \in \mathcal{R}_i} \phi (z_i, r) - \max_{r' \in \bar{\mathcal{R}}_i} \phi(z_i, r') \right] \right\}</script>
+
+<ul>
+  <li>$\phi$ is dot product</li>
+  <li>$\bar{\mathcal{R}} = \mathcal{R} \backslash \mathcal{R}_i$</li>
+</ul>
+
+<p>Correlations between features and mentions are integrated with mention and relation type associations so that features may participate in modeling the relation embeddings</p>
+
+<script type="math/tex; mode=display">O_Z = \mathcal{L}_{ZF} + \sum_{i=1}^{N_Z} l_i + \frac{\lambda}{2} \sum_{i=1}^{N_Z} \lVert z_i \rVert_2^2 + \frac{\lambda}{2} \sum_{k=1}^{K_r} \lVert r_k \rVert_2^2</script>
+
+<ul>
+  <li>$\lambda \gt 0$ tunes regularization</li>
+</ul>
+
+<h3 id="modeling-associations-between-qa-entity-mention-pairs">Modeling Associations between QA Entity Mention Pairs</h3>
+
+<p>Modeled exactly the same, with the same equations as above for mentions and linguistic features. Instead we have the entity pairs in the QA sentence $p_i$ and the QA linguistic features $c_j’$.</p>
+
+<p>The key intuition at this point is that any positive QA entity pair we encounter should be closer in embedding space to other positive answers to the same question than to negative answers to the same question.</p>
+
+<script type="math/tex; mode=display">l_{i,k} = \sum_{p_{k_1} \in \mathcal{P}_i^+, p_{k_2} \in \mathcal{P}_i^-, k_1 \neq k} \max \left\{ 0, 1 - \left[ \phi(p_k, p_{k_1}) - \phi(p_k, p_{k_2}) \right] \right\}</script>
+
+<p>Fairly self exaplanatory. It’s integrated again just like the other one so</p>
+
+<script type="math/tex; mode=display">O_{QA} = \mathcal{L}_{PF} + \sum_{i=1}^{N_Q} \sum_{k=1}^{N_i^+} l_{i, k} \frac{\lambda}{2} \sum_{k=1}^{N_P} \lVert p_k \rVert_2^2</script>
+
+<h3 id="joint-optimization-objective">Joint Optimization Objective</h3>
+
+<script type="math/tex; mode=display">O = O_Z + O_{QA}</script>
+
+<p>On each iteration alternatively sample from each of the two objectives. Convergence proof in [40].</p>
+
+<h2 id="background-and-related-work">Background and Related Work</h2>
+
+<ul>
+  <li>Remove redundant training information [16, 21, 26, 36]
+    <ul>
+      <li>For each relation, assume one sentence may express it instead of all [16, 36]</li>
+    </ul>
+  </li>
+  <li>Mapping mentions in text corpus to KB entities (NER) [15, 24]</li>
+  <li>Linguistic features for surface patterns [4, 26]</li>
+  <li>Margin-based ranking loss [30]</li>
+  <li>Second-order proximity idea [44]</li>
+  <li>Pairwise ranking [34]</li>
+  <li>Edge sampling strategy [44]</li>
+  <li>Stochastic sub-gradient descent [40]</li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<ul>
+  <li>It is a wonderful idea and I like it alot</li>
+  <li>What happens if there is no QA dataset available for a given domain - e.g. Philosophy?
+    <ul>
+      <li>I am thinking, what if we use Stack Exchange? Scrape QA pairs from there. Select maybe just QA pairs where the length is below some threshold to remove the long-winded replies.</li>
+    </ul>
+  </li>
+  <li>Still need a target relation type set (this is a problem for me)</li>
+  <li>Use an external NER system (I want an integrated one)</li>
+  <li>There is definitely mess introduced by the NER setup - p.4 they take the last entity mention in the question sentence to be the question entity</li>
+  <li>They don’t seem to use dependency information in dealing with their surface patterns</li>
+  <li>Looks like pairs of entities are concatenated into a single vector - suboptimal</li>
+</ul>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

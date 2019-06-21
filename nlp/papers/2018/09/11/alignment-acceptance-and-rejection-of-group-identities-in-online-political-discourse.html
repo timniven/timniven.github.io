@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Alignment, Acceptance, and Rejection of Group Identities in Online Political Discourse</title>
+  <meta name="description" content="Shin and Doyle NAACL 2018">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/nlp/papers/2018/09/11/alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Alignment, Acceptance, and Rejection of Group Identities in Online Political Discourse</h1>
+    <p class="post-meta"><time datetime="2018-09-11T00:00:00+08:00" itemprop="datePublished">Sep 11, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="http://aclweb.org/anthology/N18-4001">Shin and Doyle NAACL 2018</a></p>
+
+<h2 id="key-findings">Key Findings</h2>
+
+<ul>
+  <li>Alignment (measured by pronouns) is strongly biased toward cooperative
+alignment, but different linguistic features can show substantially different
+behaviours</li>
+  <li>Whilst previous work find alignment always positive and a matter of degree,
+the authors found negative alignment</li>
+  <li>Negative pronoun alignment contrasts with relatively stable alignment of
+word categories associated with possible rhetorical approaches, suggesting in
+their dataset group dynamics are more contentious than the argument itself -
+strong group identities can overcome the general desire to align</li>
+</ul>
+
+<h2 id="background-and-related-work">Background and Related Work</h2>
+
+<p>Work in Communication Accommodation Theory, that demonstrated speakers tend to
+align to achieve social approval from in-group members, and diverge with
+out-groups, especially when relations are strained</p>
+<ul>
+  <li>Giles et al. (1991, 1993)</li>
+</ul>
+
+<p>Specific studies of alignment from speed dates to legal courts</p>
+<ul>
+  <li>Danescu-Niculescu-Mizil et al. (2011)</li>
+  <li>Guo et al. (2015)</li>
+  <li>Ireland et al. (2011)</li>
+  <li>Niederhoffer and Pennebaker (2002)</li>
+</ul>
+
+<p>The alignment model the authors adapt called WHAM</p>
+<ul>
+  <li>Doyle and Frank (2016)</li>
+</ul>
+
+<p>Study of accommodation</p>
+<ul>
+  <li>Giles et al. (1991)</li>
+</ul>
+
+<p>Accommodation from looking at usage of function work categories such as
+pronouns, prepositions, and articles - an approach arguing that function words
+provide the syntactic structure which can vary somewhat independently of the
+content words being used, thereby allowing individuals to express their own
+personality and identity</p>
+<ul>
+  <li>Danescu-Niculescu-Mizil et al. (2011)</li>
+  <li>Niederhoffer and Pennebaker (2002)</li>
+  <li>Chung and Pennebaker (2007)</li>
+</ul>
+
+<p>Accommodation focusing on convergence in lexical categories is what the authors
+call <strong>linguistic alignment</strong>, and is related to the concepts of</p>
+<ul>
+  <li><strong>priming</strong>: exposure to one stimulus influences response to a subsequent
+stimulus - e.g. “nurse” brings up medical and hospital associations/context</li>
+  <li><strong>entraining</strong>: the phenomenon of adapting the reference terms of one’s
+interlocutor to ensure clarity of reference and communication, necessary to
+overcome the ambiguity in the multitude of synonyms that exist in the language</li>
+</ul>
+
+<p>Separating <strong>homophily</strong> (an inherent similarity between language users) from
+alignment (a necessary factorization to get the kinds of analysis we want going)</p>
+<ul>
+  <li>Danescu-Niculescu-Mizil et al. (2011)</li>
+  <li>Doyle et al. (2017) (estimating employees inclusion in the workplace)</li>
+</ul>
+
+<p>Alignment for argumentation</p>
+<ul>
+  <li>Burleson and Fennelly (1981)</li>
+  <li>Duran and Fusaroli (2017)</li>
+  <li>Pickering and Garrod (2004)</li>
+  <li>Giles et al. (1991)</li>
+</ul>
+
+<p>Key sentence for me:
+“if function word usage can reflect a speaker’s psychological state then
+negative alignment to opponents would be observed as a fair representation of
+the disagreement between speakers.”
+Using this idea to detect agreement/disagreement between speakers</p>
+<ul>
+  <li>Rosenthal and McKeown (2015)</li>
+</ul>
+
+<p>Word categories that represent different rhetorical approaches to argument</p>
+<ul>
+  <li>Pennebaker et al. (2003)</li>
+</ul>
+
+<p>Work on pronouns indicating group dynamics</p>
+<ul>
+  <li>Van Swol and Carlson (2017)</li>
+</ul>
+
+<p>Work on different word usage for different groups</p>
+<ul>
+  <li>Schwartz et al. (2013)</li>
+</ul>
+
+<p>Linguistic Inquiry and Word Count, seems to be about psychological states being
+reflected in counts of works in psychologically relevant categories - may be of
+use in argumentation mining, worth at least checking, especially given:
+“A speaker’s baseline usage of rhetorical categories will present the
+group-specific speech styles that may be dependent on group identity, reflecting
+preferred styles of argument. The degree of alignment on rhetorical categories
+indicates whether speakers maintain their group’s discussion style or adapt to
+the other group.”</p>
+<ul>
+  <li>Pennebaker et al. (2007)</li>
+</ul>
+
+<p>Usage of “they” among out-group members may reflect a common referent and not a
+lack of alignment - compare “you”</p>
+<ul>
+  <li>Clark (1996)</li>
+</ul>
+
+<p>Alignment due to non-social factors (i.e. cognitive, I think)</p>
+<ul>
+  <li>Pickering and Garrod (2004)</li>
+</ul>
+
+<h2 id="swam-model">SWAM Model</h2>
+
+<p>Define</p>
+<ul>
+  <li><strong>baseline word use</strong>: the rate at which someone uses a given word category
+<script type="math/tex">W</script> when it has not been used in the preceding message. This reflects
+internalization of in-group identity, homophily, and enculturation.</li>
+  <li><strong>alignment</strong>: the relative increase in the probability of words from <script type="math/tex">W</script>
+being used when the preceding message used a word from <script type="math/tex">W</script>. This reflects
+a willingness to adjust one’s own behaviour to fit another’s expectations and
+framing.</li>
+</ul>
+
+<p>Infer two parameters in logit-space, conditioned on a hierarchy of Gaussian
+priors: the baseline</p>
+
+<script type="math/tex; mode=display">\eta_{\text{base}} = \log p(B|\text{not} A)</script>
+
+<p>and alignment values</p>
+
+<script type="math/tex; mode=display">\eta_{\text{align}} = \log \frac{p(B|A)}{p(B|\text{not} A}</script>
+
+<p>The conditional probabilities express the likelihood of a word category being
+used if the previous message does or does not contain that category.</p>
+
+<p>Noted differences with WHAM (Doyle and Frank (2016))</p>
+<ul>
+  <li>WHAM uses a hierarchy of Gaussians to tie together observations from related
+messages to improve robustness when data is sparse or sociological factors
+are subtle - whilst requiring statistical assumptions it improves robustness
+when group dynamics are subtle or group membership difficult to determine</li>
+  <li>But when group membership is clear this may provide inaccurate estimates</li>
+  <li>The hierarchy in WHAM aggregates information across groups to improve
+alignment estimates, but one group’s alignment may not be predictive of
+another’s when the groups are opposed</li>
+  <li>Hence the Simplified Word-Based Alignment Model (SWAM) for cases where groups
+are expected to provide clear signal</li>
+</ul>
+
+<p>Noted differences with subtractive alignment model of Danescu-Niculescu-Mizil
+et al. (2011):</p>
+<ul>
+  <li>SWAM uses a conditioned baseline <script type="math/tex">p(B|\text{not} A)</script> whereas they use the
+unconditioned <script type="math/tex">p(B)</script></li>
+  <li>SWAM places alignment on log-odds rather than probability which avoids floor
+effects for alignment of rare word categories</li>
+  <li>SWAM calculates alignment per word, not per message, which controls for
+message length</li>
+</ul>
+
+<h2 id="on-rhetorical-categories">On Rhetorical Categories</h2>
+
+<p>The categories seem to come from Pennebaker (2007).</p>
+
+<p>The cognitive processes category “spans markers of certainty, discrepancy, and
+inclusion, and has been argued to reflect argumentation framing that appeals to
+rationality.” I would like to find those arguments.</p>
+
+<p>“Elevated causation word usage has been argued to be employed by the minority
+position within a debate, to provide convincing evidence against the status quo
+(Pennebaker et al. (2003), Van Swol and Carlson (2017)).</p>
+
+<p>Note also that perceived power differences influence alignment - the previous
+point can be seen as a specific case of this.</p>
+
+<p>It seems to be an issue for the authors, in the discussion, that alignment was
+not observed for the rhetorical categories, and setps to further investigate
+are proposed (see below).</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<h3 id="function-words-authors-discussion">Function Words (Author’s Discussion)</h3>
+
+<p>The theory upon which this work is based holds that pronouns and some rhetorical
+words can be classed as function words. However, this may not necessarily be
+such a clean classification. They say that using some alignment words are
+inevitable to stay in the conversation, or as an unambiguous referent.</p>
+
+<p>Therefore as future work the authors suggest to separate alignment motivated by
+active acceptance from alignment that must occur in order to stay in the
+conversation.</p>
+
+<p>The authors mention a strategy: separate the dataset into specific conversations
+and calculate alignment within those. The lexical coherence within conversations
+should thereby control for this effect.</p>
+
+<h3 id="does-the-conditioned-baseline-make-sense">Does the conditioned baseline make sense?</h3>
+
+<p>On the one hand <script type="math/tex">p(B)</script> seems suboptimal because it confounds alignment in its
+probability - every instance of alignment usage of a word category will also
+count towards this probability. This would seem to erroneously inflate the
+baseline probability value.</p>
+
+<p>On the other hand, instances of a word category that I would otherwise have
+used, not necessarily reflecting alignment, will be dropped from the statistic
+if it accidentally happens that the previous message contains it. This would
+threaten to erroneously lower the baseline probability.</p>
+
+<p>If I had to choose one I would choose conditioned. By only counting instances
+where we are sure word usage does not occur from alignment we would seem to get
+a cleaner signal than not doing that.</p>
+
+<p>Is there a better solution?</p>
+
+<p>(The authors do note as future work to look at a larger dataset to compare with
+WHAM in order to make sure their model estimates are accurate.)</p>
+
+<h3 id="argument-idenfitication">Argument Idenfitication</h3>
+
+<p>Can we use alignment calculations to identify when arguments are occuring? To
+identify support and attack generally?</p>
+
+<p>Or is it more useful for the pragmatic signal - to try and identify groups or
+clusters that are the secondarily useful for argument identification?</p>
+
+<h3 id="bad-argument-identification">Bad Argument Identification</h3>
+
+<p>The authors’ find that strong pronoun alignment and weak alignment of
+rhetorical categories reflecting a situation where group membership and dynamics
+means more than the issues at hand. In such a situation one would expect to find
+a preponderance of bad arguments - non-sequiturs, questionable warrants, logical
+fallacies, etc.</p>
+
+<p>In argumentation mining terms, it could be a place where the pragmatic and
+contextual signal is just as important as, or more important than, e.g., using
+warrants to try and make the connections between premises and conclusions, and
+certainly identifying what the claims are.</p>
+
+<p>This paper suggests that we can calculate the ratio of pronoun alignment over
+rhetorical category alignment to identify cases where pragmatics are more
+important and where argumentation is likely to be of poorer quality.</p>
+
+<p>A hypothesis I have been mulling over is that pragmatic signal is essential for
+high precision argumentation mining. This follows directly from my own
+experience: at times I struggle to understand a (bad) argument and only after I
+take a guess at the stance of the person can I make sense of it. It would be
+interesting to gather examples of such cases and analyze them - even turn them
+into a challenging dataset.</p>
+
+<p>It would be nice to take a dump from The Conversation and annotate it much like
+the persuasive essay corpus, only with the added pragmatic signal. That way we
+could perform a direct comparison with and without this additional signal.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

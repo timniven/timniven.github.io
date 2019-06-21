@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Contextual Pattern Embeddings</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/embeddings/re/papers/2018/03/23/contextual-pattern-embeddings.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Contextual Pattern Embeddings</h1>
+    <p class="post-meta"><time datetime="2018-03-23T00:00:00+08:00" itemprop="datePublished">Mar 23, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<h1 id="contextual-pattern-embeddings">Contextual Pattern Embeddings</h1>
+
+<p>Obamuyide and Vlachos (2017), NIPS</p>
+
+<p>http://www.akbc.ws/2017/papers/17_paper.pdf</p>
+
+<h2 id="problem">Problem</h2>
+
+<ul>
+  <li>To learn extractors for new relations for which there is limited training data (one-shot learning)</li>
+  <li>With limited training data there is limited supervision saying what relations match what surface linguistic patterns</li>
+  <li>A complication is “semantic drift”: since model predictions are used for subsequent predictions, noise in these predictions can put the whole process off course</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<ul>
+  <li>Factorization Machine model</li>
+  <li>Uses embeddings of the surface linguistic patterns as well as relations and entities (see Figure 1 on p.3). Actually I think that figure is very clear in showing how correlations between surface patterns and relations can be easily captured by the model</li>
+  <li>Universal Schema, which learns a joint embedding space for surface linguistic patterns and relations, sidesteps the problem of aligning relations to surface patterns in the corpus by performing joint inference across surface patterns, relations, and entities</li>
+  <li>The learning algorithm needs to see negative facts. However, assuming facts not in the seed KB are false runs an obvious risk. Following Riedel et al. (2013) they treat unobserved facts as unknowns that need to be inferred, and use a ranking objective that ranks observed facts higher than unobserved ones - Bayesian Personalized Ranking</li>
+</ul>
+
+<h2 id="details">Details</h2>
+
+<h3 id="factorization-machines">Factorization Machines</h3>
+
+<script type="math/tex; mode=display">s(\mathbf{f}) = \sum_{m=1}^d b_mf_m + \sum_{m=1}^d \sum_{n = m+1}^d \langle \phi_m, \phi_n \rangle f_m f_n</script>
+
+<p>It appears $d$ is the dimension of the sparse embedding of Figure 1. So each feature gets its own weight in the first term, which is a linear function. For the second term, $\phi_m \in \Bbb{R}^k$ with $k « d$ are learned vector representations for each feature.</p>
+
+<h3 id="proposed-approach">Proposed Approach</h3>
+
+<p>Represent facts as a triple $(r, t, c^t)$, being a relation, an entity pair, and a vector of counts of contextual patterns (surface patterns) observed together with the entity pairs in a text corpus, normalized to sum to one. THen $\mathbf{f}$ is represented by the concatenation of these vectors.</p>
+
+<p>Relation and tuples are encoded as one-hot vectors. (Note: since tuples are pairs of entities, shouldn’t this be a two-hot vector?) These vectors are therefore very sparse. However, they only sum over the active features $\mathcal{A}$</p>
+
+<script type="math/tex; mode=display">s(\mathbf{f}) = \sum_{a \in A} b_af_a + \sum_{a \in A, a' \in A \backslash a} \langle \phi_a, \phi_{a'} \rangle f_a f_{a'}</script>
+
+<p>Bayesian personalized ranking of observed facts $F^+$ and unobserved $F^-$ is then</p>
+
+<script type="math/tex; mode=display">\arg \min_\Theta - \sum_{f^+ \in F^+, f^- \in F^-} \log \left( 1 + \exp(s(f^+) - s(f^-)) \right) + \lambda \lVert \Theta \rVert^2</script>
+
+<p>The $F^-$ are generated by random sampling: for each positive fact, fix the relation and randomly select an entity pair such that the triple has not been observed.</p>
+
+<h2 id="training-details">Training Details</h2>
+
+<ul>
+  <li>$d = 100$</li>
+  <li>L2 of 0.01</li>
+  <li>Trained for 1,000 epochs</li>
+  <li>ADam with learning rate of $1 \times 10^{-4}$</li>
+  <li>Batch size 1,024</li>
+  <li>Random sample one negative fact per positive fact</li>
+  <li>Shortest dependency path between each pair of entities in a sentence is extracted as the surface pattern</li>
+  <li>In one-shot experiments, evaluations are performed with a fraction of the training labels for each relation $\tau \in [0, 0.5]$</li>
+  <li>NER, linking, parsing are kept the same as Riedel et al. (2013) for a fair comparison</li>
+</ul>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<ul>
+  <li>For each relation the top 1,000 entity pairs are retrieved, the top 100 of which are pooled and manually annotated, which are used to compute MAP and wMAP for each run.</li>
+  <li>wMAP takes into account the number of true facts for each relation</li>
+</ul>
+
+<h2 id="background-knowledge-and-related-work">Background Knowledge and Related Work</h2>
+
+<ul>
+  <li>Matrix Factorization model
+    <ul>
+      <li>Rendle 2010</li>
+      <li>Riedel et al. 2013</li>
+      <li>Petroni et al. 2015</li>
+      <li>Weibl et al. 2016</li>
+    </ul>
+  </li>
+  <li>Universal Schema
+    <ul>
+      <li>Riedel et al. 2013</li>
+    </ul>
+  </li>
+  <li>IE related
+    <ul>
+      <li>Zelenko et al. 2003</li>
+      <li>Culotta and Sorenson 2004</li>
+      <li>Bunescu and Mooney 2006</li>
+      <li>Mintz et al. 2009</li>
+      <li>Surdeanu et al. 2012</li>
+      <li>Riedel et al. 2013</li>
+    </ul>
+  </li>
+  <li>One-shot learning (these appear to be about vision)
+    <ul>
+      <li>Miller et al. 2000</li>
+      <li>Fei-Fei et al. 2006</li>
+    </ul>
+  </li>
+  <li>Zero-shot learning
+    <ul>
+      <li>Larochelle et al. 2008</li>
+    </ul>
+  </li>
+  <li>Bootstrapped KB population
+    <ul>
+      <li>Carlson et al. 2010</li>
+    </ul>
+  </li>
+  <li>Semantic drift problem
+    <ul>
+      <li>Curran et al. 2007</li>
+    </ul>
+  </li>
+  <li>Bayesian Personalized Ranking (BPR)
+    <ul>
+      <li>Rendle et al. 2009</li>
+    </ul>
+  </li>
+  <li>Injecting logical rules into embeddings
+    <ul>
+      <li>Rocktashcel et al. 2015</li>
+      <li>Demeester et al. 2016</li>
+    </ul>
+  </li>
+  <li>Other compared models
+    <ul>
+      <li>Mintz et al. 2009</li>
+      <li>Yao et al. 2011</li>
+      <li>Surdeanu et al. 2012</li>
+    </ul>
+  </li>
+  <li>Compositional representations of surface patterns
+    <ul>
+      <li>Toutanova et al. 2015</li>
+      <li>Verga et al. 2016</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<ul>
+  <li>Surface patterns are decided by dependency paths, maybe we could do this as a part of a jointly trained system - use RL parsing a la SPINN (I think that’s the name - Bowman’s crowd), compose those vectors as opposed to the tabular format reminiscent of LSA used in this work</li>
+</ul>
+
+<h2 id="next">Next</h2>
+
+<ul>
+  <li>That Riedel et al. 2013 paper shows up everywhere, must be read</li>
+  <li>It also introduces the evaluation dataset - obtain that dataset</li>
+</ul>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

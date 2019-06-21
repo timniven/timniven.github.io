@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Word Representation Via Gaussian Embedding</title>
+  <meta name="description" content="Word Representation Via Gaussian Embedding">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/embeddings/papers/2018/04/03/word-representation-via-gaussian-embedding.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Word Representation Via Gaussian Embedding</h1>
+    <p class="post-meta"><time datetime="2018-04-03T00:00:00+08:00" itemprop="datePublished">Apr 3, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="word-representation-via-gaussian-embedding">Word Representation Via Gaussian Embedding</h1>
+
+<p>Vilnis and McCallum, ICLR, 2015</p>
+
+<p>https://arxiv.org/pdf/1412.6623.pdf</p>
+
+<h2 id="problem-and-solution">Problem and Solution</h2>
+
+<ul>
+  <li>Limitations of representing an object as a single point
+    <ul>
+      <li>does not naturally express uncertainty</li>
+      <li>comparison is usually done with dot products/cosine distance/Euclidean distance, none of which provide for asymmetric comparisons (as is necessary to represent inclusion or entailment)</li>
+      <li>relationships are measured by distance functions that satisfy the triangle inequality (is this constrictive?)</li>
+    </ul>
+  </li>
+  <li>So, Gaussians
+    <ul>
+      <li>innately represent uncertainty</li>
+      <li>provide a distance function per object</li>
+      <li>KL-divergence between Gaussians is straightforward to calculate, naturally asymmetric, and has a geometric interpretation as an inclusion between families of ellipses</li>
+      <li>can model uncertaintly, inclusion, entailment, and a rich geometry of the latent space</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background-knowledge-and-related-work">Background Knowledge and Related Work</h2>
+
+<ul>
+  <li>Potential functions (Aizerman et al. 1964)</li>
+  <li>Kernels (Lanckriet et al. 2004)</li>
+  <li>Mixture Density Networks (Bishop 1994)</li>
+  <li>Probabilistic matrix factorization (Mnih &amp; Salakhutdinov 2007/8)</li>
+  <li>Matrix factorization and universal schemas (Riedel et al. 2013)</li>
+  <li>Embeddings and matrix factorization (Levy and Goldberg 2014) (show that word2vec is equivalent to factoring certain types of weighted pointwise mutual information matrices)</li>
+  <li>Multiplicative tensor factorization for word embeddings (Kiros et al. 2014)</li>
+  <li>Metric learning (Xing et al. 2002)</li>
+  <li>Fitting mixture models to apply Fisher kernels to whole documents (Clinchant * Perronnin 2013a/b)</li>
+  <li>Distributional inclusion hypothesis (Geffet &amp; Dagan 2005)</li>
+  <li>Words as regions in vector space (Erk 2009)</li>
+  <li>Energy-based learning (LeCun et. al 2006)</li>
+  <li>Expected likelihood or probability product kernel (Jebara et al. 2004)</li>
+</ul>
+
+<h2 id="details">Details</h2>
+
+<h3 id="loss">Loss</h3>
+
+<p>“we had difficulty using the word2vec loss that treats scores of positive and negative pairs as positive and negative examples to a binary classifier, since this relies on the ability to push up on the energy surface in an absolute, rather than relative, manner” =&gt; use a ranking based loss</p>
+
+<script type="math/tex; mode=display">L_m(w, c_p, c_n) = \max(0, m - E(w, c_p) + E(w, c_n))</script>
+
+<p>This loss pushes scores of positive pairs above negatives by a margin</p>
+
+<h3 id="empirical-covariances">Empirical Covariances</h3>
+
+<p>We can actually use pre-trained word vectors and their set of context vectors to calculate the variance of words (p. 3). However, the performance of this is inferior as it doesn’t captured inclusion between ellipsoids.</p>
+
+<h3 id="energy-based-learning-of-gaussians">Energy-Based Learning of Gaussians</h3>
+
+<p>The model learns Gaussian embeddings to predict words in context given the current word, and ranks these over negatively sampled words. Two energy functions are presented.</p>
+
+<h4 id="symmetric-similarity-expected-likelihood-or-probability-product-kernel">Symmetric Similarity: Expected Likelihood or Probability Product Kernel</h4>
+
+<p>Dot product between means gives the expected dot product, but doesn’t incorporate the covariances. The continuous version of the inner product is given by</p>
+
+<script type="math/tex; mode=display">\int_{x \in \Bbb{R}^n} f(x)g(x)dx</script>
+
+<p>Thus for Gaussians (an exercise for later might be to do the calculus involved in proving this):</p>
+
+<script type="math/tex; mode=display">E(P_i, P_j) = \int_{x \in \Bbb{R}^n} \mathcal{N}(x; \mu_i, \Sigma_i) \mathcal{N}(x; \mu_j, \Sigma_j)dx = \mathcal{N}(0; \mu_i - \mu_j, \Sigma_i + \Sigma_j)</script>
+
+<p>But, work with the logarithm of this because</p>
+<ul>
+  <li>“we plan to use ranking loss, and ratios of densities and likelihoods are much more commonly worked with than differences - differences in probabilities are less interpretable than an odds ratio”</li>
+  <li>more numerically stable - without, quantities can get exponentially small</li>
+</ul>
+
+<script type="math/tex; mode=display">\log \mathcal{N}(0; \mu_i - \mu_j, \Sigma_i + \Sigma_j) = -\frac12 \log \det (\Sigma_i + \Sigma_j) - \frac12(\mu_i - \mu_j)^\top(\Sigma_i + \Sigma_j)^{-1}(\mu_i - \mu_j) - \frac{d}{2} \log(2\pi)</script>
+
+<p>where $d$ is the number of dimensions. I had a problem reproducing this calculation where I thought $(x - \mu) = (0 - (\mu_i - \mu_j))$ should be $\mu_j + \mu_i$ which doesn’t tally with their $\mu_i - \mu_j$.</p>
+
+<p>We can optimize with</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\frac{\partial \log E(P_i, P_j)}{\partial \mu_i} &= - \frac{\partial \log E(P_i, P_j)}{\partial \mu_j} = - \Delta_{ij} \\
+\frac{\partial \log E(P_i, P_j)}{\partial \Sigma_i} &= \frac{\partial \log E(P_i, P_j)}{\partial \Sigma_j} = \frac12 (\Delta_{ij} \Delta_{ij}^\top - (\Sigma_i + \Sigma_j)^{-1}) \\
+\Delta_{ij} &= (\Sigma_i + \Sigma_j)^{-1}(\mu_i - \mu_j)
+\end{align*} %]]></script>
+
+<p>Computational notes:</p>
+<ul>
+  <li>The inverses are trivial to compute for diagonal/spherical matrices</li>
+  <li>Same for full matrices for the kind of dimensionality involved in word embeddings</li>
+  <li>If they have low-rank and diagonal stucture they can be computed and stored efficiently using the matrix inversion lemma (https://en.wikipedia.org/wiki/Woodbury_matrix_identity).</li>
+</ul>
+
+<p>Geometric interpretation as similarity measure:</p>
+<ul>
+  <li>Distance between Gaussians is measured by Mahalanobis distance, which measures distance between their means, defined by joint inverse covariance</li>
+  <li>With reference to the term with the determinant, we are talking about the log volume of the ellipse spanned by the principle components. Increasing this volume will therefore lower energy. This acts as a regularizer, preventing the algorithm from decreasing distance by increasing joint variance. This encourages the distributions to have sharper peaks in order to have high energy.</li>
+</ul>
+
+<h4 id="asymmetric-similarity-kl-divergence">Asymmetric Similarity: KL Divergence</h4>
+
+<p>This function is for representing entialment - or containment within ellipsoids generated by Gaussians. Being non-symmetric, entailment is directed, as we require. Specifically, a low KL divergence from $x$ to $y$ indicates that we can “encode” $y$ as easily as $x$, implying $y$ entails $x$, or is a super-class/concept.</p>
+
+<p>Note that since KL divergence is a distance not a similarity (as in the first energy function above), we use a negative sign:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+-E(P-i, P_j) &= D_{KL}(\mathcal{N}_j \lVert \mathcal{N}_i) \\
+&= \int_{x \in \Bbb{R}^n} \mathcal{N}(x; \mu_i, \Sigma_i) \log \frac{\mathcal{N}(x; \mu_j, \Sigma_j)}{\mathcal{N}(x; \mu_i, \Sigma_i)} dx \\
+&= \frac12 \left( \text{tr}(\Sigma_i^{-1} \Sigma_j) + (\mu_i - \mu_j)^\top \Sigma_i^{-1} (\mu_i - \mu_j) - d - \log \frac{\det(\Sigma_j)}{\det(\Sigma_i)} \right)
+\end{align*} %]]></script>
+
+<p>Gradients</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\frac{\partial E(P_i, P_j)}{\partial \mu_i} &= - \frac{\partial E(P_i, P_j)}{\partial \mu_j} = - \Delta_{ij}' \\
+\frac{\partial E(P_i, P_j)}{\partial \Sigma_i} &= \frac12 (\sigma_i^{-1} \Sigma_j \Sigma_i^{-1} + \Delta_{ij}' \Delta_{ij}'^\top - \Sigma_i^{-1}) \\
+\frac{\partial E(P_i, P_j)}{\partial \Sigma_j} &= \frac12(\Sigma_j^{-1} - \Sigma_i^{-1}) \\
+\Delta_{ij}' &= \Sigma_i^{-1}(\mu_i - \mu_j)
+\end{align*} %]]></script>
+
+<p>TODO: some matrix derivatives need reviewing there. Work through these derivations. The paper cites the Matrix Cookbook, section 8.2.</p>
+
+<h4 id="uncertainty-of-inner-products">Uncertainty of Inner Products</h4>
+
+<p>We can then treat the scalar resulting from the inner product of Gaussian embeddings as a random variable with its own distribution. Citing Brown and Rutemiller (1977) they say this distribution is not a one-dimensional Gaussian, but has finite mean and variance if the two Guassian of the inner product are assumed to be independent. For $P(z = x^\top y)$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\mu_z &= \mu_x^\top \mu_y \\
+\Sigma_z &= \mu_x^\top \Sigma_x \mu_x + \mu_y^\top \Sigma_y \mu_y + \text{tr}(\Sigma_z \Sigma_y)
+\end{align*} %]]></script>
+
+<p>We can therefore determine upper and lower bounds for this product that hold some given percentage of the time - e.g. using some number of standard deviations we get a range for the dot product</p>
+
+<script type="math/tex; mode=display">\mu_x^\top \mu_y \pm c \sqrt{\mu_x^\top \Sigma_x \mu_x + \mu_y^\top \Sigma_y \mu_y + \text{tr}(\Sigma_z \Sigma_y)}</script>
+
+<p>where $c$ could be an incorrect Gaussian approximation, or, the author’s mention, a more general bound such as Chebyshev’s inequality.</p>
+
+<h4 id="regularization">Regularization</h4>
+
+<p>To prevent the means from growing too large, they add L2 regularization</p>
+
+<script type="math/tex; mode=display">\lVert \mu_i \rVert_2 \le C, \ \forall i</script>
+
+<p>Covariance matrices must be kept positive definite and reasonably sized. Add a hard constraint that the eigenvalues lie within the hypercube $[m, M]^d$ for constants $m$ and $M$.</p>
+
+<script type="math/tex; mode=display">mI \prec \Sigma_i \prec MI, \ \forall i</script>
+
+<p>(Don’t understand that notation).</p>
+
+<p>In practice they say this ammounts to applying</p>
+
+<script type="math/tex; mode=display">\Sigma_{ii} \leftarrow \max(m, \min(M, \Sigma_{ii}))</script>
+
+<h4 id="training-details">Training Details</h4>
+
+<ul>
+  <li>Use AdaGrad</li>
+  <li>Minibatches containing 20 sentences worth of tokens and contexts</li>
+  <li>Word vectors have 50 dimensions</li>
+  <li>All word types appearing less than 100 times int he training set are dropped</li>
+  <li>Trained with one pass over the data</li>
+  <li>1 negative sample per positive</li>
+  <li>Same subsampling procesures as Mikolov et al. 2013</li>
+  <li>Diagonal covariances are used (except where noted)</li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>Future work:</p>
+<ul>
+  <li>Going beyond diagonal covariances, preventing the semantics from being axis-aligned, increasing capacity and expressivity</li>
+  <li>Learn the representations robustly in one pass, not with SGD, but instead with proximal or block coordinate descent</li>
+  <li>Different distributions (Student’s t)</li>
+  <li>Multimodal distributions</li>
+  <li>Combining ideas from kernel methods and manifold learning with DL and linguistic representation learning</li>
+  <li>Extend the use of potential function representations to, e.g., relational learning with universal schema</li>
+</ul>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

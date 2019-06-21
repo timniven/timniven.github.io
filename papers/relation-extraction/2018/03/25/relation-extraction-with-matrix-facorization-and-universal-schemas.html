@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Relation Extraction with Matrix Factorization and Universal Schemas</title>
+  <meta name="description" content="Relation Extraction with Matrix Factorization and Universal Schemas">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/papers/relation-extraction/2018/03/25/relation-extraction-with-matrix-facorization-and-universal-schemas.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Relation Extraction with Matrix Factorization and Universal Schemas</h1>
+    <p class="post-meta"><time datetime="2018-03-25T00:00:00+08:00" itemprop="datePublished">Mar 25, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="relation-extraction-with-matrix-factorization-and-universal-schemas">Relation Extraction with Matrix Factorization and Universal Schemas</h1>
+
+<p>Riedel et al. (2013), NAACL</p>
+
+<p>http://www.aclweb.org/anthology/N13-1008</p>
+
+<h2 id="problem">Problem</h2>
+
+<ul>
+  <li>Most previous work uses a pre-defined, finite, and fixed schema of relation types, aligns some text to this schema, which is costly in terms of annotation</li>
+  <li>It is more desirable to have a distantly supervised schema</li>
+  <li>More distant supervision can be provided by aligning database records with the sentences in which they occur</li>
+  <li>But this relies on a large database that has the desired schema</li>
+  <li>This can be avoided by using language itself as the source of the schema</li>
+  <li>But this suffers from a lack of generalization (really?)</li>
+  <li>Clustering has been used to overcome this</li>
+  <li>But clustering fails to capture implicature: e.g. worked-at doesn’t imply scientist-at</li>
+  <li>Claim: any relational schema would inherently be brittle and ill-defined, having ambiguities, problematic boundary cases, and incompleteness (noting Freebase lacks “critized” and “scientist-at” relations)</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<ul>
+  <li>Don’t force textual meaning into pre-defined boxes</li>
+  <li>Claim: modeling semantic equivalence will always be elusive</li>
+  <li>Instead concentrate on predicting source data</li>
+  <li>Universal schema is the union of all source schemas: surface patterns as well as relations in the various existing databases</li>
+  <li>Focus on learning asymmetric implicature - e.g. X-historian-at-Y =&gt; X-works-at-Y, but not vice versa</li>
+  <li>Working with text and relations at the same time is mutually supporting since the surface features offer more information when predicting relations, and vice versa</li>
+  <li>Probabilistic matrix factorization and collaborative filtering solution</li>
+  <li>Rows come from cross-document entity resolution across pre-existing structured DBs and textual corpora</li>
+  <li>Columns are the union of relations in the DBs and observed surface forms</li>
+  <li>Learn lower dimensional manifolds for tuples, relations and entities and a set of weights that capture direct correlations between relations</li>
+</ul>
+
+<h2 id="model">Model</h2>
+
+<ul>
+  <li>A fact is a relation and entity tuple (pair) $\langle r, t \rangle$</li>
+  <li>Set of observed facts $\mathcal{O}$</li>
+  <li>Set of observed facts for a tuple $\mathcal{O}_t = { \langle r, t \rangle \in \mathcal{O} }$</li>
+  <li>Modeling $p(y_{r, t} = 1)$ where $y_{r,t}$ is a binary random variable that is true iff $t$ is in relation $r$</li>
+  <li>All models have the form</li>
+</ul>
+
+<script type="math/tex; mode=display">p(y_{r, t} = 1|\theta_{r, t}) = \sigma(\theta_{r, t}) = \frac{1}{1 + \exp(-\theta_{r, t})}</script>
+
+<h3 id="latent-feature-model">Latent Feature Model</h3>
+
+<ul>
+  <li>Measure compatibility between relate and entity typle with dot product of latent feature representations of size $K^F$</li>
+</ul>
+
+<script type="math/tex; mode=display">\theta_{r, t}^F = \sum_k^{K^F} a_{r, k} v_{t, k}</script>
+
+<ul>
+  <li>This apparently corresponds to generalized PCA where the matrix of natural parameters is defined as the low rank factorization $\mathbf{AV}$.</li>
+  <li>A point I can’t quite see: they say asymmetry can be captured by assigning more peaked vectors to more specific relations, and more uniform vectors to general relations.</li>
+</ul>
+
+<h3 id="neighbourhood-model">Neighbourhood Model</h3>
+
+<ul>
+  <li>Interpolate the confidence for a given tuple and relation given truness of other similar relations for the same tuple</li>
+  <li>Use weights $w_{r, r’}$ to define the directed association strength</li>
+</ul>
+
+<script type="math/tex; mode=display">\theta_{r, t}^N = \sum_{(r', t) \in \mathcal{O} \backslash \{ (r, t) \}} w_{r, r'}</script>
+
+<ul>
+  <li>Amounts to a collection of local log-linear classifiers, one for each relation $r$ with feature functions $f_{r, r’}(t) = \Bbb{I}[r’ \neq r \land (r’, t) \in \mathcal{O}]$ and weights $w_r$</li>
+  <li>Does not look at synergies between relations and text, rather focuses on relations</li>
+</ul>
+
+<h3 id="entity-model">Entity Model</h3>
+
+<ul>
+  <li>Instead of using a brittle pre-defined set of entity types, learn latent entity representations from data</li>
+  <li>For each entity a latent feature vector $\mathbf{t}_e$ of dimension $K^E$</li>
+  <li>Also a vector $\mathbf{d}_i$ of the same dimension for argument slots of relations</li>
+  <li>Measure entity and argument compatibility</li>
+</ul>
+
+<script type="math/tex; mode=display">\theta_{r, t}^E = \sum_{i=1}^{\text{arity}(r)} \sum_k^{KE} d_{i, k} t_{t_i, k}</script>
+
+<ul>
+  <li>Note that since entities are put into pairs, parameters are shared across rows in the universal schema</li>
+</ul>
+
+<h3 id="combined-model">Combined Model</h3>
+
+<ul>
+  <li>Each of the models captures something important</li>
+</ul>
+
+<script type="math/tex; mode=display">\theta_{r, t}^{NFE} = \theta_{r,t}^N + \theta_{r,t}^F + \theta_{r,t}^E</script>
+
+<h3 id="objective">Objective</h3>
+
+<ul>
+  <li>Create a set of ranked pairs by sampling tuples not observed for the relations in the observed set</li>
+  <li>Rank observed facts $f^+ = \langle r, t^+ \rangle \in \mathcal{O}$ above unobserved $f^- = \langle r, t^- \rangle \notin \mathcal{O}$</li>
+  <li>We want $p(f^+) \gt p(f^-)$ and therefore $\theta_{f^+} \gt \theta_{f^-}$</li>
+  <li>Sum up terms</li>
+</ul>
+
+<script type="math/tex; mode=display">\text{Obj} = \sum_{\langle r, t^+ \rangle \in \mathcal{O}} \sum_{\langle r, t^- \rangle \notin \mathcal{O}} \log(\sigma(\theta_{f^+} - \theta_{f^-}))</script>
+
+<ul>
+  <li>All parameters regularized with quadratic penalty</li>
+</ul>
+
+<h2 id="training-details">Training Details</h2>
+
+<ul>
+  <li>One unobserved fact for each observed fact per epoch</li>
+</ul>
+
+<h2 id="background-knowledge-and-related-work">Background Knowledge and Related Work</h2>
+
+<ul>
+  <li>Using language itself as the source data
+    <ul>
+      <li>Etzioni et al. 2008</li>
+    </ul>
+  </li>
+  <li>Probabilistic models of matrix factorization and collaborative filtering
+    <ul>
+      <li>Collins et al. 2001 (generalized PCA)</li>
+      <li>Koren 2008 (neighbourhood model)</li>
+      <li>Rendle et al. 2009</li>
+    </ul>
+  </li>
+  <li>Freebase types of entities not fine enough to allow relations to discriminate
+    <ul>
+      <li>Yao et al. 2012b</li>
+    </ul>
+  </li>
+  <li>Distant Supervision
+    <ul>
+      <li>Bunescu and Mooney 2007</li>
+      <li>Mintz et al. 2009</li>
+      <li>Riedel et al. 2010</li>
+      <li>Hoffman et al. 2011</li>
+      <li>Surdeanu et al. 2012</li>
+    </ul>
+  </li>
+  <li>Never-ending learning
+    <ul>
+      <li>Carlson et al. 2010</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<ul>
+  <li>The learned entity types are nice and what I have had in mind for some time</li>
+  <li>Asymmetric Gaussian embeddings with KL divergence for relations…?</li>
+  <li>What about Poincare embeddings? They would seem a natural choice for a scenario like this</li>
+</ul>
+
+<h2 id="next">Next</h2>
+
+<ul>
+  <li>This is one to implement, also as a baseline for potential subsequent experiments</li>
+  <li>The dataset seems hard to come by, and for purchase (https://catalog.ldc.upenn.edu/ldc2008t19) - do we have it in the department somewhere?</li>
+</ul>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

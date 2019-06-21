@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Argumentation Mining from the Web from Information Seeking Perspective</title>
+  <meta name="description" content="Habernal et al. ACL 2014">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/argmin/papers/2018/09/03/argumentation-mining-on-the-web-from-information-seeking-perspective.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Argumentation Mining from the Web from Information Seeking Perspective</h1>
+    <p class="post-meta"><time datetime="2018-09-03T00:00:00+08:00" itemprop="datePublished">Sep 3, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://pdfs.semanticscholar.org/12b1/2ea73652da56023e0e4776211e4f4301f339.pdf">Habernal et al. ACL 2014</a></p>
+
+<ul>
+  <li><a href="#problem">Problem</a></li>
+  <li><a href="#claims-and-findings">Claims and Findings</a></li>
+  <li><a href="#argument-models-used">Argument Models Used</a></li>
+  <li><a href="#background-and-related-work">Background and Related Work</a></li>
+  <li><a href="#discussion">Discussion</a></li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+
+<p>A lot of work has been done fairly independently on particular domains
+of argumentation mining. Different interpretations of argumentation have
+developed, limiting cross-domain applicability. This work is also not
+necessarily well connected to argumentation theories and therefore lacks
+a suitable theoretical grounding.</p>
+
+<p>The goal is then to bridge the gap between theories and practice and
+provide some guidelines. This is explored via literature review and
+annotation studies.</p>
+
+<h2 id="claims-and-findings">Claims and Findings</h2>
+
+<h3 id="main-conclusions">Main conclusions</h3>
+
+<ol>
+  <li>The use-case of any research in argumentation mining must be clearly
+stated (i.e. in terms of expected outcomes)</li>
+  <li>Properties of the data under investigation must be taken into
+account, given the variety of genres and registers</li>
+  <li>An appropriate argumentation model must be chosen according to the
+requirements</li>
+</ol>
+
+<h3 id="there-is-no-one-size-fits-all-argumentation-theory">There is no one-size-fits-all argumentation theory</h3>
+
+<ul>
+  <li>Even argumentation researchers disagree on any widely-accepted
+ultimate concept</li>
+  <li>Therefore NLP researchers cannot in principle adopt any particular
+theory without justification - i.e. its suitability for the particular
+task</li>
+</ul>
+
+<h3 id="waltons-schemes-are-not-as-general-and-domain-independent-as-hoped">Walton’s schemes are not as general and domain-independent as hoped</h3>
+
+<ul>
+  <li>Schneider and Wyner (2012) try to apply them to the product review
+domain; but only <script type="math/tex">37.1\%</script> of observed arguments fall under the
+schemes, and new ad hoc schemes are required</li>
+  <li>Cabrio et al. (2013a) try to map schemes to discourse relations in
+the Penn Discourse TreeBank; but again need to create two new schemes
+that they discover</li>
+  <li>Therefore, the schemes lack appropriate coverage for dealing with
+real argumentation in natural language texts</li>
+</ul>
+
+<h3 id="annotating-nested-arguments-is-a-drawback">Annotating nested arguments is a drawback</h3>
+
+<ul>
+  <li>Kluge (2014) experimented with this in an annotation study and found
+that when introducing nested arguments, as opposed to linear
+arguments, IAA dropped considerably.</li>
+</ul>
+
+<h3 id="annotation-review-findings">Annotation Review Findings</h3>
+
+<ul>
+  <li>Most studies dealing with web data use a proprietary model without
+basis in argumentation theory</li>
+  <li>IAA is either not reported or not based on a chance-corrected measure</li>
+</ul>
+
+<h3 id="a-high-degree-of-controversiality-improved-summarization">A high degree of controversiality improved summarization</h3>
+
+<ul>
+  <li>Carenini and Cheung (2008)</li>
+  <li>“presenting argumentation in a condensed form (the large concepts of
+the argument are compressed or summarized) may improve argument
+comprehension”</li>
+  <li>This is essentially my pragmatic idea, to try and predict what the
+person is arguing for as an aid to argument comprehension. That’s how
+I do it, especially when the argument is bad and requires so much more
+interpretation - figure out what their point is and infer what the
+warrants must be.</li>
+</ul>
+
+<h3 id="annotation-experiment-findings">Annotation Experiment Findings</h3>
+
+<p>The claim-premise model was done on</p>
+<ul>
+  <li>newspaper articles</li>
+  <li>blog posts</li>
+  <li>interviews</li>
+</ul>
+
+<p>The Toulmin model was done on</p>
+<ul>
+  <li>comments on articles and forum posts</li>
+  <li>newspaper editorials</li>
+  <li>blog posts</li>
+</ul>
+
+<p>For claim-premise</p>
+<ul>
+  <li><script type="math/tex">72.4\%</script> of arguments consist of one claim and a premise</li>
+  <li>in <script type="math/tex">59.5\%</script> of these the support follows the claim</li>
+  <li>in only <script type="math/tex">11.6\%</script> did the support precede the claim</li>
+  <li><strong>what is the ratio of supports to attacks?</strong></li>
+</ul>
+
+<p>For Toulmin</p>
+<ul>
+  <li>IAA varies significantly with component type, with claim and grounds
+being the best, then backing then rebuttal; refutation is by far the
+lowest</li>
+  <li>IAA higher for short texts such as comments; lower for longer
+documents such as blog posts and editorials</li>
+  <li>Manual analysis revealed annotation difficulties especially where the
+discussion is complex (i.e. many sub-aspects are discussed) and where
+it proceeds in a dialogical manner</li>
+  <li>The distinction between grounds and backing is too fuzzy</li>
+</ul>
+
+<h3 id="observations">Observations</h3>
+
+<p>Some dimensions that need to be considered when approaching any
+particular AM annotation task</p>
+<ul>
+  <li>There is a <strong>variety of registers</strong></li>
+  <li><strong>Length of documents</strong>*</li>
+  <li><strong>Degree of structure</strong></li>
+</ul>
+
+<p>Other properties</p>
+<ul>
+  <li>Non-argumentative texts: sometimes an entire user comment has no
+argumentative contenxt</li>
+  <li>Implicit warrants and even implicit claims</li>
+  <li>Figurative language, fallacies, and narratives are prevalent in online
+context</li>
+</ul>
+
+<h2 id="argument-models-used">Argument Models Used</h2>
+
+<h3 id="claim-premise">Claim-Premise</h3>
+
+<p>They keep this <strong>linear</strong> by labeling adjacent components with</p>
+
+<script type="math/tex; mode=display">\{
+\text{claim}, \text{claim-restatement}, \text{pre-claim support},
+\text{pre-claim attack}, \text{post-claim support},
+\text{post-claim attack}
+\}</script>
+
+<p>This prevents the construction of a graph, and nesting.</p>
+
+<p><strong>Suitability</strong>:</p>
+<ul>
+  <li>simple model</li>
+  <li>good for long web documents such as news articles, editorials, or
+blog posts</li>
+  <li>cannot distinguish premise types - e.g. factual evidence versus
+common understanding</li>
+</ul>
+
+<h3 id="toulmin">Toulmin</h3>
+
+<p>They make some changes</p>
+<ul>
+  <li>Omit the <strong>qualifier</strong> as people don’t usually state their degree of
+certainty</li>
+  <li>Omit the <strong>warrant</strong> as again it is not usually stated</li>
+  <li>Extend <strong>backing</strong> to provide more information to back up the argument</li>
+  <li>Add <strong>refutation</strong> as a rebuttal to the rebuttal</li>
+</ul>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>Omitting the qualifier and warrant make sense from the point of view
+of annotation. Indeed, if the authors don’t state them it is very
+difficult or impossible to say what they are.</li>
+  <li>The new role of backing feels a bit too general</li>
+  <li>Is refutation added to avoid nesting?</li>
+</ul>
+
+<p><strong>Suitability</strong></p>
+<ul>
+  <li>In natural language arguments premises play different roles; by
+expressing these the argument is more readily understandable and
+it is easier to identify the various ways in which it can be accepted
+or refuted (Bentahar et al. (2010, p.216)</li>
+  <li>A complicated model</li>
+  <li>The description of the components is often ambiguous</li>
+  <li>Some components are left implicit (e.g. warrants, even claims)</li>
+</ul>
+
+<h2 id="background-and-related-work">Background and Related Work</h2>
+
+<p>Argumentation mining on the web</p>
+<ul>
+  <li>Schneider et al. (2012)</li>
+  <li>Sergeant (2013)</li>
+</ul>
+
+<p>Argumentation and philosophy and rhetoric</p>
+<ul>
+  <li>Aristotle and Kennedy (translator) (1991)</li>
+  <li>Perelman and Olbrechts-Tyteca (1991)</li>
+  <li>Walton et al. (2008)</li>
+</ul>
+
+<p>Argumentation and informal and formal logic</p>
+<ul>
+  <li>Dun (1995)</li>
+  <li>Henkmans (2000)</li>
+  <li>Stoianovici (2009)</li>
+  <li>Schneider et al. (2013)</li>
+  <li>Hunter (2013)</li>
+</ul>
+
+<p>Argumentation and educational research</p>
+<ul>
+  <li>Weinberger and Fischer (2006)</li>
+  <li>Noroozi et al. (2013)</li>
+</ul>
+
+<p>Argumentation and pragmatics</p>
+<ul>
+  <li>Xu and Wu (2014)</li>
+</ul>
+
+<p>Argumentation and psychology</p>
+<ul>
+  <li>Larson et al. (2004)</li>
+</ul>
+
+<p>Criticism of existing argumentation theories</p>
+<ul>
+  <li>Luque (2011)</li>
+</ul>
+
+<p>Criticism of Luque (2011)</p>
+<ul>
+  <li>Andone (2012)</li>
+  <li>Xie (2012)</li>
+</ul>
+
+<p>Monological argumentation models</p>
+<ul>
+  <li>Bentahar et al. (2010), p. 215</li>
+</ul>
+
+<p>Formal frameworks (logic, defeasibility, evalaution)</p>
+<ul>
+  <li>Prakken (2010)</li>
+  <li>Hunter (2013)</li>
+  <li>Hunter (2014)</li>
+</ul>
+
+<p>Rhetorical considerations from NLP point of view</p>
+<ul>
+  <li>Crosswhite et al. (2004)</li>
+</ul>
+
+<p>Look like a textbooks on argumentation</p>
+<ul>
+  <li>Freeley and Steinberg (2008)
+    <ul>
+      <li>Chapter 8 has examples of Toulmin annotations</li>
+    </ul>
+  </li>
+  <li>Besnard and Hunter (2008)</li>
+</ul>
+
+<p>Another Toulmin to read</p>
+<ul>
+  <li>Toulmin et al. (1984)</li>
+</ul>
+
+<p>Building on RST, classifying discourse relations conveying arguments to
+find argument supports</p>
+<ul>
+  <li>Villalbda and Saint-Dizier (2012)</li>
+</ul>
+
+<p>Using Dung’s framework and Walton’s argument schemes together. However
+it is unclear how feasible this is.</p>
+<ul>
+  <li>Schneider (2012)</li>
+</ul>
+
+<p>Using Walton’s schemes for the product reviews domain</p>
+<ul>
+  <li>Schneider and Wyner (2012)</li>
+</ul>
+
+<p>General discourse analysis and annotation</p>
+<ul>
+  <li>Newman and Marshall (1991)</li>
+  <li>Walton (2012)</li>
+</ul>
+
+<p>Extensive overview of argumentation models</p>
+<ul>
+  <li>Bentahar et al. (2010)</li>
+</ul>
+
+<p>Study of annotation arguments in long web documents</p>
+<ul>
+  <li>Kluge (2014)</li>
+</ul>
+
+<p>Annotating with Toulmin’s scheme</p>
+<ul>
+  <li>Newman and Marshall (1991)</li>
+  <li>Chambliss (1995)</li>
+  <li>Simosi (2003)</li>
+  <li>Weinberger and Fischer (2006)</li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<ul>
+  <li>The comparison between claim-premise and Toulmin looks to be OK, but
+I am wondering why they didn’t use the same dataset for the clearest
+comparison - given the genres I would expect the claim-premise data
+to be at least a bit easier to annotate than the Toulmin data, as it
+should have more structure and be more formal - user comments should
+be the hardest to annotate; still I think the independent analysis of
+the difficulties with the Toulmin model stands and is valuable</li>
+  <li>The modification they made to Toulmin, specifically the backing,
+looked destined to fail to me before I read the results for the very
+reason they cite - it appears too vague a concept to be a part of a
+good argument model, and also to be reliably annotated. However, that
+is a fairly shallow opinion just now, and I’d like to roll up my
+sleeves and do some annotation myself to get a better feel for how
+fair this criticism is.</li>
+  <li>One problem with Toulmin is quantifiers and warrants are often not
+explicit. Arguments have to be interpreted and this is part of our
+communication environment - enthymemes abound. Even with a
+claim-premise model annotators have to identify arguments by
+implicitly using warrants they have, or inferring the warrant in use.
+The Toulmin scheme makes this explicit. It is certainly a big problem
+for an annotation task. Though I wonder whether experts could discuss
+and agree on the best most likely implicit warrant in a given context.
+This comes down to a judgment, a complicated one, which is in fact
+likely to vary from person to person depending on their background.
+I wonder how much of the I-A-Disagreement can be explained by this?</li>
+  <li>I think it would be a fun dataset - warrant induction</li>
+  <li>Another fun thing: if we had a large enough dataset (unlikely, but
+let’s just pie in the sky for a moment), then we could use the
+warrants as a natural langauge parameter space (as in Learning with
+Latent Language). Then we could use them to map premises to claims,
+then later use that for argumentation mining. Maybe warrant induction
+can help us overcome the dataset issue.</li>
+  <li>Part of my intuition about pragmatics is also about dialogical
+argumentation. Even for an essay the general context (i.e.
+the intended audience) seems important for properly understanding it
+to me. So that could be a research question: find a way to perform a
+critical test of monological versus dialogical argumentation mining.</li>
+</ul>
+
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

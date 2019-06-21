@@ -1,0 +1,1905 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-19T21:40:34+08:00</updated><id>http://localhost:4000/</id><title type="html">Tim Niven (寒山)</title><subtitle>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</subtitle><entry><title type="html">[Paper] Alignment, Acceptance, and Rejection of Group Identities in Online Political Discourse</title><link href="http://localhost:4000/nlp/papers/2018/09/11/alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.html" rel="alternate" type="text/html" title="[Paper] Alignment, Acceptance, and Rejection of Group Identities in Online Political Discourse" /><published>2018-09-11T00:00:00+08:00</published><updated>2018-09-11T00:00:00+08:00</updated><id>http://localhost:4000/nlp/papers/2018/09/11/alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse</id><content type="html" xml:base="http://localhost:4000/nlp/papers/2018/09/11/alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.html">&lt;p&gt;&lt;a href=&quot;http://aclweb.org/anthology/N18-4001&quot;&gt;Shin and Doyle NAACL 2018&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;key-findings&quot;&gt;Key Findings&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Alignment (measured by pronouns) is strongly biased toward cooperative
+alignment, but different linguistic features can show substantially different
+behaviours&lt;/li&gt;
+  &lt;li&gt;Whilst previous work find alignment always positive and a matter of degree,
+the authors found negative alignment&lt;/li&gt;
+  &lt;li&gt;Negative pronoun alignment contrasts with relatively stable alignment of
+word categories associated with possible rhetorical approaches, suggesting in
+their dataset group dynamics are more contentious than the argument itself -
+strong group identities can overcome the general desire to align&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background-and-related-work&quot;&gt;Background and Related Work&lt;/h2&gt;
+
+&lt;p&gt;Work in Communication Accommodation Theory, that demonstrated speakers tend to
+align to achieve social approval from in-group members, and diverge with
+out-groups, especially when relations are strained&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Giles et al. (1991, 1993)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Specific studies of alignment from speed dates to legal courts&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Danescu-Niculescu-Mizil et al. (2011)&lt;/li&gt;
+  &lt;li&gt;Guo et al. (2015)&lt;/li&gt;
+  &lt;li&gt;Ireland et al. (2011)&lt;/li&gt;
+  &lt;li&gt;Niederhoffer and Pennebaker (2002)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The alignment model the authors adapt called WHAM&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Doyle and Frank (2016)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Study of accommodation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Giles et al. (1991)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Accommodation from looking at usage of function work categories such as
+pronouns, prepositions, and articles - an approach arguing that function words
+provide the syntactic structure which can vary somewhat independently of the
+content words being used, thereby allowing individuals to express their own
+personality and identity&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Danescu-Niculescu-Mizil et al. (2011)&lt;/li&gt;
+  &lt;li&gt;Niederhoffer and Pennebaker (2002)&lt;/li&gt;
+  &lt;li&gt;Chung and Pennebaker (2007)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Accommodation focusing on convergence in lexical categories is what the authors
+call &lt;strong&gt;linguistic alignment&lt;/strong&gt;, and is related to the concepts of&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;priming&lt;/strong&gt;: exposure to one stimulus influences response to a subsequent
+stimulus - e.g. “nurse” brings up medical and hospital associations/context&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;entraining&lt;/strong&gt;: the phenomenon of adapting the reference terms of one’s
+interlocutor to ensure clarity of reference and communication, necessary to
+overcome the ambiguity in the multitude of synonyms that exist in the language&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Separating &lt;strong&gt;homophily&lt;/strong&gt; (an inherent similarity between language users) from
+alignment (a necessary factorization to get the kinds of analysis we want going)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Danescu-Niculescu-Mizil et al. (2011)&lt;/li&gt;
+  &lt;li&gt;Doyle et al. (2017) (estimating employees inclusion in the workplace)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Alignment for argumentation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Burleson and Fennelly (1981)&lt;/li&gt;
+  &lt;li&gt;Duran and Fusaroli (2017)&lt;/li&gt;
+  &lt;li&gt;Pickering and Garrod (2004)&lt;/li&gt;
+  &lt;li&gt;Giles et al. (1991)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Key sentence for me:
+“if function word usage can reflect a speaker’s psychological state then
+negative alignment to opponents would be observed as a fair representation of
+the disagreement between speakers.”
+Using this idea to detect agreement/disagreement between speakers&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rosenthal and McKeown (2015)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Word categories that represent different rhetorical approaches to argument&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pennebaker et al. (2003)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Work on pronouns indicating group dynamics&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Van Swol and Carlson (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Work on different word usage for different groups&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Schwartz et al. (2013)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Linguistic Inquiry and Word Count, seems to be about psychological states being
+reflected in counts of works in psychologically relevant categories - may be of
+use in argumentation mining, worth at least checking, especially given:
+“A speaker’s baseline usage of rhetorical categories will present the
+group-specific speech styles that may be dependent on group identity, reflecting
+preferred styles of argument. The degree of alignment on rhetorical categories
+indicates whether speakers maintain their group’s discussion style or adapt to
+the other group.”&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pennebaker et al. (2007)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Usage of “they” among out-group members may reflect a common referent and not a
+lack of alignment - compare “you”&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Clark (1996)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Alignment due to non-social factors (i.e. cognitive, I think)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pickering and Garrod (2004)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;swam-model&quot;&gt;SWAM Model&lt;/h2&gt;
+
+&lt;p&gt;Define&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;baseline word use&lt;/strong&gt;: the rate at which someone uses a given word category
+&lt;script type=&quot;math/tex&quot;&gt;W&lt;/script&gt; when it has not been used in the preceding message. This reflects
+internalization of in-group identity, homophily, and enculturation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;alignment&lt;/strong&gt;: the relative increase in the probability of words from &lt;script type=&quot;math/tex&quot;&gt;W&lt;/script&gt;
+being used when the preceding message used a word from &lt;script type=&quot;math/tex&quot;&gt;W&lt;/script&gt;. This reflects
+a willingness to adjust one’s own behaviour to fit another’s expectations and
+framing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Infer two parameters in logit-space, conditioned on a hierarchy of Gaussian
+priors: the baseline&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\eta_{\text{base}} = \log p(B|\text{not} A)&lt;/script&gt;
+
+&lt;p&gt;and alignment values&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\eta_{\text{align}} = \log \frac{p(B|A)}{p(B|\text{not} A}&lt;/script&gt;
+
+&lt;p&gt;The conditional probabilities express the likelihood of a word category being
+used if the previous message does or does not contain that category.&lt;/p&gt;
+
+&lt;p&gt;Noted differences with WHAM (Doyle and Frank (2016))&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;WHAM uses a hierarchy of Gaussians to tie together observations from related
+messages to improve robustness when data is sparse or sociological factors
+are subtle - whilst requiring statistical assumptions it improves robustness
+when group dynamics are subtle or group membership difficult to determine&lt;/li&gt;
+  &lt;li&gt;But when group membership is clear this may provide inaccurate estimates&lt;/li&gt;
+  &lt;li&gt;The hierarchy in WHAM aggregates information across groups to improve
+alignment estimates, but one group’s alignment may not be predictive of
+another’s when the groups are opposed&lt;/li&gt;
+  &lt;li&gt;Hence the Simplified Word-Based Alignment Model (SWAM) for cases where groups
+are expected to provide clear signal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Noted differences with subtractive alignment model of Danescu-Niculescu-Mizil
+et al. (2011):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SWAM uses a conditioned baseline &lt;script type=&quot;math/tex&quot;&gt;p(B|\text{not} A)&lt;/script&gt; whereas they use the
+unconditioned &lt;script type=&quot;math/tex&quot;&gt;p(B)&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;SWAM places alignment on log-odds rather than probability which avoids floor
+effects for alignment of rare word categories&lt;/li&gt;
+  &lt;li&gt;SWAM calculates alignment per word, not per message, which controls for
+message length&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;on-rhetorical-categories&quot;&gt;On Rhetorical Categories&lt;/h2&gt;
+
+&lt;p&gt;The categories seem to come from Pennebaker (2007).&lt;/p&gt;
+
+&lt;p&gt;The cognitive processes category “spans markers of certainty, discrepancy, and
+inclusion, and has been argued to reflect argumentation framing that appeals to
+rationality.” I would like to find those arguments.&lt;/p&gt;
+
+&lt;p&gt;“Elevated causation word usage has been argued to be employed by the minority
+position within a debate, to provide convincing evidence against the status quo
+(Pennebaker et al. (2003), Van Swol and Carlson (2017)).&lt;/p&gt;
+
+&lt;p&gt;Note also that perceived power differences influence alignment - the previous
+point can be seen as a specific case of this.&lt;/p&gt;
+
+&lt;p&gt;It seems to be an issue for the authors, in the discussion, that alignment was
+not observed for the rhetorical categories, and setps to further investigate
+are proposed (see below).&lt;/p&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;h3 id=&quot;function-words-authors-discussion&quot;&gt;Function Words (Author’s Discussion)&lt;/h3&gt;
+
+&lt;p&gt;The theory upon which this work is based holds that pronouns and some rhetorical
+words can be classed as function words. However, this may not necessarily be
+such a clean classification. They say that using some alignment words are
+inevitable to stay in the conversation, or as an unambiguous referent.&lt;/p&gt;
+
+&lt;p&gt;Therefore as future work the authors suggest to separate alignment motivated by
+active acceptance from alignment that must occur in order to stay in the
+conversation.&lt;/p&gt;
+
+&lt;p&gt;The authors mention a strategy: separate the dataset into specific conversations
+and calculate alignment within those. The lexical coherence within conversations
+should thereby control for this effect.&lt;/p&gt;
+
+&lt;h3 id=&quot;does-the-conditioned-baseline-make-sense&quot;&gt;Does the conditioned baseline make sense?&lt;/h3&gt;
+
+&lt;p&gt;On the one hand &lt;script type=&quot;math/tex&quot;&gt;p(B)&lt;/script&gt; seems suboptimal because it confounds alignment in its
+probability - every instance of alignment usage of a word category will also
+count towards this probability. This would seem to erroneously inflate the
+baseline probability value.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, instances of a word category that I would otherwise have
+used, not necessarily reflecting alignment, will be dropped from the statistic
+if it accidentally happens that the previous message contains it. This would
+threaten to erroneously lower the baseline probability.&lt;/p&gt;
+
+&lt;p&gt;If I had to choose one I would choose conditioned. By only counting instances
+where we are sure word usage does not occur from alignment we would seem to get
+a cleaner signal than not doing that.&lt;/p&gt;
+
+&lt;p&gt;Is there a better solution?&lt;/p&gt;
+
+&lt;p&gt;(The authors do note as future work to look at a larger dataset to compare with
+WHAM in order to make sure their model estimates are accurate.)&lt;/p&gt;
+
+&lt;h3 id=&quot;argument-idenfitication&quot;&gt;Argument Idenfitication&lt;/h3&gt;
+
+&lt;p&gt;Can we use alignment calculations to identify when arguments are occuring? To
+identify support and attack generally?&lt;/p&gt;
+
+&lt;p&gt;Or is it more useful for the pragmatic signal - to try and identify groups or
+clusters that are the secondarily useful for argument identification?&lt;/p&gt;
+
+&lt;h3 id=&quot;bad-argument-identification&quot;&gt;Bad Argument Identification&lt;/h3&gt;
+
+&lt;p&gt;The authors’ find that strong pronoun alignment and weak alignment of
+rhetorical categories reflecting a situation where group membership and dynamics
+means more than the issues at hand. In such a situation one would expect to find
+a preponderance of bad arguments - non-sequiturs, questionable warrants, logical
+fallacies, etc.&lt;/p&gt;
+
+&lt;p&gt;In argumentation mining terms, it could be a place where the pragmatic and
+contextual signal is just as important as, or more important than, e.g., using
+warrants to try and make the connections between premises and conclusions, and
+certainly identifying what the claims are.&lt;/p&gt;
+
+&lt;p&gt;This paper suggests that we can calculate the ratio of pronoun alignment over
+rhetorical category alignment to identify cases where pragmatics are more
+important and where argumentation is likely to be of poorer quality.&lt;/p&gt;
+
+&lt;p&gt;A hypothesis I have been mulling over is that pragmatic signal is essential for
+high precision argumentation mining. This follows directly from my own
+experience: at times I struggle to understand a (bad) argument and only after I
+take a guess at the stance of the person can I make sense of it. It would be
+interesting to gather examples of such cases and analyze them - even turn them
+into a challenging dataset.&lt;/p&gt;
+
+&lt;p&gt;It would be nice to take a dump from The Conversation and annotate it much like
+the persuasive essay corpus, only with the added pragmatic signal. That way we
+could perform a direct comparison with and without this additional signal.&lt;/p&gt;</content><author><name></name></author><summary type="html">Shin and Doyle NAACL 2018</summary></entry><entry><title type="html">[Paper] Argumentation Mining from the Web from Information Seeking Perspective</title><link href="http://localhost:4000/argmin/papers/2018/09/03/argumentation-mining-on-the-web-from-information-seeking-perspective.html" rel="alternate" type="text/html" title="[Paper] Argumentation Mining from the Web from Information Seeking Perspective" /><published>2018-09-03T00:00:00+08:00</published><updated>2018-09-03T00:00:00+08:00</updated><id>http://localhost:4000/argmin/papers/2018/09/03/argumentation-mining-on-the-web-from-information-seeking-perspective</id><content type="html" xml:base="http://localhost:4000/argmin/papers/2018/09/03/argumentation-mining-on-the-web-from-information-seeking-perspective.html">&lt;p&gt;&lt;a href=&quot;https://pdfs.semanticscholar.org/12b1/2ea73652da56023e0e4776211e4f4301f339.pdf&quot;&gt;Habernal et al. ACL 2014&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#claims-and-findings&quot;&gt;Claims and Findings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#argument-models-used&quot;&gt;Argument Models Used&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#background-and-related-work&quot;&gt;Background and Related Work&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#discussion&quot;&gt;Discussion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;A lot of work has been done fairly independently on particular domains
+of argumentation mining. Different interpretations of argumentation have
+developed, limiting cross-domain applicability. This work is also not
+necessarily well connected to argumentation theories and therefore lacks
+a suitable theoretical grounding.&lt;/p&gt;
+
+&lt;p&gt;The goal is then to bridge the gap between theories and practice and
+provide some guidelines. This is explored via literature review and
+annotation studies.&lt;/p&gt;
+
+&lt;h2 id=&quot;claims-and-findings&quot;&gt;Claims and Findings&lt;/h2&gt;
+
+&lt;h3 id=&quot;main-conclusions&quot;&gt;Main conclusions&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The use-case of any research in argumentation mining must be clearly
+stated (i.e. in terms of expected outcomes)&lt;/li&gt;
+  &lt;li&gt;Properties of the data under investigation must be taken into
+account, given the variety of genres and registers&lt;/li&gt;
+  &lt;li&gt;An appropriate argumentation model must be chosen according to the
+requirements&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;there-is-no-one-size-fits-all-argumentation-theory&quot;&gt;There is no one-size-fits-all argumentation theory&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Even argumentation researchers disagree on any widely-accepted
+ultimate concept&lt;/li&gt;
+  &lt;li&gt;Therefore NLP researchers cannot in principle adopt any particular
+theory without justification - i.e. its suitability for the particular
+task&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;waltons-schemes-are-not-as-general-and-domain-independent-as-hoped&quot;&gt;Walton’s schemes are not as general and domain-independent as hoped&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Schneider and Wyner (2012) try to apply them to the product review
+domain; but only &lt;script type=&quot;math/tex&quot;&gt;37.1\%&lt;/script&gt; of observed arguments fall under the
+schemes, and new ad hoc schemes are required&lt;/li&gt;
+  &lt;li&gt;Cabrio et al. (2013a) try to map schemes to discourse relations in
+the Penn Discourse TreeBank; but again need to create two new schemes
+that they discover&lt;/li&gt;
+  &lt;li&gt;Therefore, the schemes lack appropriate coverage for dealing with
+real argumentation in natural language texts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;annotating-nested-arguments-is-a-drawback&quot;&gt;Annotating nested arguments is a drawback&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kluge (2014) experimented with this in an annotation study and found
+that when introducing nested arguments, as opposed to linear
+arguments, IAA dropped considerably.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;annotation-review-findings&quot;&gt;Annotation Review Findings&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Most studies dealing with web data use a proprietary model without
+basis in argumentation theory&lt;/li&gt;
+  &lt;li&gt;IAA is either not reported or not based on a chance-corrected measure&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;a-high-degree-of-controversiality-improved-summarization&quot;&gt;A high degree of controversiality improved summarization&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Carenini and Cheung (2008)&lt;/li&gt;
+  &lt;li&gt;“presenting argumentation in a condensed form (the large concepts of
+the argument are compressed or summarized) may improve argument
+comprehension”&lt;/li&gt;
+  &lt;li&gt;This is essentially my pragmatic idea, to try and predict what the
+person is arguing for as an aid to argument comprehension. That’s how
+I do it, especially when the argument is bad and requires so much more
+interpretation - figure out what their point is and infer what the
+warrants must be.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;annotation-experiment-findings&quot;&gt;Annotation Experiment Findings&lt;/h3&gt;
+
+&lt;p&gt;The claim-premise model was done on&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;newspaper articles&lt;/li&gt;
+  &lt;li&gt;blog posts&lt;/li&gt;
+  &lt;li&gt;interviews&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Toulmin model was done on&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;comments on articles and forum posts&lt;/li&gt;
+  &lt;li&gt;newspaper editorials&lt;/li&gt;
+  &lt;li&gt;blog posts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For claim-premise&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;72.4\%&lt;/script&gt; of arguments consist of one claim and a premise&lt;/li&gt;
+  &lt;li&gt;in &lt;script type=&quot;math/tex&quot;&gt;59.5\%&lt;/script&gt; of these the support follows the claim&lt;/li&gt;
+  &lt;li&gt;in only &lt;script type=&quot;math/tex&quot;&gt;11.6\%&lt;/script&gt; did the support precede the claim&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;what is the ratio of supports to attacks?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For Toulmin&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;IAA varies significantly with component type, with claim and grounds
+being the best, then backing then rebuttal; refutation is by far the
+lowest&lt;/li&gt;
+  &lt;li&gt;IAA higher for short texts such as comments; lower for longer
+documents such as blog posts and editorials&lt;/li&gt;
+  &lt;li&gt;Manual analysis revealed annotation difficulties especially where the
+discussion is complex (i.e. many sub-aspects are discussed) and where
+it proceeds in a dialogical manner&lt;/li&gt;
+  &lt;li&gt;The distinction between grounds and backing is too fuzzy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;observations&quot;&gt;Observations&lt;/h3&gt;
+
+&lt;p&gt;Some dimensions that need to be considered when approaching any
+particular AM annotation task&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;There is a &lt;strong&gt;variety of registers&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Length of documents&lt;/strong&gt;*&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Degree of structure&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other properties&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Non-argumentative texts: sometimes an entire user comment has no
+argumentative contenxt&lt;/li&gt;
+  &lt;li&gt;Implicit warrants and even implicit claims&lt;/li&gt;
+  &lt;li&gt;Figurative language, fallacies, and narratives are prevalent in online
+context&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;argument-models-used&quot;&gt;Argument Models Used&lt;/h2&gt;
+
+&lt;h3 id=&quot;claim-premise&quot;&gt;Claim-Premise&lt;/h3&gt;
+
+&lt;p&gt;They keep this &lt;strong&gt;linear&lt;/strong&gt; by labeling adjacent components with&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\{
+\text{claim}, \text{claim-restatement}, \text{pre-claim support},
+\text{pre-claim attack}, \text{post-claim support},
+\text{post-claim attack}
+\}&lt;/script&gt;
+
+&lt;p&gt;This prevents the construction of a graph, and nesting.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Suitability&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;simple model&lt;/li&gt;
+  &lt;li&gt;good for long web documents such as news articles, editorials, or
+blog posts&lt;/li&gt;
+  &lt;li&gt;cannot distinguish premise types - e.g. factual evidence versus
+common understanding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;toulmin&quot;&gt;Toulmin&lt;/h3&gt;
+
+&lt;p&gt;They make some changes&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Omit the &lt;strong&gt;qualifier&lt;/strong&gt; as people don’t usually state their degree of
+certainty&lt;/li&gt;
+  &lt;li&gt;Omit the &lt;strong&gt;warrant&lt;/strong&gt; as again it is not usually stated&lt;/li&gt;
+  &lt;li&gt;Extend &lt;strong&gt;backing&lt;/strong&gt; to provide more information to back up the argument&lt;/li&gt;
+  &lt;li&gt;Add &lt;strong&gt;refutation&lt;/strong&gt; as a rebuttal to the rebuttal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Comments&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Omitting the qualifier and warrant make sense from the point of view
+of annotation. Indeed, if the authors don’t state them it is very
+difficult or impossible to say what they are.&lt;/li&gt;
+  &lt;li&gt;The new role of backing feels a bit too general&lt;/li&gt;
+  &lt;li&gt;Is refutation added to avoid nesting?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Suitability&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In natural language arguments premises play different roles; by
+expressing these the argument is more readily understandable and
+it is easier to identify the various ways in which it can be accepted
+or refuted (Bentahar et al. (2010, p.216)&lt;/li&gt;
+  &lt;li&gt;A complicated model&lt;/li&gt;
+  &lt;li&gt;The description of the components is often ambiguous&lt;/li&gt;
+  &lt;li&gt;Some components are left implicit (e.g. warrants, even claims)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background-and-related-work&quot;&gt;Background and Related Work&lt;/h2&gt;
+
+&lt;p&gt;Argumentation mining on the web&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Schneider et al. (2012)&lt;/li&gt;
+  &lt;li&gt;Sergeant (2013)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argumentation and philosophy and rhetoric&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Aristotle and Kennedy (translator) (1991)&lt;/li&gt;
+  &lt;li&gt;Perelman and Olbrechts-Tyteca (1991)&lt;/li&gt;
+  &lt;li&gt;Walton et al. (2008)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argumentation and informal and formal logic&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dun (1995)&lt;/li&gt;
+  &lt;li&gt;Henkmans (2000)&lt;/li&gt;
+  &lt;li&gt;Stoianovici (2009)&lt;/li&gt;
+  &lt;li&gt;Schneider et al. (2013)&lt;/li&gt;
+  &lt;li&gt;Hunter (2013)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argumentation and educational research&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Weinberger and Fischer (2006)&lt;/li&gt;
+  &lt;li&gt;Noroozi et al. (2013)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argumentation and pragmatics&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Xu and Wu (2014)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argumentation and psychology&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Larson et al. (2004)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Criticism of existing argumentation theories&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Luque (2011)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Criticism of Luque (2011)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Andone (2012)&lt;/li&gt;
+  &lt;li&gt;Xie (2012)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Monological argumentation models&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bentahar et al. (2010), p. 215&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Formal frameworks (logic, defeasibility, evalaution)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Prakken (2010)&lt;/li&gt;
+  &lt;li&gt;Hunter (2013)&lt;/li&gt;
+  &lt;li&gt;Hunter (2014)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rhetorical considerations from NLP point of view&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Crosswhite et al. (2004)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Look like a textbooks on argumentation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Freeley and Steinberg (2008)
+    &lt;ul&gt;
+      &lt;li&gt;Chapter 8 has examples of Toulmin annotations&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Besnard and Hunter (2008)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Another Toulmin to read&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Toulmin et al. (1984)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Building on RST, classifying discourse relations conveying arguments to
+find argument supports&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Villalbda and Saint-Dizier (2012)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using Dung’s framework and Walton’s argument schemes together. However
+it is unclear how feasible this is.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Schneider (2012)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using Walton’s schemes for the product reviews domain&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Schneider and Wyner (2012)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;General discourse analysis and annotation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Newman and Marshall (1991)&lt;/li&gt;
+  &lt;li&gt;Walton (2012)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Extensive overview of argumentation models&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bentahar et al. (2010)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Study of annotation arguments in long web documents&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Kluge (2014)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Annotating with Toulmin’s scheme&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Newman and Marshall (1991)&lt;/li&gt;
+  &lt;li&gt;Chambliss (1995)&lt;/li&gt;
+  &lt;li&gt;Simosi (2003)&lt;/li&gt;
+  &lt;li&gt;Weinberger and Fischer (2006)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The comparison between claim-premise and Toulmin looks to be OK, but
+I am wondering why they didn’t use the same dataset for the clearest
+comparison - given the genres I would expect the claim-premise data
+to be at least a bit easier to annotate than the Toulmin data, as it
+should have more structure and be more formal - user comments should
+be the hardest to annotate; still I think the independent analysis of
+the difficulties with the Toulmin model stands and is valuable&lt;/li&gt;
+  &lt;li&gt;The modification they made to Toulmin, specifically the backing,
+looked destined to fail to me before I read the results for the very
+reason they cite - it appears too vague a concept to be a part of a
+good argument model, and also to be reliably annotated. However, that
+is a fairly shallow opinion just now, and I’d like to roll up my
+sleeves and do some annotation myself to get a better feel for how
+fair this criticism is.&lt;/li&gt;
+  &lt;li&gt;One problem with Toulmin is quantifiers and warrants are often not
+explicit. Arguments have to be interpreted and this is part of our
+communication environment - enthymemes abound. Even with a
+claim-premise model annotators have to identify arguments by
+implicitly using warrants they have, or inferring the warrant in use.
+The Toulmin scheme makes this explicit. It is certainly a big problem
+for an annotation task. Though I wonder whether experts could discuss
+and agree on the best most likely implicit warrant in a given context.
+This comes down to a judgment, a complicated one, which is in fact
+likely to vary from person to person depending on their background.
+I wonder how much of the I-A-Disagreement can be explained by this?&lt;/li&gt;
+  &lt;li&gt;I think it would be a fun dataset - warrant induction&lt;/li&gt;
+  &lt;li&gt;Another fun thing: if we had a large enough dataset (unlikely, but
+let’s just pie in the sky for a moment), then we could use the
+warrants as a natural langauge parameter space (as in Learning with
+Latent Language). Then we could use them to map premises to claims,
+then later use that for argumentation mining. Maybe warrant induction
+can help us overcome the dataset issue.&lt;/li&gt;
+  &lt;li&gt;Part of my intuition about pragmatics is also about dialogical
+argumentation. Even for an essay the general context (i.e.
+the intended audience) seems important for properly understanding it
+to me. So that could be a research question: find a way to perform a
+critical test of monological versus dialogical argumentation mining.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Habernal et al. ACL 2014</summary></entry><entry><title type="html">[Paper] Learning with Latent Language</title><link href="http://localhost:4000/nlp/papers/2018/09/01/learning-with-latent-language.html" rel="alternate" type="text/html" title="[Paper] Learning with Latent Language" /><published>2018-09-01T00:00:00+08:00</published><updated>2018-09-01T00:00:00+08:00</updated><id>http://localhost:4000/nlp/papers/2018/09/01/learning-with-latent-language</id><content type="html" xml:base="http://localhost:4000/nlp/papers/2018/09/01/learning-with-latent-language.html">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1711.00482&quot;&gt;Andreas et al. NAACL 2018&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;The efficient automatic discovery of abstract structure.
+Think few-shot learning.&lt;/p&gt;
+
+&lt;p&gt;“We seek an intermediate language of task representations that, like
+in program synthesis, is both expressive and compact, but like in
+multitask approaches is learnable directly from training data without
+domain engineering.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Use language as a latent &lt;em&gt;parameter space&lt;/em&gt; for few-shot learning.&lt;/p&gt;
+
+&lt;p&gt;“The structure of natural language reflects the structure of the world.”
+Language tells us about the kinds of abstractions that we find useful
+for interpreting and navigating our environment.&lt;/p&gt;
+
+&lt;p&gt;“Our thesis is that language is a powerful, general-purpose kind of
+pre-training, even for tasks that do not directly involve language.”
+Natural language hypotheses mean&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;easier to discover compositional concepts in the training examples&lt;/li&gt;
+  &lt;li&gt;harder to overfit to few examples&lt;/li&gt;
+  &lt;li&gt;easier to understand inferred patterns&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By “equipping models with the ability to think out loud when learning
+they become both more comprehensible and more accurate.”&lt;/p&gt;
+
+&lt;p&gt;Natural langauge:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;is discrete&lt;/li&gt;
+  &lt;li&gt;has a rich set of compositional operators&lt;/li&gt;
+  &lt;li&gt;comes equipped with a natural description length prior&lt;/li&gt;
+  &lt;li&gt;flexible semantics&lt;/li&gt;
+  &lt;li&gt;plenty of annotated data exists for learning from language&lt;/li&gt;
+  &lt;li&gt;provides a strong prior about the kinds of abstractions that are
+useful for natural learning problems&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;
+
+&lt;h3 id=&quot;generic-approach&quot;&gt;Generic Approach&lt;/h3&gt;
+
+&lt;p&gt;Three stages:&lt;/p&gt;
+
+&lt;h4 id=&quot;1-language-learning&quot;&gt;1. Language Learning&lt;/h4&gt;
+
+&lt;p&gt;The &lt;strong&gt;language learning&lt;/strong&gt; phase using different datasets &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;.
+The datasets have samples like &lt;script type=&quot;math/tex&quot;&gt;\{ (\mathbf{x}_1^{(li)},
+\mathbf{w}_1^{(li)}, y_1^{(li)}), \dots, (\mathbf{x}_n^{(li)},
+\mathbf{w}_1^{(li)}, y_n^{(li)}) \}&lt;/script&gt;.
+The idea is to turn the tokens &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}^{(li)}&lt;/script&gt; into a function
+&lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x}, \mathbf{\eta}, y)&lt;/script&gt; mapping from inputs
+&lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(li)}&lt;/script&gt; to outputs &lt;script type=&quot;math/tex&quot;&gt;y^{(li)}&lt;/script&gt;.
+For example an image rating model that gives a scalar value
+&lt;script type=&quot;math/tex&quot;&gt;y^{(li)}&lt;/script&gt; indicating how well a natural language description
+&lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}^{(li)}&lt;/script&gt; matches an image &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(li)}&lt;/script&gt;.
+They call this function a &lt;strong&gt;language interpretation model&lt;/strong&gt;.
+The job in this phase is to learn the real-valued parameters
+&lt;script type=&quot;math/tex&quot;&gt;\mathbf{\eta}&lt;/script&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\arg \max_{\mathbf{\eta} \in \Bbb{R}^a}
+\sum_{i, j}
+L \left(
+  f(\mathbf{x}_j^{(li)}; \mathbf{\eta}, \mathbf{w}^{(li)}),
+  y_j^{(li)}
+\right)&lt;/script&gt;
+
+&lt;h4 id=&quot;2-concept-learning&quot;&gt;2. Concept Learning&lt;/h4&gt;
+
+&lt;p&gt;The &lt;strong&gt;concept learning&lt;/strong&gt; basically trains to a specific target dataset
+with samples &lt;script type=&quot;math/tex&quot;&gt;\{ (\mathbf{x}_1^{(c)}, y_1^{(c)}), \dots,
+(\mathbf{x}_n^{(c)}, y_n^{(c)}) \}&lt;/script&gt;. This is now &lt;strong&gt;an optimization
+problem over natural language strings&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\arg \max_{\mathbf{w}' \in \Sigma*}
+\sum_j
+L \left(
+  f(\mathbf{x}_j^{(c)}; \mathbf{\eta}, \mathbf{w}^{(c)}),
+  y_j^{(c)}
+\right)&lt;/script&gt;
+
+&lt;p&gt;This is an unusual optimization problem for me.
+They propose to fit a &lt;strong&gt;reverse proposal model&lt;/strong&gt; estimating&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\arg \max_\lambda \log q(\mathbf{w}_i|\mathbf{x}_1^{(li)}, y_1^{(li)},
+\dots, \mathbf{x}_n^{(li)}, y_n^{(li)}; \lambda)&lt;/script&gt;
+
+&lt;p&gt;This &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; gives a distribution over strings expressing how likely they
+are to be a match given the input data. They say it’s an image
+captioning model in practice.&lt;/p&gt;
+
+&lt;p&gt;They sample from this distribution and perform optimization over the
+resulting set of candidate strings &lt;script type=&quot;math/tex&quot;&gt;\Sigma*&lt;/script&gt; that are expected to
+obtain small loss.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-evaluation&quot;&gt;3. Evaluation&lt;/h4&gt;
+
+&lt;p&gt;Apply learned concept to new input &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(e)}&lt;/script&gt; to obtain
+prediction &lt;script type=&quot;math/tex&quot;&gt;y^{(e)}&lt;/script&gt;. This is done by drawing a fixed number of
+sample strings, find the one that achieves minimum loss, and then use
+&lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x}^{(e)}; \mathbf{\eta}, \mathbf{w}^{(c)})&lt;/script&gt; to make the
+prediction.&lt;/p&gt;
+
+&lt;h3 id=&quot;details-of-their-approach&quot;&gt;Details of their Approach&lt;/h3&gt;
+
+&lt;h4 id=&quot;few-shot-classification&quot;&gt;Few-Shot Classification&lt;/h4&gt;
+
+&lt;p&gt;The learner sees four images which are positive examples of some visual
+concept - e.g. “a red circle above a blue square” - and must decide if
+a fifth held-out image matches the same concept.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;interpretation model&lt;/strong&gt; is implemented as a VGGNet that encodes
+the image, and an RNN encoder for descriptions&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(\mathbf{x}, \mathbf{w}) = \sigma(\text{rnn-encode}(\mathbf{w})^\top
+\text{rep}(\mathbf{x}))&lt;/script&gt;
+
+&lt;p&gt;which outputs a probability that the image matches the description and
+is trained using maximum log-likelihood.&lt;/p&gt;
+
+&lt;p&gt;Their &lt;strong&gt;proposal model&lt;/strong&gt; is defined as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;q(\mathbf{w}|\{\mathbf{x}_j\}) = \text{rnn-decode}(\mathbf{w} | \frac1n
+\sum_j \text{rep}(\mathbf{x}_j))&lt;/script&gt;
+
+&lt;p&gt;They want to answer&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Does the addition of language help as compared to multi-task or
+meta-learning?&lt;/li&gt;
+  &lt;li&gt;It is better to use language as a hypothesis space or as additional
+supervision?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the few-shot setting they answer (1) by comparing to MTL and ML
+models. But I am not sure how to evaluate it as a comparison right
+now. I will have to come back after learning more about multi-task and
+meta-learning.&lt;/p&gt;
+
+&lt;h4 id=&quot;programming-by-demonstration&quot;&gt;Programming by Demonstration&lt;/h4&gt;
+
+&lt;p&gt;See five string transformations and have to apply the same to a sixth
+input. There is also a natural language description of the
+transformation.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\text{rep}(x, y) &amp;= \text{rnn-encode}([x, y]) \\
+f(y | x; w) &amp;= \text{rnn_decode} \left( y | \text{rnn-encode}(x), \text{rnn-encode}(w)] \right) \\
+q(w | \{(x_j, y_j)\}) &amp;= \text{rnn-decode} \left( w | \frac1n \sum_j \text{rep}(x_j, y_j) \right)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;They compare using regular expressions to using natural language and
+find natural language superior. They hypothesize this is due to the
+extra variation in natural language helping the model figure out the
+true axes of variation and avoid overfitting&lt;/li&gt;
+  &lt;li&gt;Providing ground truth annotations was worse than letting the model
+perform inference on its own. They hypothesize this is due to the
+model being more reliable than the human annotators who sometimes
+write, e.g., “I don’t know”.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;reinforcement-learning&quot;&gt;Reinforcement Learning&lt;/h4&gt;
+
+&lt;p&gt;The task is treasure hunting where the treasure is in some location a
+fixed distance from some landmark. These are randomized over episodes.
+Nothing in the agent’s observations should suggest these things are
+related - but for the natural language descriptions.&lt;/p&gt;
+
+&lt;p&gt;The goal is to adapt quickly to new environments. The hypothesis is that
+from the beginning, instead of searching in random parameter space,
+which often leads to nonsensical behaviour, searching in the space of
+natural language strings will at least lead to some reasonable policy,
+which should in turn lead to faster learning. I find that very
+compelling.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\text{rep}(x) &amp;= \tanh(\text{fc}(\tanh(\text{fc}(x)))) \\
+f(a| x; w) &amp;\propto \text{rnn-encode}(w)^\top W_a \text{rep}(x) \\
+q(w) &amp;= \text{rnn-decode}(w)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;At language learning time it is assumed to have natural language
+descriptions of the target locations provided by human annotators and
+expert policies for navigating there.&lt;/p&gt;
+
+&lt;p&gt;Learning proceeds by:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;sampling a fixed number of descriptions &lt;script type=&quot;math/tex&quot;&gt;w&lt;/script&gt; from &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;for each, rollout the policy induced and estimate average reward&lt;/li&gt;
+  &lt;li&gt;take highest scoring description and perform further fine-tuning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At language learning time the agent has access to 250 environments and
+is evaluated on a further 50.&lt;/p&gt;
+
+&lt;p&gt;Results indeed show faster learning and “show that the model has used
+the structure provided by language to &lt;em&gt;learn&lt;/em&gt; a better representation
+space for policies - one that allows it to sample from a distribution
+over interesting and meaningful behaviors rather than sequences of
+random actions.”&lt;/p&gt;
+
+&lt;h2 id=&quot;datasets&quot;&gt;Datasets&lt;/h2&gt;
+
+&lt;p&gt;ShapeWorld&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Kuhnle and Copestake (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Their own string editing dataset.&lt;/p&gt;
+
+&lt;p&gt;Adaptation of a natural language navigation dataset&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Janner et al. (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background-and-related-work&quot;&gt;Background and Related Work&lt;/h2&gt;
+
+&lt;p&gt;Inductive program synthesis approaches reduce the hypothesis space by
+moving the problem out of continuous space and into the discrete space
+of program descriptors&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gulwani (2011)&lt;/li&gt;
+  &lt;li&gt;version space algebras: Lau et al. 2003&lt;/li&gt;
+  &lt;li&gt;type systems: Kitzelmann and Schmid (2006)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But the computational primitives necessary to describe every hypothesis
+must be specified by hand a priori by a human designer.&lt;/p&gt;
+
+&lt;p&gt;Multi-task learning&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Caruana (1998)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Meta-learning&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Schmidhuber (1987)&lt;/li&gt;
+  &lt;li&gt;Santoro et al. (2016)&lt;/li&gt;
+  &lt;li&gt;Vinyals et al. (2016)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Image rating model&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Socher et al. (2014)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Techniques aimed at making synthesis more efficient&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Devlin et al. (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Image captioning model&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Donahue et al. (2015)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Visual reasoning problems where a natural language explanation must be
+inferred&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Raven (1936)&lt;/li&gt;
+  &lt;li&gt;Bongard (1968)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Visual question answering&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Johnson et al. (2017)&lt;/li&gt;
+  &lt;li&gt;Suhr et al. (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Similar ideas to the RL task, in the context of human concept learning&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Hermer-Vazquez et al. (2001)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Instruction following model of a kind well studied in the NLP literature&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Branavan et al. (2009)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DAgger&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ross et al. (2011)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Policy gradients&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Williams (1992)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using natural language annotations to guide the discovery of logical
+descriptions of concepts&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ling et al. (2017)&lt;/li&gt;
+  &lt;li&gt;Srivastava et al. (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using structured language-like annotations to improve learning of
+generalizable structured policies&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Andreas et al. (2017)&lt;/li&gt;
+  &lt;li&gt;Denil et al. (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using natural language at concept learning time for RL agents for&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;high level structure: Branavan et al. (2011)&lt;/li&gt;
+  &lt;li&gt;environment dynamics: Narasimhan et al. (2017)&lt;/li&gt;
+  &lt;li&gt;exploration: Harrison et al. (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Dataset augmentation strategy used in Navigation and Regex datasets&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jia and Liang (2016)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Automatic template induction system (again data augmentation)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Kwiakowski et al. (2011)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Via their comparisons they make the case that this is a feasible
+technique, which is very interesting. However, I have not seen any
+specific discussion of they hypothesis that the performance increase
+is due to discovery of compositional concepts. It is a tantalizing
+hypothesis and I would like more said, or more investigation into
+this aspect (unless I have missed it). Insofar as it is discussed it
+seems to be a given from the nature of language itself. It would be
+nice to see examples of learned behavior demonstrating this.&lt;/li&gt;
+  &lt;li&gt;The vocabulary used in these datasets is very small (see appendix).
+This work is meant to be an initial exploration on smaller, toy tasks,
+which I am totally on board with. But of course the next step is to
+wonder how it could work with much larger and more complicated
+natural language. Will their particular techniques be scalable? Have
+we the datasets to do it?&lt;/li&gt;
+  &lt;li&gt;It seems the same function &lt;script type=&quot;math/tex&quot;&gt;f(x, \eta, w)&lt;/script&gt; is used at both language
+and concept learning time. It feels like this is restricting - it
+seems the problems need to be the same, because the parameters are
+the same. E.g., if as in the example we have a model rating how well
+an image matches a description, how do we then use that for the
+regex task? We are mapping from an image to a scalar in the first
+case - that is what &lt;script type=&quot;math/tex&quot;&gt;\eta&lt;/script&gt; has learned to do. It doesn’t seem like
+we can then use the same function for a different task.&lt;/li&gt;
+  &lt;li&gt;How can we generalize if we don’t have a complete set of natural
+language strings at language learning time?&lt;/li&gt;
+  &lt;li&gt;Relatedly, I am thinking about Bengio’s Consciousness Prior, wherein
+he argued convincingly in my view for the benefits of having hidden
+units mapped to words or phrases. The idea here seems to be somewhat
+different, although some of the motivations align a little bit. I
+don’t think this paper qualifies as progress towards Bengio’s idea,
+but does further demonstrate that it is a good one.&lt;/li&gt;
+  &lt;li&gt;It also seems that the optimization step over natural language strings
+is not ideal.&lt;/li&gt;
+  &lt;li&gt;I am also thinking about recent work I’ve read (and must review) about
+learning a more explicit space using words…&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Andreas et al. NAACL 2018</summary></entry><entry><title type="html">[Paper] Neural End-to-End Learning for Computational Argumentation Mining</title><link href="http://localhost:4000/argmin/papers/2018/08/31/neural-end-to-end-learning-for-computational-argument-mining.html" rel="alternate" type="text/html" title="[Paper] Neural End-to-End Learning for Computational Argumentation Mining" /><published>2018-08-31T00:00:00+08:00</published><updated>2018-08-31T00:00:00+08:00</updated><id>http://localhost:4000/argmin/papers/2018/08/31/neural-end-to-end-learning-for-computational-argument-mining</id><content type="html" xml:base="http://localhost:4000/argmin/papers/2018/08/31/neural-end-to-end-learning-for-computational-argument-mining.html">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1704.06104&quot;&gt;Eger et al. ACL 2017&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;key-findings&quot;&gt;Key Findings&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Framing AM as token-based dependency parsing is subpar relative to
+token-based sequence tagging&lt;/li&gt;
+  &lt;li&gt;Multi-task learning improves performance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;This paper aims to address end-to-end argumentation mining.&lt;/p&gt;
+
+&lt;h2 id=&quot;dependency-parsing-based-model&quot;&gt;Dependency Parsing Based Model&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;They use the model of Miwa and Bansal (2016) &lt;strong&gt;LSTM-ER&lt;/strong&gt; with their
+own formulation of the AM problem&lt;/li&gt;
+  &lt;li&gt;Entity detection and relation classification are decoupled, although
+with shared parameters - more modular than sequence tagging model
+(although that can be recovered with MTL architecture specified below)&lt;/li&gt;
+  &lt;li&gt;Pretraining on entities (?) and scheduled sampling
+(Bengio et al. 2015) prevent low performance at early training stages&lt;/li&gt;
+  &lt;li&gt;The model uses a TreeLSTM with dependency parse information for
+relation classification.  &lt;strong&gt;How can this work across sentences?
+How is it actually implemented?&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;This model can in principle model any kind of relations between
+argument components - in contrast to the sequence tagging model that
+is constrained such that each component can only relate to one other&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sequence-tagging-based-model&quot;&gt;Sequence Tagging Based Model&lt;/h2&gt;
+
+&lt;p&gt;Each token will be tagged with a four-tuple&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$b \in {B, I, O}$ for component tagging&lt;/li&gt;
+  &lt;li&gt;$t \in {\text{Premise}, \text{Claim}, text{Major Claim}, \bot}$
+for component types&lt;/li&gt;
+  &lt;li&gt;$d \in {\dots, -2, -1, 1, 2, \dots, \bot}$ for position relative to
+connected component&lt;/li&gt;
+  &lt;li&gt;$s \in {\text{Support}, \text{Attack}, \text{For}, \text{Ag}, \bot}$
+for relation type&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They use a BiLSTM-CRF-CNN.&lt;/p&gt;
+
+&lt;h2 id=&quot;multi-task-learning&quot;&gt;Multi-Task Learning&lt;/h2&gt;
+
+&lt;p&gt;Following the framework of Sogaard and Goldber (2016) MTL is seen as
+multiple layers of LSTMs each responsible for one of the tasks. This
+works best when the tasks are hierarchical.&lt;/p&gt;
+
+&lt;p&gt;The auxiliary tasks are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$C$: predicting $(b, t)$ from the four-tuple&lt;/li&gt;
+  &lt;li&gt;$R$: predicting $(d, s)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Findings:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Hierarchical ordering didn’t help&lt;/li&gt;
+  &lt;li&gt;$C$ more helpful than $R$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;comparison-and-analysis&quot;&gt;Comparison and Analysis&lt;/h2&gt;
+
+&lt;p&gt;Evaluation metric details from&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Persing and Ng (2016)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;They hypothesize that the LSTM-Parser’s good relative performance is a
+result of encoding its whole stack history rather than just the top
+elements on the stack, which makes it aware of much larger contexts.&lt;/p&gt;
+
+&lt;p&gt;The LSTM-ER model deteriorates rapidly from paragraph level to essay
+level prediction - they hypothesize this is because at essay level the
+search space for the tree is so much larger.&lt;/p&gt;
+
+&lt;p&gt;In contrast the strength of the sequence tagging model is seen to come
+from its simplicity (less overfitting) and the fact it can deal with
+longer sequences being “largely invariant to length”.&lt;/p&gt;
+
+&lt;p&gt;The relatively good performance of LSTM-ER is attributed to decoupling
+of component identification and relation prediction. Similar results can
+be achieved with the tagging model by using the MTL setting (effectively
+decoupling).&lt;/p&gt;
+
+&lt;p&gt;The tagging model performs better as it explicitly considers the
+distance between components - it is therefore able to reflect the
+distribution.&lt;/p&gt;
+
+&lt;p&gt;The tagger performance has a lower standard deviation than the parser
+over random initializations.&lt;/p&gt;
+
+&lt;p&gt;As for training data - the parser only sees 322 trees whereas the tagger
+is trained on 120K tokens.&lt;/p&gt;
+
+&lt;p&gt;A big source of error is accurately determining component spans.&lt;/p&gt;
+
+&lt;h2 id=&quot;background-and-related-work&quot;&gt;Background and Related Work&lt;/h2&gt;
+
+&lt;p&gt;Two recent approaches to end-to-end learning for AM&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Persing and Ng (2016)&lt;/li&gt;
+  &lt;li&gt;Stab and Gurevych (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The notion of “argument” critically relies on the underlying argument
+theory&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reed et al. (2008)&lt;/li&gt;
+  &lt;li&gt;Biran and Rambow (2011)&lt;/li&gt;
+  &lt;li&gt;Habernal and Gurevych (2015)&lt;/li&gt;
+  &lt;li&gt;Stab and Gurevych (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Discourse parsing (Muller et al. 2012) for AM&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pedszus and Stede (2015)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;BIO tagging for component idenfitification&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Habernal and Gurevych (2016)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A model that combines sequential (entity) and tree structure (relation)
+information so as to be in principle applicable to any problem where
+the aim is to extract entities and their relations&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Miwa and Bansal (2016) *could be relevant to FEVER idea&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;AM and analysis of scientific papers&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Kirschner et al. (2015)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other MTL&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Sogaard and Goldberg (2016) *most interesting&lt;/li&gt;
+  &lt;li&gt;Peng and Dredze (2016)&lt;/li&gt;
+  &lt;li&gt;Yang et al. (2016)&lt;/li&gt;
+  &lt;li&gt;Rusu et al. (2016)&lt;/li&gt;
+  &lt;li&gt;Hector and Plank (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Even humans struggle to determine component spans&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Persing and Ng (2016)&lt;/li&gt;
+  &lt;li&gt;Yang and Cardie (2013)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Use of encoder-decoder framing for AM investigated in&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Potash et al. (2016)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;datasets&quot;&gt;Datasets&lt;/h2&gt;
+
+&lt;p&gt;To the authors’ best knowledge, the only dataset of quality that
+annotates AM in its entire complexity (token-level annotation of
+components, their types, and relations and their types)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Stab and Gurevych (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notes&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;This is the persuasive essay corpus&lt;/li&gt;
+  &lt;li&gt;Huge imbalance: &amp;gt;90% of relations are supporting&lt;/li&gt;
+  &lt;li&gt;Prediction on the paragraph level is easier than on the essay level
+because the number of potential configurations of components is
+fewer&lt;/li&gt;
+  &lt;li&gt;~30% of relations are next to each other; 66% in ${-2, -1, 1}$;
+but values of $-11$ and $+10$ are observed&lt;/li&gt;
+  &lt;li&gt;~92% of relations are inter-sentence&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;Interesting point made in the paper: a model that enforces a constraint
+does not necessarily mean it is more suitable for a task. It has
+frequently been observed that models tend to produce output consistent
+with the constraints in their training data in such situations; thus
+they have learned the constraints&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Zhang et al. (2017)&lt;/li&gt;
+  &lt;li&gt;Hector and Plank (2017)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One question, which the paper does also raise, is whether the
+dependency parsing based model is weaker due to a lack of data. The
+authors seems to think so. A question then arises: would a dependency
+parsing based model overtake a sequence tagging based model with
+enough data? Yes, data efficiency is good. But are we in the zone here
+where the data really is that small such that general conclusions like
+“dependency parsing is worse than sequence tagging” can’t be properly
+made?&lt;/p&gt;
+
+&lt;p&gt;Reading the paper it is hard to know how to implement the LSTM-ER model.
+Yes, we must refer to the original author’s paper. But because the
+TreeLSTM doesn’t seem to apply to their problem, the question remains as
+to whether they used it as is or modified it somehow.&lt;/p&gt;</content><author><name></name></author><summary type="html">Eger et al. ACL 2017</summary></entry><entry><title type="html">[Paper] The Consciousness Prior</title><link href="http://localhost:4000/ai/papers/2018/08/12/consciousness-prior.html" rel="alternate" type="text/html" title="[Paper] The Consciousness Prior" /><published>2018-08-12T00:00:00+08:00</published><updated>2018-08-12T00:00:00+08:00</updated><id>http://localhost:4000/ai/papers/2018/08/12/consciousness-prior</id><content type="html" xml:base="http://localhost:4000/ai/papers/2018/08/12/consciousness-prior.html">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1709.08568&quot;&gt;Bengio (2017)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Consciousness as awareness of one’s thoughts&lt;/li&gt;
+  &lt;li&gt;This should be &lt;em&gt;low-dimensional&lt;/em&gt;. Why? Conscious thought is limited to
+“a few [handful of] concepts” at a time. We use these concepts to
+form statements to base predictions and decisions upon. E.g., we
+might see a paw print on a table and predict “a cat lives in this
+house”. It is intuitive that this prediction would come from higher
+level abstractions - a lower-dimensional &lt;strong&gt;abstract&lt;/strong&gt; space and not
+very high-dimensional pixel space.&lt;/li&gt;
+  &lt;li&gt;The &lt;strong&gt;representation RNN&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt; can be thought of as the content of
+almost the whole brain, apart from the weights, that summarizes recent
+and past observations. It will yield a very high-dimensional
+&lt;strong&gt;representation state&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;h_t&lt;/script&gt; based on the current observed state
+&lt;script type=&quot;math/tex&quot;&gt;s_t&lt;/script&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;h_t = F(s_t, h_{t-1})&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;strong&gt;consciousness RNN&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; then yields the &lt;strong&gt;conscious state&lt;/strong&gt;
+&lt;script type=&quot;math/tex&quot;&gt;c_t&lt;/script&gt;, a very low-dimensional vector, and is derived from an
+attention mechanism over the representation state plus some noise
+&lt;script type=&quot;math/tex&quot;&gt;z_t&lt;/script&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;c_t = C(h_t, c_{t-1}, z_t)&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The addition of noise introduces randomness into the attention
+mechanism, useful for exploring different options in thinking - e.g.
+different interpretations, different plans of action, different
+predictions about the future.&lt;/li&gt;
+  &lt;li&gt;For training objectives in general we want to capture the idea that
+these high-level features are useful for prediction and action.
+Focusing on prediction, a &lt;strong&gt;verifier network&lt;/strong&gt; measures the
+consistency between a current representation state and a past
+conscious state:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;V(h_t, c_{t-k}) \in \mathbb{R}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Since the conscious state attends to some feature locations in the
+representation state, it will be useful to know which ones they are.
+For this reason a “key, value” system could be useful. This will be
+vital for the verifier network to align the predictions with the
+representation state.&lt;/li&gt;
+  &lt;li&gt;There is a mapping from conscious states to language utterances. But
+the mapping in the other direction is underdetermined - it is
+postulated that the conscious state is richer. This apts with my own
+experience - an utterance sets off many of my own internal
+associations, enthymeme fillers, etc. It also apts with the fact that
+the same utterance can be interpreted in different ways - context
+matters.&lt;/li&gt;
+  &lt;li&gt;It is therefore suggested as a regularization term that the attended
+elements of the conscious states be mappable to already heard phrases
+or words. This in turn implies that the representation states
+&lt;script type=&quot;math/tex&quot;&gt;h_t&lt;/script&gt; be regularized by language, that their features be mappable
+roughly to words or short phrases.&lt;/li&gt;
+  &lt;li&gt;It follows from this that language facilitates thinking and
+understanding - a point I am well on board with - that language helps
+us build sharper internal representations, more disentangled, which
+helps us learn better, and enable collaborative taslk solving.
+References to follow this idea: Bengio et al. (2009) “Curriculum
+learning”; Bengio (2014) “Deep learning and cultural evolution”.&lt;/li&gt;
+  &lt;li&gt;It would be of benefit to interprebility if a network could map its
+abstract space to utterances, as it could then explain its decisions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;concerns&quot;&gt;Concerns&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Given the variety of phenomena that can come into consciousness, I was
+originally struggling to see how a low-dimensional space could handle
+everything required of it. If it is instead thought of as simply
+attending to a handful of dimensions in the representation space then
+that makes more sense. However I am still struggling to conceive
+how this works.&lt;/li&gt;
+  &lt;li&gt;It would be nice to see some concrete examples.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;of-personal-interest&quot;&gt;Of Personal Interest&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Andreas et al. (2017) “Learning with Latent Language” of related
+interest.&lt;/li&gt;
+  &lt;li&gt;The idea of a thinking network might help me scratch the itch I’ve had
+for a long time wondering about Eureka moments. Suppose the agent goes
+into thinking mode to solve a problem. It can explore (with some
+randomness) possibilities until it finds one that solves its problem.
+How that would actually work algorithmically I don’t know, but at
+least this architecture allows it to happen. Perhaps this idea may
+connect with Schmidhuber’s work on fast and slow memory updates. I
+encounter some input that jars with my world model, so I try and
+resolve the issue through thinking - when I find a solution I can make
+a fast update to my world model. (That really is idealistic, but AI
+can do better than humans). Perhaps Charles Yang’s work from the NAACL
+keynote could be a nice toy task to test this? I would also like to
+use this for supervised learning - have a mechanism that picks out
+&lt;strong&gt;salient examples&lt;/strong&gt; from the training data - i.e. ones that are
+challenging or provide the most opportunity for learning given the
+current state of the network (maybe the worst misclassifications) -
+commits them to memory, and can use them later in this kind of
+“thinking -&amp;gt; Eureka -&amp;gt; fast update” process.&lt;/li&gt;
+  &lt;li&gt;Regarding my CCQ project: it could be worth keeping the original form
+of the questions for a time when networks do have the ability to
+answer questions in language mapped from their internal states.
+However the question of evaluating the answers would remain a problem.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Bengio (2017)</summary></entry><entry><title type="html">[Paper] Multimodal Word Distributions</title><link href="http://localhost:4000/embeddings/papers/2018/04/05/multimodal-word-distributions.html" rel="alternate" type="text/html" title="[Paper] Multimodal Word Distributions" /><published>2018-04-05T00:00:00+08:00</published><updated>2018-04-05T00:00:00+08:00</updated><id>http://localhost:4000/embeddings/papers/2018/04/05/multimodal-word-distributions</id><content type="html" xml:base="http://localhost:4000/embeddings/papers/2018/04/05/multimodal-word-distributions.html">&lt;h1 id=&quot;multimodal-word-distributions&quot;&gt;Multimodal Word Distributions&lt;/h1&gt;
+
+&lt;p&gt;Athiwaratkun and Wilson (2017), ACL&lt;/p&gt;
+
+&lt;p&gt;https://arxiv.org/abs/1704.08424&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-and-solution&quot;&gt;Problem and Solution&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Vilnis and McCallum’s single mode Gaussian embeddings are overly diffuse for words with multiple meanings&lt;/li&gt;
+  &lt;li&gt;The mean is pulled in multiple directions, leading to bias&lt;/li&gt;
+  &lt;li&gt;Therefore, multi-modal representations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background-knowledge-and-related-work&quot;&gt;Background Knowledge and Related Work&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Having read Vilnis and McCallum (2015) much of the relevant background is already in there&lt;/li&gt;
+  &lt;li&gt;Hierarchical softmax (needs review): Mikolov et al. 2011a, Mnih and Hinton 2008, Morin and Bengio 2005&lt;/li&gt;
+  &lt;li&gt;Noise contrastive estimation: Gutmann and Hyvarinen 2012&lt;/li&gt;
+  &lt;li&gt;Polysemy
+    &lt;ul&gt;
+      &lt;li&gt;Cluster centroid of context vectors - Huang et al. 2012&lt;/li&gt;
+      &lt;li&gt;Adapted skip-gram with EM algorithm (Tian et al. 2014)&lt;/li&gt;
+      &lt;li&gt;Nelakantan et al. (2014) non-parametric approach to determining number of word senses&lt;/li&gt;
+      &lt;li&gt;Liu et al. 2015 - topical embeddings based on latent topic models&lt;/li&gt;
+      &lt;li&gt;Infinite dimensional-space where embeddings gradually represent incremental word sense if complex meanings are observed (Nalisnick and Ravi 2015)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;
+
+&lt;p&gt;Many details are similar to Vilnis and McCallum (2014), so I only note significant points or differences here.&lt;/p&gt;
+
+&lt;h3 id=&quot;mixture-function&quot;&gt;Mixture Function&lt;/h3&gt;
+
+&lt;p&gt;Mixture function for a word&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  f_w(\vec{x}) &amp;= \sum_{i=1}^K p_{w,i} \mathcal{N}(\vec{x}; \vec{\mu}_{w,i}, \Sigma_{w, i}) \\
+               &amp;= \sum_{i=1}^K \frac{p_{w,i}}{\sqrt{2 \pi \lvert \Sigma_{w, i} \rvert}} \exp \left( -\frac12 (\vec{x} - \vec{\mu}_{w, i})^\top \Sigma_{w, i}^{-1} (\vec{x} - \vec{\mu}_{w, i}) \right)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;where $\sum_{i=1}^K p_{w, i} = 1$.&lt;/p&gt;
+
+&lt;h3 id=&quot;expected-likelihood-kernel&quot;&gt;Expected Likelihood Kernel&lt;/h3&gt;
+
+&lt;p&gt;The derivation is quite trivial following Vilnis and McCallum (2015). $f$ and $g$ are the mixture functions for two words.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  \log E(f, g) &amp;= \log \sum_i \sum_j p_i q_i \exp(\xi_{i, j}) \\
+  \xi_{i, j}   &amp;\equiv \log \mathcal{N}(0; \vec{\mu}_{f, i} - \vec{\mu}_{g, j}, \Sigma_{f, i} + \Sigma_{g, j}) \\
+               &amp;= \frac12 \log \det( \Sigma_{f, i} + \Sigma_{g, j}) - \frac{d}{2} \log (2 \pi) - \frac12 (\vec{\mu}_{f, i} - \vec{\mu}_{g, j})^\top (\Sigma_{f, i} + \Sigma{g, j}^{-1} (\vec{\mu}_{f, i} - \vec{\mu}_{g, j})
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;It can be seen that we are dealing with multiple sense of each word at a time here, where the term $(\vec{\mu}&lt;em&gt;{f, i} - \vec{\mu}&lt;/em&gt;{g, j})^\top (\Sigma_{f, i} + \Sigma{g, j}^{-1} (\vec{\mu}&lt;em&gt;{f, i} - \vec{\mu}&lt;/em&gt;{g, j})$ is measuring the similarity of these two senses of the two words in question.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-not-kl-divergence&quot;&gt;Why Not KL Divergence?&lt;/h3&gt;
+
+&lt;p&gt;The authors note there is no closed form for KL divergence if the two distributions are Gaussian mixtures.&lt;/p&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We still have to predefine $K$ ???&lt;/li&gt;
+  &lt;li&gt;We still have diagonal covariance&lt;/li&gt;
+  &lt;li&gt;No KL divergence - review the list of benefits (theoretical and empirical) reported by Vilnis and McCallum. If really desirable, that is a research question here - how to get it for a mixture model?&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Multimodal Word Distributions</summary></entry><entry><title type="html">[Paper] Translational Embeddings for Modelling Multi-Relational Data</title><link href="http://localhost:4000/papers/entity-embeddings/2018/04/03/translational-embeddings-for-modelling-multi-relational-data.html" rel="alternate" type="text/html" title="[Paper] Translational Embeddings for Modelling Multi-Relational Data" /><published>2018-04-03T00:00:00+08:00</published><updated>2018-04-03T00:00:00+08:00</updated><id>http://localhost:4000/papers/entity-embeddings/2018/04/03/translational-embeddings-for-modelling-multi-relational-data</id><content type="html" xml:base="http://localhost:4000/papers/entity-embeddings/2018/04/03/translational-embeddings-for-modelling-multi-relational-data.html">&lt;p&gt;&lt;a href=&quot;https://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf&quot;&gt;Bordes et al. (2013). NIPS&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Goal is to model multi-relational data from KBs for provision of
+efficient tool to complete them by adding new facts without requiring
+extra knowledge&lt;/li&gt;
+  &lt;li&gt;Modeling involves extracting local or global connectivity patterns in
+the knowledge graph, and using these to generalize&lt;/li&gt;
+  &lt;li&gt;For single relational data this can be easier, such as the friend of
+my friend is my friend&lt;/li&gt;
+  &lt;li&gt;However these patterns can get more complicated, such as considering
+whether my friend’s friend and I share various interests&lt;/li&gt;
+  &lt;li&gt;This obviously greatly increases the complexity of potential patterns&lt;/li&gt;
+  &lt;li&gt;Prior work had focused on increasing the expressivity of the models,
+but over- (and under-) fitting have been problems, as well as model
+interpretibility and computational complexity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Energy-based model for learning low-dimensional embeddings of entities&lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;(h, l, t)&lt;/script&gt; holds, then the embedding for tail &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; should be
+close to the vector for head &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; plus some vector that depends on
+the relationship &lt;script type=&quot;math/tex&quot;&gt;l&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Motivated by considering that hierarchy is ubiquitous in KBs, and
+noting that trees have this property: children’s relative position to
+parent is a translation on the y-axis&lt;/li&gt;
+  &lt;li&gt;This may also work well with the kinds of linear regularities
+exhibited by word2vec embeddings&lt;/li&gt;
+  &lt;li&gt;Reduced parameters follows from learning just one low-dimensional
+embedding for each entity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;model-details&quot;&gt;Model Details&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt;(h, l, t)&lt;/script&gt; holds, then we want &lt;script type=&quot;math/tex&quot;&gt;h + l \approx t&lt;/script&gt; to hold, i.e.
+we want &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; to be a nearest neighbour to &lt;script type=&quot;math/tex&quot;&gt;h + l&lt;/script&gt;, and the others
+far away&lt;/li&gt;
+  &lt;li&gt;Energy is given by distance &lt;script type=&quot;math/tex&quot;&gt;d(h + l, t)&lt;/script&gt;, taken to be the L1 or L2
+norm&lt;/li&gt;
+  &lt;li&gt;Corrupted pairs are used to provide negative examples, then a margin
+based ranking loss is used to learn the embeddings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L} = \sum_{(h, l, t) \in S} \sum_{(h', l, t') \in S'} \left[ \gamma + d(h + l, t) - d(h' + l, t') \right]_+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;[x]_+&lt;/script&gt; denotes the positive part of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\gamma \gt 0&lt;/script&gt; is the margin hyperparameter&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;S'&lt;/script&gt; is the set of corrupted triples where either the head or tail
+(but not both) are replaced by a random entity for an untrue relation&lt;/li&gt;
+  &lt;li&gt;Entity embeddings (but not relations) are limited to have norm 1 to
+prevent the model from artificially reducing loss by increasing
+embedding norms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;training-details&quot;&gt;Training Details&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;See p.3, last paragraph before section 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;comparisons&quot;&gt;Comparisons&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Main models compared to are:
+    &lt;ul&gt;
+      &lt;li&gt;Bordes et al. (2011) Learning structured embeddings of knowledge
+bases&lt;/li&gt;
+      &lt;li&gt;Socher et al. (2013) Learning new facts from knowledge bases with
+neural tensor networks and semantic word vectors&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background-knowledge-and-related-work&quot;&gt;Background Knowledge and Related Work&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Latent factor models: Jenatton et al. (2012)&lt;/li&gt;
+  &lt;li&gt;Non-parametric Bayesian extensions of the stochastic blockmodel: Zhu
+(2012), Miller et al. (2009), Kemp et al. (2006)&lt;/li&gt;
+  &lt;li&gt;Tensor factorization models: Harshman and Lundy (1994)&lt;/li&gt;
+  &lt;li&gt;Collective matrix factorization: [13, 11, 12]&lt;/li&gt;
+  &lt;li&gt;Bayesian clustering frameworks: [15]&lt;/li&gt;
+  &lt;li&gt;Energy-based frameworks for learning embeddings of entities: [3, 15,
+2, 14]&lt;/li&gt;
+  &lt;li&gt;Relation extraction [2, 16]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;datasets&quot;&gt;Datasets&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;WordNet&lt;/li&gt;
+  &lt;li&gt;Freebase&lt;/li&gt;
+  &lt;li&gt;Kinships&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;They note their model can’t handle ternary relationship as in the
+Kinship dataset; however they deal with less complicated relationships
+better on the real world Freebase&lt;/li&gt;
+  &lt;li&gt;They didn’t compare to Socher’s neural tensor network, so that needs
+to be looked at&lt;/li&gt;
+  &lt;li&gt;I’m more interested in relation extraction at this point, so need to
+follow the links [2, 16].&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Bordes et al. (2013). NIPS</summary></entry><entry><title type="html">[Paper] Word Representation Via Gaussian Embedding</title><link href="http://localhost:4000/embeddings/papers/2018/04/03/word-representation-via-gaussian-embedding.html" rel="alternate" type="text/html" title="[Paper] Word Representation Via Gaussian Embedding" /><published>2018-04-03T00:00:00+08:00</published><updated>2018-04-03T00:00:00+08:00</updated><id>http://localhost:4000/embeddings/papers/2018/04/03/word-representation-via-gaussian-embedding</id><content type="html" xml:base="http://localhost:4000/embeddings/papers/2018/04/03/word-representation-via-gaussian-embedding.html">&lt;h1 id=&quot;word-representation-via-gaussian-embedding&quot;&gt;Word Representation Via Gaussian Embedding&lt;/h1&gt;
+
+&lt;p&gt;Vilnis and McCallum, ICLR, 2015&lt;/p&gt;
+
+&lt;p&gt;https://arxiv.org/pdf/1412.6623.pdf&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-and-solution&quot;&gt;Problem and Solution&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Limitations of representing an object as a single point
+    &lt;ul&gt;
+      &lt;li&gt;does not naturally express uncertainty&lt;/li&gt;
+      &lt;li&gt;comparison is usually done with dot products/cosine distance/Euclidean distance, none of which provide for asymmetric comparisons (as is necessary to represent inclusion or entailment)&lt;/li&gt;
+      &lt;li&gt;relationships are measured by distance functions that satisfy the triangle inequality (is this constrictive?)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;So, Gaussians
+    &lt;ul&gt;
+      &lt;li&gt;innately represent uncertainty&lt;/li&gt;
+      &lt;li&gt;provide a distance function per object&lt;/li&gt;
+      &lt;li&gt;KL-divergence between Gaussians is straightforward to calculate, naturally asymmetric, and has a geometric interpretation as an inclusion between families of ellipses&lt;/li&gt;
+      &lt;li&gt;can model uncertaintly, inclusion, entailment, and a rich geometry of the latent space&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background-knowledge-and-related-work&quot;&gt;Background Knowledge and Related Work&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Potential functions (Aizerman et al. 1964)&lt;/li&gt;
+  &lt;li&gt;Kernels (Lanckriet et al. 2004)&lt;/li&gt;
+  &lt;li&gt;Mixture Density Networks (Bishop 1994)&lt;/li&gt;
+  &lt;li&gt;Probabilistic matrix factorization (Mnih &amp;amp; Salakhutdinov 2007/8)&lt;/li&gt;
+  &lt;li&gt;Matrix factorization and universal schemas (Riedel et al. 2013)&lt;/li&gt;
+  &lt;li&gt;Embeddings and matrix factorization (Levy and Goldberg 2014) (show that word2vec is equivalent to factoring certain types of weighted pointwise mutual information matrices)&lt;/li&gt;
+  &lt;li&gt;Multiplicative tensor factorization for word embeddings (Kiros et al. 2014)&lt;/li&gt;
+  &lt;li&gt;Metric learning (Xing et al. 2002)&lt;/li&gt;
+  &lt;li&gt;Fitting mixture models to apply Fisher kernels to whole documents (Clinchant * Perronnin 2013a/b)&lt;/li&gt;
+  &lt;li&gt;Distributional inclusion hypothesis (Geffet &amp;amp; Dagan 2005)&lt;/li&gt;
+  &lt;li&gt;Words as regions in vector space (Erk 2009)&lt;/li&gt;
+  &lt;li&gt;Energy-based learning (LeCun et. al 2006)&lt;/li&gt;
+  &lt;li&gt;Expected likelihood or probability product kernel (Jebara et al. 2004)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;
+
+&lt;h3 id=&quot;loss&quot;&gt;Loss&lt;/h3&gt;
+
+&lt;p&gt;“we had difficulty using the word2vec loss that treats scores of positive and negative pairs as positive and negative examples to a binary classifier, since this relies on the ability to push up on the energy surface in an absolute, rather than relative, manner” =&amp;gt; use a ranking based loss&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;L_m(w, c_p, c_n) = \max(0, m - E(w, c_p) + E(w, c_n))&lt;/script&gt;
+
+&lt;p&gt;This loss pushes scores of positive pairs above negatives by a margin&lt;/p&gt;
+
+&lt;h3 id=&quot;empirical-covariances&quot;&gt;Empirical Covariances&lt;/h3&gt;
+
+&lt;p&gt;We can actually use pre-trained word vectors and their set of context vectors to calculate the variance of words (p. 3). However, the performance of this is inferior as it doesn’t captured inclusion between ellipsoids.&lt;/p&gt;
+
+&lt;h3 id=&quot;energy-based-learning-of-gaussians&quot;&gt;Energy-Based Learning of Gaussians&lt;/h3&gt;
+
+&lt;p&gt;The model learns Gaussian embeddings to predict words in context given the current word, and ranks these over negatively sampled words. Two energy functions are presented.&lt;/p&gt;
+
+&lt;h4 id=&quot;symmetric-similarity-expected-likelihood-or-probability-product-kernel&quot;&gt;Symmetric Similarity: Expected Likelihood or Probability Product Kernel&lt;/h4&gt;
+
+&lt;p&gt;Dot product between means gives the expected dot product, but doesn’t incorporate the covariances. The continuous version of the inner product is given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{x \in \Bbb{R}^n} f(x)g(x)dx&lt;/script&gt;
+
+&lt;p&gt;Thus for Gaussians (an exercise for later might be to do the calculus involved in proving this):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E(P_i, P_j) = \int_{x \in \Bbb{R}^n} \mathcal{N}(x; \mu_i, \Sigma_i) \mathcal{N}(x; \mu_j, \Sigma_j)dx = \mathcal{N}(0; \mu_i - \mu_j, \Sigma_i + \Sigma_j)&lt;/script&gt;
+
+&lt;p&gt;But, work with the logarithm of this because&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;“we plan to use ranking loss, and ratios of densities and likelihoods are much more commonly worked with than differences - differences in probabilities are less interpretable than an odds ratio”&lt;/li&gt;
+  &lt;li&gt;more numerically stable - without, quantities can get exponentially small&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\log \mathcal{N}(0; \mu_i - \mu_j, \Sigma_i + \Sigma_j) = -\frac12 \log \det (\Sigma_i + \Sigma_j) - \frac12(\mu_i - \mu_j)^\top(\Sigma_i + \Sigma_j)^{-1}(\mu_i - \mu_j) - \frac{d}{2} \log(2\pi)&lt;/script&gt;
+
+&lt;p&gt;where $d$ is the number of dimensions. I had a problem reproducing this calculation where I thought $(x - \mu) = (0 - (\mu_i - \mu_j))$ should be $\mu_j + \mu_i$ which doesn’t tally with their $\mu_i - \mu_j$.&lt;/p&gt;
+
+&lt;p&gt;We can optimize with&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\frac{\partial \log E(P_i, P_j)}{\partial \mu_i} &amp;= - \frac{\partial \log E(P_i, P_j)}{\partial \mu_j} = - \Delta_{ij} \\
+\frac{\partial \log E(P_i, P_j)}{\partial \Sigma_i} &amp;= \frac{\partial \log E(P_i, P_j)}{\partial \Sigma_j} = \frac12 (\Delta_{ij} \Delta_{ij}^\top - (\Sigma_i + \Sigma_j)^{-1}) \\
+\Delta_{ij} &amp;= (\Sigma_i + \Sigma_j)^{-1}(\mu_i - \mu_j)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Computational notes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The inverses are trivial to compute for diagonal/spherical matrices&lt;/li&gt;
+  &lt;li&gt;Same for full matrices for the kind of dimensionality involved in word embeddings&lt;/li&gt;
+  &lt;li&gt;If they have low-rank and diagonal stucture they can be computed and stored efficiently using the matrix inversion lemma (https://en.wikipedia.org/wiki/Woodbury_matrix_identity).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Geometric interpretation as similarity measure:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Distance between Gaussians is measured by Mahalanobis distance, which measures distance between their means, defined by joint inverse covariance&lt;/li&gt;
+  &lt;li&gt;With reference to the term with the determinant, we are talking about the log volume of the ellipse spanned by the principle components. Increasing this volume will therefore lower energy. This acts as a regularizer, preventing the algorithm from decreasing distance by increasing joint variance. This encourages the distributions to have sharper peaks in order to have high energy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;asymmetric-similarity-kl-divergence&quot;&gt;Asymmetric Similarity: KL Divergence&lt;/h4&gt;
+
+&lt;p&gt;This function is for representing entialment - or containment within ellipsoids generated by Gaussians. Being non-symmetric, entailment is directed, as we require. Specifically, a low KL divergence from $x$ to $y$ indicates that we can “encode” $y$ as easily as $x$, implying $y$ entails $x$, or is a super-class/concept.&lt;/p&gt;
+
+&lt;p&gt;Note that since KL divergence is a distance not a similarity (as in the first energy function above), we use a negative sign:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+-E(P-i, P_j) &amp;= D_{KL}(\mathcal{N}_j \lVert \mathcal{N}_i) \\
+&amp;= \int_{x \in \Bbb{R}^n} \mathcal{N}(x; \mu_i, \Sigma_i) \log \frac{\mathcal{N}(x; \mu_j, \Sigma_j)}{\mathcal{N}(x; \mu_i, \Sigma_i)} dx \\
+&amp;= \frac12 \left( \text{tr}(\Sigma_i^{-1} \Sigma_j) + (\mu_i - \mu_j)^\top \Sigma_i^{-1} (\mu_i - \mu_j) - d - \log \frac{\det(\Sigma_j)}{\det(\Sigma_i)} \right)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Gradients&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\frac{\partial E(P_i, P_j)}{\partial \mu_i} &amp;= - \frac{\partial E(P_i, P_j)}{\partial \mu_j} = - \Delta_{ij}' \\
+\frac{\partial E(P_i, P_j)}{\partial \Sigma_i} &amp;= \frac12 (\sigma_i^{-1} \Sigma_j \Sigma_i^{-1} + \Delta_{ij}' \Delta_{ij}'^\top - \Sigma_i^{-1}) \\
+\frac{\partial E(P_i, P_j)}{\partial \Sigma_j} &amp;= \frac12(\Sigma_j^{-1} - \Sigma_i^{-1}) \\
+\Delta_{ij}' &amp;= \Sigma_i^{-1}(\mu_i - \mu_j)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;TODO: some matrix derivatives need reviewing there. Work through these derivations. The paper cites the Matrix Cookbook, section 8.2.&lt;/p&gt;
+
+&lt;h4 id=&quot;uncertainty-of-inner-products&quot;&gt;Uncertainty of Inner Products&lt;/h4&gt;
+
+&lt;p&gt;We can then treat the scalar resulting from the inner product of Gaussian embeddings as a random variable with its own distribution. Citing Brown and Rutemiller (1977) they say this distribution is not a one-dimensional Gaussian, but has finite mean and variance if the two Guassian of the inner product are assumed to be independent. For $P(z = x^\top y)$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\mu_z &amp;= \mu_x^\top \mu_y \\
+\Sigma_z &amp;= \mu_x^\top \Sigma_x \mu_x + \mu_y^\top \Sigma_y \mu_y + \text{tr}(\Sigma_z \Sigma_y)
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We can therefore determine upper and lower bounds for this product that hold some given percentage of the time - e.g. using some number of standard deviations we get a range for the dot product&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu_x^\top \mu_y \pm c \sqrt{\mu_x^\top \Sigma_x \mu_x + \mu_y^\top \Sigma_y \mu_y + \text{tr}(\Sigma_z \Sigma_y)}&lt;/script&gt;
+
+&lt;p&gt;where $c$ could be an incorrect Gaussian approximation, or, the author’s mention, a more general bound such as Chebyshev’s inequality.&lt;/p&gt;
+
+&lt;h4 id=&quot;regularization&quot;&gt;Regularization&lt;/h4&gt;
+
+&lt;p&gt;To prevent the means from growing too large, they add L2 regularization&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lVert \mu_i \rVert_2 \le C, \ \forall i&lt;/script&gt;
+
+&lt;p&gt;Covariance matrices must be kept positive definite and reasonably sized. Add a hard constraint that the eigenvalues lie within the hypercube $[m, M]^d$ for constants $m$ and $M$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;mI \prec \Sigma_i \prec MI, \ \forall i&lt;/script&gt;
+
+&lt;p&gt;(Don’t understand that notation).&lt;/p&gt;
+
+&lt;p&gt;In practice they say this ammounts to applying&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Sigma_{ii} \leftarrow \max(m, \min(M, \Sigma_{ii}))&lt;/script&gt;
+
+&lt;h4 id=&quot;training-details&quot;&gt;Training Details&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use AdaGrad&lt;/li&gt;
+  &lt;li&gt;Minibatches containing 20 sentences worth of tokens and contexts&lt;/li&gt;
+  &lt;li&gt;Word vectors have 50 dimensions&lt;/li&gt;
+  &lt;li&gt;All word types appearing less than 100 times int he training set are dropped&lt;/li&gt;
+  &lt;li&gt;Trained with one pass over the data&lt;/li&gt;
+  &lt;li&gt;1 negative sample per positive&lt;/li&gt;
+  &lt;li&gt;Same subsampling procesures as Mikolov et al. 2013&lt;/li&gt;
+  &lt;li&gt;Diagonal covariances are used (except where noted)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;Future work:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Going beyond diagonal covariances, preventing the semantics from being axis-aligned, increasing capacity and expressivity&lt;/li&gt;
+  &lt;li&gt;Learn the representations robustly in one pass, not with SGD, but instead with proximal or block coordinate descent&lt;/li&gt;
+  &lt;li&gt;Different distributions (Student’s t)&lt;/li&gt;
+  &lt;li&gt;Multimodal distributions&lt;/li&gt;
+  &lt;li&gt;Combining ideas from kernel methods and manifold learning with DL and linguistic representation learning&lt;/li&gt;
+  &lt;li&gt;Extend the use of potential function representations to, e.g., relational learning with universal schema&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Word Representation Via Gaussian Embedding</summary></entry><entry><title type="html">[Paper] Indirect Supervision for Relation Extraction using Question-Answer Pairs</title><link href="http://localhost:4000/papers/relation-extraction/2018/04/01/indirect-supervision-for-relation-extraction-using-question-answer-pairs.html" rel="alternate" type="text/html" title="[Paper] Indirect Supervision for Relation Extraction using Question-Answer Pairs" /><published>2018-04-01T00:00:00+08:00</published><updated>2018-04-01T00:00:00+08:00</updated><id>http://localhost:4000/papers/relation-extraction/2018/04/01/indirect-supervision-for-relation-extraction-using-question-answer-pairs</id><content type="html" xml:base="http://localhost:4000/papers/relation-extraction/2018/04/01/indirect-supervision-for-relation-extraction-using-question-answer-pairs.html">&lt;h1 id=&quot;indirect-supervision-for-relation-extraction-using-question-answer-pairs&quot;&gt;Indirect Supervision for Relation Extraction using Question-Answer Pairs&lt;/h1&gt;
+
+&lt;p&gt;Wu et al. (2017), WSDM&lt;/p&gt;
+
+&lt;p&gt;https://arxiv.org/pdf/1710.11169v2.pdf&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RE systems usually rely on costly and noisy human annotations&lt;/li&gt;
+  &lt;li&gt;This motivated the move to distant supervision with an existing KB&lt;/li&gt;
+  &lt;li&gt;Pipeline
+    &lt;ol&gt;
+      &lt;li&gt;detect entity mentions in text&lt;/li&gt;
+      &lt;li&gt;map detected entity mentions to entities in KB&lt;/li&gt;
+      &lt;li&gt;assign, to the candidate type set of each entity mention pair, all KB relation types between their KB-mapped entities&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Two sources of error:
+    &lt;ul&gt;
+      &lt;li&gt;incomplete KB (false negatives)&lt;/li&gt;
+      &lt;li&gt;context-agnostic labelling process (false positives): two entities are mentioned in a sentence (e.g. Trump flew back to United States), but due to (3) in the process above, relation types that are not expressed are labeled&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Previous work focuses on minimizing either false positives or false negatives, not both&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Indirect external supervision from QA task&lt;/li&gt;
+  &lt;li&gt;Have text from some specific domain, and also a QA set&lt;/li&gt;
+  &lt;li&gt;Question sentences map to positive and negative sentences (where answers can and cannot be found)&lt;/li&gt;
+  &lt;li&gt;Positive pairs are enforced to be similar, negative dissimilar&lt;/li&gt;
+  &lt;li&gt;Generate a graph automatically from mentions, relations, and entity types&lt;/li&gt;
+  &lt;li&gt;Use a QA set to also construct another graph&lt;/li&gt;
+  &lt;li&gt;Merge the graphs based on similarity in some way&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;details&quot;&gt;Details&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Relation vector space
+    &lt;ul&gt;
+      &lt;li&gt;objects whose types are close to each other should have a similar representation&lt;/li&gt;
+      &lt;li&gt;what are types?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;QA pair vector space
+    &lt;ul&gt;
+      &lt;li&gt;Positive answers sharing the same question should be close to each other&lt;/li&gt;
+      &lt;li&gt;what about questions worded differently that essentially have the same meaning? How much noise will this introduce?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Shared features between relation mentions and QA pairs connect the two vector spaces
+    &lt;ul&gt;
+      &lt;li&gt;Linguistic features? How does that work?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;text-feature-extraction&quot;&gt;Text Feature Extraction&lt;/h3&gt;
+
+&lt;p&gt;Extract features such as head token and bigram from POS-tagged corpus.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\mathcal{F}_Z$ is the set of features extracted from relation mentions&lt;/li&gt;
+  &lt;li&gt;$\mathcal{F}_{QA}$ is the set extracted from QA pairs&lt;/li&gt;
+  &lt;li&gt;$\mathcal{F}$ is the combined set&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The overlap between the relation mention and QA pair features is the bridge between the embedding spaces.&lt;/p&gt;
+
+&lt;p&gt;Question: what does a feature vector actually represent? Is it a collection of feature values, or is it a vector representation of a single feature?&lt;/p&gt;
+
+&lt;h3 id=&quot;modeling-types-of-relation-mentions&quot;&gt;Modeling Types of Relation Mentions&lt;/h3&gt;
+
+&lt;p&gt;The idea is to model co-occurences between linguistic surface features and relation mentions. The intuition is that if the same features co-occur with the same relations, then they should have similar embeddings; whilst relations that share similar surface linguistic features should be close in embedding space.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\mathcal{L}_{ZF} &amp;= - \sum_{z_i \in \mathcal{Z}} \sum_{f_i \in \mathcal{F}_z} w_{ij} \log p(f_i|z_i) \\
+&amp;= - \sum_{z_i \in \mathcal{Z}} \sum_{f_i \in \mathcal{F}_z} w_{ij} \log \sigma(z_i^\top c_j) + \sum_{v=1}^V \Bbb{E}_{f_j \sim P_n(F)} [ \log \sigma(-z_i^\top c_{j'}]
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$z_i$ is the relation mention vector and $c_j$ is the text feature vector (still unclear what a feature vector represents)&lt;/li&gt;
+  &lt;li&gt;in the final form, the first term models observed co-occurrence whilst the second term is negative sampling with $V$ negative samples&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the automatically labeled dataset, some mentions are associated with relations they shouldn’t be (false positives). To deal with this, they enforce the relation mention’s embedding vector to be closest to the most relevant relation.&lt;/p&gt;
+
+&lt;p&gt;Question: how to define the most relevant relation?&lt;/p&gt;
+
+&lt;p&gt;The partial loss for each relation mention is then&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;l_i = \max \left\{ 0, 1 - \left[ \max_{r \in \mathcal{R}_i} \phi (z_i, r) - \max_{r' \in \bar{\mathcal{R}}_i} \phi(z_i, r') \right] \right\}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\phi$ is dot product&lt;/li&gt;
+  &lt;li&gt;$\bar{\mathcal{R}} = \mathcal{R} \backslash \mathcal{R}_i$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Correlations between features and mentions are integrated with mention and relation type associations so that features may participate in modeling the relation embeddings&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;O_Z = \mathcal{L}_{ZF} + \sum_{i=1}^{N_Z} l_i + \frac{\lambda}{2} \sum_{i=1}^{N_Z} \lVert z_i \rVert_2^2 + \frac{\lambda}{2} \sum_{k=1}^{K_r} \lVert r_k \rVert_2^2&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\lambda \gt 0$ tunes regularization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;modeling-associations-between-qa-entity-mention-pairs&quot;&gt;Modeling Associations between QA Entity Mention Pairs&lt;/h3&gt;
+
+&lt;p&gt;Modeled exactly the same, with the same equations as above for mentions and linguistic features. Instead we have the entity pairs in the QA sentence $p_i$ and the QA linguistic features $c_j’$.&lt;/p&gt;
+
+&lt;p&gt;The key intuition at this point is that any positive QA entity pair we encounter should be closer in embedding space to other positive answers to the same question than to negative answers to the same question.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;l_{i,k} = \sum_{p_{k_1} \in \mathcal{P}_i^+, p_{k_2} \in \mathcal{P}_i^-, k_1 \neq k} \max \left\{ 0, 1 - \left[ \phi(p_k, p_{k_1}) - \phi(p_k, p_{k_2}) \right] \right\}&lt;/script&gt;
+
+&lt;p&gt;Fairly self exaplanatory. It’s integrated again just like the other one so&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;O_{QA} = \mathcal{L}_{PF} + \sum_{i=1}^{N_Q} \sum_{k=1}^{N_i^+} l_{i, k} \frac{\lambda}{2} \sum_{k=1}^{N_P} \lVert p_k \rVert_2^2&lt;/script&gt;
+
+&lt;h3 id=&quot;joint-optimization-objective&quot;&gt;Joint Optimization Objective&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;O = O_Z + O_{QA}&lt;/script&gt;
+
+&lt;p&gt;On each iteration alternatively sample from each of the two objectives. Convergence proof in [40].&lt;/p&gt;
+
+&lt;h2 id=&quot;background-and-related-work&quot;&gt;Background and Related Work&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Remove redundant training information [16, 21, 26, 36]
+    &lt;ul&gt;
+      &lt;li&gt;For each relation, assume one sentence may express it instead of all [16, 36]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mapping mentions in text corpus to KB entities (NER) [15, 24]&lt;/li&gt;
+  &lt;li&gt;Linguistic features for surface patterns [4, 26]&lt;/li&gt;
+  &lt;li&gt;Margin-based ranking loss [30]&lt;/li&gt;
+  &lt;li&gt;Second-order proximity idea [44]&lt;/li&gt;
+  &lt;li&gt;Pairwise ranking [34]&lt;/li&gt;
+  &lt;li&gt;Edge sampling strategy [44]&lt;/li&gt;
+  &lt;li&gt;Stochastic sub-gradient descent [40]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It is a wonderful idea and I like it alot&lt;/li&gt;
+  &lt;li&gt;What happens if there is no QA dataset available for a given domain - e.g. Philosophy?
+    &lt;ul&gt;
+      &lt;li&gt;I am thinking, what if we use Stack Exchange? Scrape QA pairs from there. Select maybe just QA pairs where the length is below some threshold to remove the long-winded replies.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Still need a target relation type set (this is a problem for me)&lt;/li&gt;
+  &lt;li&gt;Use an external NER system (I want an integrated one)&lt;/li&gt;
+  &lt;li&gt;There is definitely mess introduced by the NER setup - p.4 they take the last entity mention in the question sentence to be the question entity&lt;/li&gt;
+  &lt;li&gt;They don’t seem to use dependency information in dealing with their surface patterns&lt;/li&gt;
+  &lt;li&gt;Looks like pairs of entities are concatenated into a single vector - suboptimal&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Indirect Supervision for Relation Extraction using Question-Answer Pairs</summary></entry><entry><title type="html">Pypi Package Upload</title><link href="http://localhost:4000/pypi/2018/03/30/Pypi-Package-Upload.html" rel="alternate" type="text/html" title="Pypi Package Upload" /><published>2018-03-30T00:00:00+08:00</published><updated>2018-03-30T00:00:00+08:00</updated><id>http://localhost:4000/pypi/2018/03/30/Pypi-Package-Upload</id><content type="html" xml:base="http://localhost:4000/pypi/2018/03/30/Pypi-Package-Upload.html">&lt;p&gt;#First Time&lt;/p&gt;
+
+&lt;p&gt;Make sure .pypirc is in the home folder. Mine currently looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-[distutils]&quot;&gt;index-servers=pypi
+
+[pypi]
+username=***
+password=***
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.py&lt;/code&gt; to the root folder. Might look like:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;setuptools&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_packages&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;author_email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;download_url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;license&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'MIT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;classifiers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'Development Status :: 3 - Alpha'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'Intended Audience :: Developers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'Topic :: Software Development :: Libraries :: Python Modules'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'Programming Language :: Python :: 3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'License :: OSI Approved :: MIT License'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;keywords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;install_requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'***'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.cfg&lt;/code&gt; (apparently necessary if you have a &lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt; in markdown)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[metadata]
+description-file = README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Make sure everything is committed to Git, and then create a tag&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git tag *** -m &quot;***&quot;
+git push --tags origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Execute the command&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python setup.py sdist upload -r pypi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;updating&quot;&gt;Updating&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.py&lt;/code&gt; with new version info and tag info&lt;/li&gt;
+  &lt;li&gt;Commit everything to Git&lt;/li&gt;
+  &lt;li&gt;Create new tag&lt;/li&gt;
+  &lt;li&gt;Execute &lt;code class=&quot;highlighter-rouge&quot;&gt;python setup.py sdist upload -r pypi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">#First Time</summary></entry></feed>

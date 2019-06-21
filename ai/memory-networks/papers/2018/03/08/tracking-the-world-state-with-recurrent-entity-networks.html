@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Paper] Tracking the World State with Recurrent Entity Networks</title>
+  <meta name="description" content="Tracking the World State with Recurrent Entity Networks">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/ai/memory-networks/papers/2018/03/08/tracking-the-world-state-with-recurrent-entity-networks.html">
+  <link rel="alternate" type="application/rss+xml" title="Tim Niven (寒山)" href="/feed.xml">
+  
+  
+</head>
+
+
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Tim Niven (寒山)</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">[Paper] Tracking the World State with Recurrent Entity Networks</h1>
+    <p class="post-meta"><time datetime="2018-03-08T00:00:00+08:00" itemprop="datePublished">Mar 8, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="tracking-the-world-state-with-recurrent-entity-networks">Tracking the World State with Recurrent Entity Networks</h1>
+
+<p>Henaff et al. (2017)</p>
+
+<p>https://arxiv.org/pdf/1612.03969.pdf</p>
+
+<h2 id="problem-and-solution">Problem and Solution</h2>
+
+<ul>
+  <li>Intelligence requires storing the state of the world, and having a model for how it will evolve in the future, in order to make predictions</li>
+  <li>The nature of the tasks (babi QA and Children’s Story) provide the setting: sequences of statements about the state of the world that evolve through time, punctuated with questions that provide supervision</li>
+  <li>From this supervision signal we aim to learn:
+    <ol>
+      <li>basic dynamical constraints, such as that somethings cannot be in two places at once</li>
+      <li>simple update rules, such as decrementing the number of people in a room after someone leaves</li>
+      <li>basic approximate inference, such as inferring that objects belonging to the same category have similar properties (e.g. light objects can be carried from room to room)</li>
+    </ol>
+  </li>
+  <li>Entities are modeled as dynamic memory cells that can be updated after reading new information</li>
+  <li>These cells do not communicate, reflecting the invariance of the rules that should apply to their updating</li>
+  <li>The memory module can be thought of as a bank of RNN cells whose hidden states are latent concepts and attributes, and whose parameters describe the rules of their updating</li>
+</ul>
+
+<h2 id="related-work">Related Work</h2>
+
+<p>Compared models for evaluation (babi QA):</p>
+<ul>
+  <li>Sukhbaatar et al. (2015) MemN2N</li>
+  <li>Xiong et al. (2016) Dynamic Memory Network</li>
+  <li>Gulcehre et al. (2016) Dynamic Neural Turing Machine</li>
+  <li>Graves et al. (2014) Neural Turing Machine</li>
+  <li>Graves et al. (2016) Differentiable Neural Computer</li>
+</ul>
+
+<p>Memory Networks (and variants):</p>
+<ul>
+  <li>Weston et al. (2014)</li>
+  <li>Sukhbaatar et al. (2015)</li>
+  <li>Chandar et al. (2016)</li>
+  <li>Miller et al. (2016)</li>
+  <li>Xiong et al. (2016)</li>
+</ul>
+
+<p>Graph Network:</p>
+<ul>
+  <li>Li et al. (2015)</li>
+</ul>
+
+<p>Writeable memory as stacks, linked lists, or queues:</p>
+<ul>
+  <li>Joulin &amp; Mikolov (2015)</li>
+  <li>Grefenstette et al. (2015)</li>
+</ul>
+
+<h2 id="datasets">Datasets</h2>
+
+<ul>
+  <li>babi QA (Weston et al. 2015)</li>
+  <li>babi Children’s Book Test (Hill et al. 2016)</li>
+  <li>synthetic task to test reasoning with a large number of supporting facts</li>
+</ul>
+
+<h2 id="model">Model</h2>
+
+<ul>
+  <li>Differences with LSTM/GRU:
+    <ul>
+      <li>also uses gating to update the hidden state, however it uses a common weight for an entire group (cell)</li>
+      <li>“content-based matching tern between input and hidden state” (LOOK AT FURTHER)</li>
+    </ul>
+  </li>
+  <li>Differences with NTM:
+    <ul>
+      <li>NTM uses a “controller” to read and write to an external memory matrix, whereas here the memory cells are more like RNN hidden states</li>
+      <li>No need to compute a softmax to update memories in this model</li>
+    </ul>
+  </li>
+  <li>Differences with Memory Network (and variants):
+    <ul>
+      <li>There have sequential updating via softmax over memories, whereas here a fixed number of hidden blocks are updated with indepdendent RNNs</li>
+      <li>Xiong et al. (2016) link tokens to memories and update them sequentially (recurrently), but here memory cells are entities/concepts and are updated in parallel</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="1-input-encoder">1. Input Encoder</h3>
+
+<p>Inputs from babi QA come as sentences at each timestep, for which we obtain a vector representation</p>
+
+<script type="math/tex; mode=display">s_t = \sum_i f_i \odot e_i  \quad f_i, e_i \in \Bbb{R}^{d_e}</script>
+
+<p>where $e_i$ are word vectors and $f_i$ are multiplicative mask vectors (looks like one for each word), and the dimension of the word embeddings is $d_e$.</p>
+
+<h3 id="2-dynamic-memory">2. Dynamic Memory</h3>
+
+<p>We have $m$ memory cells $h_j$, each updated in parallel when a new sentence $s_t$ arrives by</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+g_j &\leftarrow \sigma (s_t^Th_j + s_t^T w_j) \\
+\tilde{h}_j &\leftarrow \phi (Uh_j + Vw_j + Ws_t) \\
+h_j &\leftarrow h_j + g_j \odot \tilde{h}_j \\
+h_j &\leftarrow \frac{h_j}{||h_j||}
+\end{align*} %]]></script>
+
+<p>Here</p>
+<ul>
+  <li>$g_j$ is a gating function that determines how much $h_j$ should be updated</li>
+  <li>$\tilde{h}_j$ is the candidate update</li>
+  <li>$\phi$ is PReLU or identity in their work</li>
+  <li>$w_j$ is a key vector associated with each memory state.</li>
+</ul>
+
+<p>The gating function has two terms</p>
+<ul>
+  <li>“content” term, $s_t^Th_j$, causes the memory gate to open for memory slotes whose content matches the input</li>
+  <li>“location” term, $s_t^Tw_j$, causes the gate to open for memory slots whose key matches the input</li>
+</ul>
+
+<p>The final model step allows the model to forget previous information:</p>
+<ul>
+  <li>all memories lie on the unit sphere</li>
+  <li>information is thereby given exclusively by angle</li>
+  <li>vector addition closes the angular distance between the original and subsequent memories</li>
+</ul>
+
+<h3 id="3-output-module">3. Output Module</h3>
+
+<p>Given a query vector $q$ the output is generated by</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+p_j &= \text{softmax}(q^Th_j) \\
+u &= \sum_j p_jh_j \\
+y &= R\phi(q + Hu)
+\end{align*} %]]></script>
+
+<p>Think of $R$ as a decoder matrix - we want to translate whatever we have stored in memory into the output space.</p>
+
+<p>If the memory slots contain all possible answers (e.g. words) then the last two steps are unnecessary and a prediction can be delivered directly from $p$ which would then be a distribution over potential answers.</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>What is this model learning, and how does it learn it?</p>
+
+<ul>
+  <li>The model is free to learn the keys $w_j$</li>
+  <li>It may choose to encode each entity in the story in a cell</li>
+  <li>Each cell then holds mutable information about that entity’s state - e.g. holding a ball, in the kitchen, what have you</li>
+  <li>This structure could be forced on the model - e.g. associating word vectors with a memory slots, or named entities (perhaps identified by a standard tagger)</li>
+  <li>The latter option looks like an advantage for generalization to unseen entities</li>
+</ul>
+
+<h2 id="issues">Issues</h2>
+
+<ul>
+  <li>As best I can see just now, the QA sets in a batch of 32 can’t be processed in parallel, since if question 1 has “Mary goes to the kitchen” and question 25 says “Mary goes to the bathroom” at the same timestep, this will create an update conflict. So it appears they need to be processed linearly, which reduces the efficiency of this model. I guess the other option would be to create 32 copies of the parameters and then aggregate the gradient. I won’t go that path.</li>
+  <li>I have interpreted the $W$ in the dynamic memory update equations as a <strong>separate</strong> parameter from the matrix holding the keys $w_j$.</li>
+  <li>Can’t see the detail, going for $\phi = \text{PReLU}$ in the output module.</li>
+  <li>With that final equation in the output module, do we need to normalize with softmax? They don’t give details of loss functions of the like…</li>
+  <li>Didn’t notice any biases in the equations - didn’t note any mention of them, assume they are not there</li>
+</ul>
+
+<h2 id="thoughts">Thoughts</h2>
+
+<ul>
+  <li>I like the discussion of linking memory keys to word vectors - the next step would be real world entities (named entity recognition) that would make it applicable to real world text (going beyond toy tasks)</li>
+  <li>Can this entity recognition and memory addressing be learned jointly?</li>
+  <li>Memories should be affected by broader world knowledge - another component to integrate</li>
+</ul>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">Tim Niven (寒山)</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Tim Niven (寒山)
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/timniven"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">timniven</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>I maintain this blog to share information pertaining to my research that may be of interest to others, as well as generally useful information I wish to make a note of.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
