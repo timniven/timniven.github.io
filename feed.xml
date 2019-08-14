@@ -1,5 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-24T20:08:03+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tim Niven (寒山)</title><subtitle>Information and ideas pertaining to my research and other interests.
-</subtitle><entry><title type="html">Does the brain represent words?</title><link href="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html" rel="alternate" type="text/html" title="Does the brain represent words?" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words</id><content type="html" xml:base="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html">&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/abs/1806.00591&quot;&gt;paper&lt;/a&gt; is by Jon Gauthier and Anna 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-14T21:59:21+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tim Niven (寒山)</title><subtitle>Information and ideas pertaining to my research and other interests.
+</subtitle><entry><title type="html">Exploitation of spurious statistics undermines an ‘Engineering Success’ argument for less innate structure</title><link href="http://localhost:4000/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure.html" rel="alternate" type="text/html" title="Exploitation of spurious statistics undermines an 'Engineering Success' argument for less innate structure" /><published>2019-06-27T00:00:00+08:00</published><updated>2019-06-27T00:00:00+08:00</updated><id>http://localhost:4000/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure</id><content type="html" xml:base="http://localhost:4000/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure.html">&lt;p&gt;In a recent interview with Data Skeptic, the question of empiricism in
+contemporary artificial intelligence arose, and it gave me an opportunity to
+raise the issue of how the problem of models latching onto spurious statistical
+artifacts in our datasets connects to contemporary arguments for a strong form
+of empiricism. I would like to sketch the argument below in the hope it will
+attract feedback and criticism.&lt;/p&gt;
+
+&lt;p&gt;I don’t know all the reasons why Yann LeCun sees innate structure as an “evil” 
+to be minimized. However, watching his debate with Gary Marcus, he appears to
+offer what could be called an “argument from engineering success”:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(1) The less innate structure we put into our models, the better they have 
+  performed&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(2) Engineering success is a strong indication of the right path&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(3) Therefore less innate structure is better&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We of course need to define what we mean by innate structure. From the same
+debate, it appears LeCun and Marcus have different ideas of what this means.
+Marcus argues that NIPS papers roundly ignore innate structure; LeCun states
+exactly the opposite is the case. That’s a question I want to return to in the
+future and think more deeply about.&lt;/p&gt;
+
+&lt;p&gt;Returning to the argument from engineering success. The problem of machine
+learning models exploiting spurious statistics in the datasets on
+which we measure this success undermines the argument at once because this is
+very clearly not the notion of success we seek. This could of course be added
+to well-known concerns of non-systematic and non-compositional learning,
+brittleness to adversarial attacks, and failures to generalize beyond the
+distribution of the training set in the ways that humans do, and that we seek in
+and expect from strong models. However, here I just focus on the how findings of
+models exploitating spurious statistics to attain near human performance
+directly undermines (1).&lt;/p&gt;
+
+&lt;p&gt;There is a natural question as to just how big the problem really is - i.e. just
+how much (1) is undermined. This seems to be an open question, and even one that
+needs work to formulate precisely and meaningfully. I look forward to
+attempting to address this question in the future.&lt;/p&gt;
+
+&lt;p&gt;We do appear to be able to say some things, though. I am
+no expert in vision and speech recognition, but it seems to me that we have had
+unquestionable success in parts of those areas. In language understanding,
+however, my sense is not so positive. Since there are no current studies that
+directly address this problem more generally this “sense” is something rather
+subjective, being a distillation of the growing and significant work on the
+problem so far, which has rather focused on specific datasets. This sense comes
+in part from the following results&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can achieve a surprisingly high accuracy on NLI datasets with just the
+hypothesis.  On SNLI, when you add the last verb of the premise, you are up to
+76% already. We are far from enumerating all the heuristics and we only have
+14% of performance left to account for. It is likely in my mind at least a
+significant portion of that is going to be heurstics.&lt;/li&gt;
+  &lt;li&gt;In a forthcoming paper we collected all NLI heuristics measurements, and
+our experiments show that for the best models out there (including the GLUE
+winners) the better the performance, the more these heuristics are being
+exploited.&lt;/li&gt;
+  &lt;li&gt;My own research on a much higher level NLP task (ARCT) that showed BERT’s
+apparent near-human performance can be entirely accounted for by exploiting
+spurious statistics, and that the true state of the art on this task for
+neural networks remains random.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is of course likely to be a one-sided and very incomplete list, and I look
+forward to hearing objections and counter-arguments that attempt to sharpen this
+“sense” of mine. Adding supporting cases is also keenly welcomed - I haven’t
+had the time to list some others I am aware of.&lt;/p&gt;
+
+&lt;p&gt;Returning to the argument, in the absence of a compelling general case that
+demonstrates how serious the problem of spurious statistics is in NLP, perhaps
+the correct conclusion to draw is&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To the extent that our models are finding spurious solutions to our datasets
+is the extent to which the argument from engineering success is undermined.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This suggests it would be interesting to attempt to show one way or another just
+how significant the problem is, and therefore how significantly the argument
+from engineering is undermined by this problem. Or else, a general answer to
+this question may not even make sense, and we are left collecting our “sense”
+of the problem from individual cases.&lt;/p&gt;
+
+&lt;p&gt;Note also other similar arguments from different directions that undermine (1),
+mentioned above: the extent to which what is learned is not systematic and
+compositional, and fails to generate beyond the distribution of the training set
+in the way that humans do, and that we expect and aim for. So the attack that
+considers spurious statistics is not the only string in this bow.&lt;/p&gt;
+
+&lt;p&gt;As always, critical feedback is warmly encouraged. I still have not had the time
+to turn commenting on, so please send me an email.&lt;/p&gt;</content><author><name></name></author><summary type="html">In a recent interview with Data Skeptic, the question of empiricism in contemporary artificial intelligence arose, and it gave me an opportunity to raise the issue of how the problem of models latching onto spurious statistical artifacts in our datasets connects to contemporary arguments for a strong form of empiricism. I would like to sketch the argument below in the hope it will attract feedback and criticism.</summary></entry><entry><title type="html">Does the brain represent words?</title><link href="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html" rel="alternate" type="text/html" title="Does the brain represent words?" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words</id><content type="html" xml:base="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html">&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/abs/1806.00591&quot;&gt;paper&lt;/a&gt; is by Jon Gauthier and Anna 
 Ivanova, and is from June 2018.&lt;/p&gt;
 
 &lt;p&gt;My interest in this paper comes from the claim made therein that work in NLP on 
@@ -76,47 +173,4 @@ trained to perform specific tasks.&lt;/p&gt;
 by those that are more general (e.g. GloVe and NLI).&lt;/p&gt;
 
 &lt;p&gt;These results are where the suggestion comes from - the more general NLP model 
-the better the fMRIs can predict its representations.&lt;/p&gt;
-
-&lt;h2 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h2&gt;
-
-&lt;h3 id=&quot;general-representations&quot;&gt;General Representations&lt;/h3&gt;
-
-&lt;p&gt;That fMRIs better predict the features of more general NLP 
-representations is an interesting idea. On the face of it, it seems quite 
-reasonable. Assume we take this as an evaluation criteria. Some following 
-questions:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;How does BERT do?&lt;/li&gt;
-  &lt;li&gt;How do multimodal representations do?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;language-understanding&quot;&gt;Language Understanding&lt;/h3&gt;
-
-&lt;p&gt;The criticism of previous work on decoders echoes a concern of mine in NLP with 
-claims of “language understanding” following success at a supervised learning 
-task (such as natural language inference). Even if you tick off all the items
-in the evaluation&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;we could just as well claim that the network has captured elements of 
-[what is on that list]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;as opposed to some general claim to language understanding. And that claim to
-language understanding, such as it is, looks all the more suspect due to the
-brittleness and susceptibility to simple adversaries, as I seem to have proven
-to myself by poking around, and ample prior work demonstrates. 
-However, the claim to “general language understanding “is much stronger for a 
-multi-task learning setup (like GLUE). A criticism of GLUE might follow from 
-doubting just how general it really is. Do the laundry list of tasks it covers
-really cover everything we want to call language understanding? I don’t think 
-so. If you can perform well on all the tasks but still not answer simple 
-questions like in the Winograd challenge, then I think you don’t have it.
-In short, I think language understanding fundamentally includes the common
-sense everyone is talking about trying to get into our models, which is a 
-function of learning grounded in the world.&lt;/p&gt;
-
-&lt;p&gt;So that’s where my CCQs project comes in, and where it should help this 
-situation - by providing a more direct test for what we consider “understanding”
-to be.&lt;/p&gt;</content><author><name></name></author><summary type="html">The paper is by Jon Gauthier and Anna Ivanova, and is from June 2018.</summary></entry></feed>
+the better the fMRIs can predict its representations.&lt;/p&gt;</content><author><name></name></author><summary type="html">The paper is by Jon Gauthier and Anna Ivanova, and is from June 2018.</summary></entry></feed>

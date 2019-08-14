@@ -132,49 +132,6 @@ by those that are more general (e.g. GloVe and NLI).</p>
 <p>These results are where the suggestion comes from - the more general NLP model 
 the better the fMRIs can predict its representations.</p>
 
-<h2 id="thoughts">Thoughts</h2>
-
-<h3 id="general-representations">General Representations</h3>
-
-<p>That fMRIs better predict the features of more general NLP 
-representations is an interesting idea. On the face of it, it seems quite 
-reasonable. Assume we take this as an evaluation criteria. Some following 
-questions:</p>
-<ul>
-  <li>How does BERT do?</li>
-  <li>How do multimodal representations do?</li>
-</ul>
-
-<h3 id="language-understanding">Language Understanding</h3>
-
-<p>The criticism of previous work on decoders echoes a concern of mine in NLP with 
-claims of “language understanding” following success at a supervised learning 
-task (such as natural language inference). Even if you tick off all the items
-in the evaluation</p>
-
-<blockquote>
-  <p>we could just as well claim that the network has captured elements of 
-[what is on that list]</p>
-</blockquote>
-
-<p>as opposed to some general claim to language understanding. And that claim to
-language understanding, such as it is, looks all the more suspect due to the
-brittleness and susceptibility to simple adversaries, as I seem to have proven
-to myself by poking around, and ample prior work demonstrates. 
-However, the claim to “general language understanding “is much stronger for a 
-multi-task learning setup (like GLUE). A criticism of GLUE might follow from 
-doubting just how general it really is. Do the laundry list of tasks it covers
-really cover everything we want to call language understanding? I don’t think 
-so. If you can perform well on all the tasks but still not answer simple 
-questions like in the Winograd challenge, then I think you don’t have it.
-In short, I think language understanding fundamentally includes the common
-sense everyone is talking about trying to get into our models, which is a 
-function of learning grounded in the world.</p>
-
-<p>So that’s where my CCQs project comes in, and where it should help this 
-situation - by providing a more direct test for what we consider “understanding”
-to be.</p>
-
   </div>
 
   
