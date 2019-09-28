@@ -1,102 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-14T23:44:16+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tim Niven (寒山)</title><subtitle>Information and ideas pertaining to my research and other interests.
-</subtitle><entry><title type="html">Exploitation of spurious statistics undermines an ‘Engineering Success’ argument for less innate structure</title><link href="http://localhost:4000/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure.html" rel="alternate" type="text/html" title="Exploitation of spurious statistics undermines an 'Engineering Success' argument for less innate structure" /><published>2019-06-27T00:00:00+08:00</published><updated>2019-06-27T00:00:00+08:00</updated><id>http://localhost:4000/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure</id><content type="html" xml:base="http://localhost:4000/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure.html">&lt;p&gt;In a recent interview with Data Skeptic, the question of empiricism in
-contemporary artificial intelligence arose, and it gave me an opportunity to
-raise the issue of how the problem of models latching onto spurious statistical
-artifacts in our datasets connects to contemporary arguments for a strong form
-of empiricism. I would like to sketch the argument below in the hope it will
-attract feedback and criticism.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-28T18:51:51+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tim Niven (寒山)</title><subtitle>Information and ideas pertaining to my research and other interests.
+</subtitle><entry><title type="html">Interview with Data Skeptic</title><link href="http://localhost:4000/nlp,/ai/2019/09/28/interview-with-data-skeptic.html" rel="alternate" type="text/html" title="Interview with Data Skeptic" /><published>2019-09-28T00:00:00+08:00</published><updated>2019-09-28T00:00:00+08:00</updated><id>http://localhost:4000/nlp,/ai/2019/09/28/interview-with-data-skeptic</id><content type="html" xml:base="http://localhost:4000/nlp,/ai/2019/09/28/interview-with-data-skeptic.html">&lt;p&gt;I was recently &lt;a href=&quot;https://podcasts.google.com/?feed=aHR0cDovL2RhdGFza2VwdGljLmNvbS9mZWVkLnJzcw&amp;amp;episode=MzdjYzU5NWM5YzNlNDJmMWEzOTM0OTAwODJhYzdhOWI&amp;amp;hl=en-TW&amp;amp;ep=6&amp;amp;at=1569665805799&quot;&gt;interviewed about our ACL 2019 paper on Data Skeptic.&lt;/a&gt;
+Many thanks to the Data Skeptic team for inviting me to participate in
+this interview, for asking some great questions, and for cutting the 
+interview as nicely as I think possible given what raw materials I
+provided.&lt;/p&gt;
 
-&lt;p&gt;I don’t know all the reasons why Yann LeCun sees innate structure as an “evil” 
-to be minimized. However, watching his debate with Gary Marcus, he appears to
-offer what could be called an “argument from engineering success”:&lt;/p&gt;
+&lt;p&gt;It was my first ever interview of this nature, and a learning experience
+for me. I was only able to assign a limited amount of time to prepare
+for this interview. This post is a brief note about what I wish I had
+done better, and another statement of an argument I made about 
+empricism and nativism in AI - especially topical in light of the release
+of &lt;a href=&quot;https://www.bookdepository.com/Rebooting-AI-Gary-Marcus/9781524748258&quot;&gt;Gary Marcus and Ernest Davis’ new book&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the main, I should have referenced other researchers more.
+A conversational style is nice and relaxed, but clarifying
+ where ideas come from is required and non-negotiable.
+Most of the ideas I presented are not original. For example, the idea 
+that supervised learning with text
+is facing a Chinese Room argument I first read in a paper by
+&lt;a href=&quot;https://arxiv.org/abs/1610.07432&quot;&gt;Douwe Kiela&lt;/a&gt;. &lt;a href=&quot;https://www.youtube.com/attribution_link?a=aJ8aqmEmOb4&amp;amp;u=%2Fwatch%3Fv%3DIU9cQ1JdC7Y%26feature%3Dshare&amp;amp;fbclid=IwAR3zb8sPtuM7JKJkfei1nkEG3P8n01KH7262nSwBokj_-RTrlNeri5bida4&quot;&gt;Yoshua Bengio has also
+been arguing for grounded language learning recently&lt;/a&gt;,
+ and for being more willing to look at the results of cognitive science,
+ and for the important of out-of-distribution generalization.&lt;/p&gt;
+
+&lt;p&gt;As far as I know, perhaps the only original opinion expressed in the 
+interview, beyond the results of our paper, was the counter-argument
+offered by our work to an “Argument from engineering success” for the
+kind of strongly empiricist program of people like Yann LeCun. I briefly
+reiterate that argument here.&lt;/p&gt;
+
+&lt;p&gt;I don’t know all the reasons why Yann LeCun sees innate structure as an 
+“evil” to be minimized. However, watching
+&lt;a href=&quot;https://www.youtube.com/watch?v=vdWPQ6iAkT4&quot;&gt;his debate with Gary Marcus&lt;/a&gt;,
+among those reasons appears to
+be what could be called an “argument from engineering success”:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;(1) The less innate structure we put into our models, the better they have 
-  performed&lt;/p&gt;
+  &lt;p&gt;(1) The less innate structure we put into our models, the better they 
+      have performed.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;(2) Engineering success is a strong indication of the right path&lt;/p&gt;
+  &lt;p&gt;(2) Engineering success is a strong indication of the right path, 
+      scientifically.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;(3) Therefore less innate structure is better&lt;/p&gt;
+  &lt;p&gt;(3) Therefore, less innate structure is better.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;We of course need to define what we mean by innate structure. From the same
-debate, it appears LeCun and Marcus have different ideas of what this means.
-Marcus argues that NIPS papers roundly ignore innate structure; LeCun states
-exactly the opposite is the case. That’s a question I want to return to in the
-future and think more deeply about.&lt;/p&gt;
+&lt;p&gt;We of course need to define what we mean by innate structure. From the 
+same debate, it appears LeCun and Marcus have different ideas of what 
+this means. Marcus argues that NIPS papers roundly ignore innate 
+structure; LeCun states exactly the opposite is the case. That’s a 
+question I want to return to in the future.&lt;/p&gt;
 
-&lt;p&gt;Returning to the argument from engineering success. The problem of machine
-learning models exploiting spurious statistics in the datasets on
-which we measure this success undermines the argument at once because this is
-very clearly not the notion of success we seek. This could of course be added
-to well-known concerns of non-systematic and non-compositional learning,
-brittleness to adversarial attacks, and failures to generalize beyond the
-distribution of the training set in the ways that humans do, and that we seek in
-and expect from strong models. However, here I just focus on the how findings of
-models exploitating spurious statistics to attain near human performance
-directly undermines (1).&lt;/p&gt;
+&lt;p&gt;But for the time being, the growing number of findings in NLP that 
+demonstrate our best deep learning models are learning spurious 
+solutions to datasets via superficial statistics immediately undermines
+(1), since this improved performance does not represent the kind of
+learning we care about.&lt;/p&gt;
 
-&lt;p&gt;There is a natural question as to just how big the problem really is - i.e. just
-how much (1) is undermined. This seems to be an open question, and even one that
-needs work to formulate precisely and meaningfully. I look forward to
-attempting to address this question in the future.&lt;/p&gt;
-
-&lt;p&gt;We do appear to be able to say some things, though. I am
-no expert in vision and speech recognition, but it seems to me that we have had
-unquestionable success in parts of those areas. In language understanding,
-however, my sense is not so positive. Since there are no current studies that
-directly address this problem more generally this “sense” is something rather
-subjective, being a distillation of the growing and significant work on the
-problem so far, which has rather focused on specific datasets. This sense comes
-in part from the following results&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;You can achieve a surprisingly high accuracy on NLI datasets with just the
-hypothesis.  On SNLI, when you add the last verb of the premise, you are up to
-76% already. We are far from enumerating all the heuristics and we only have
-14% of performance left to account for. It is likely in my mind at least a
-significant portion of that is going to be heurstics.&lt;/li&gt;
-  &lt;li&gt;In a forthcoming paper we collected all NLI heuristics measurements, and
-our experiments show that for the best models out there (including the GLUE
-winners) the better the performance, the more these heuristics are being
-exploited.&lt;/li&gt;
-  &lt;li&gt;My own research on a much higher level NLP task (ARCT) that showed BERT’s
-apparent near-human performance can be entirely accounted for by exploiting
-spurious statistics, and that the true state of the art on this task for
-neural networks remains random.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is of course likely to be a one-sided and very incomplete list, and I look
-forward to hearing objections and counter-arguments that attempt to sharpen this
-“sense” of mine. Adding supporting cases is also keenly welcomed - I haven’t
-had the time to list some others I am aware of.&lt;/p&gt;
-
-&lt;p&gt;Returning to the argument, in the absence of a compelling general case that
-demonstrates how serious the problem of spurious statistics is in NLP, perhaps
-the correct conclusion to draw is&lt;/p&gt;
+&lt;p&gt;Bengio (who I continue to admire greatly, not just for his scientific
+achievements, which are amazing, but perhaps even more for how much of a 
+high quality human being he is - see his work on AI for social good, and
+his passionate advocacy for action on climate change) has also been 
+taking &lt;a href=&quot;https://www.youtube.com/watch?v=llGG62fNN64&amp;amp;fbclid=IwAR2tX_GQX7ohJ92zJlm4_Fuj7-QEpZ0ggX-z_cu8reXZehacWm08KUbBWhM&quot;&gt;a view of recent
+deep learning success as specifically “System 1” success&lt;/a&gt;,
+ in terms of Kahneman’s “systems theory.” If this view is correct, then 
+the argument from engineering success should be modified as follows&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;To the extent that our models are finding spurious solutions to our datasets
-is the extent to which the argument from engineering success is undermined.&lt;/p&gt;
+  &lt;p&gt;(1) The less innate structure we put into our models, the better they 
+      have performed &lt;strong&gt;at system 1 tasks&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This suggests it would be interesting to attempt to show one way or another just
-how significant the problem is, and therefore how significantly the argument
-from engineering is undermined by this problem. Or else, a general answer to
-this question may not even make sense, and we are left collecting our “sense”
-of the problem from individual cases.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;(2) Engineering success is a strong indication of the right path, 
+      scientifically.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;Note also other similar arguments from different directions that undermine (1),
-mentioned above: the extent to which what is learned is not systematic and
-compositional, and fails to generate beyond the distribution of the training set
-in the way that humans do, and that we expect and aim for. So the attack that
-considers spurious statistics is not the only string in this bow.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;(3) Therefore, less innate structure is better &lt;strong&gt;for system 1 tasks&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;As always, critical feedback is warmly encouraged. I still have not had the time
-to turn commenting on, so please send me an email.&lt;/p&gt;</content><author><name></name></author><summary type="html">In a recent interview with Data Skeptic, the question of empiricism in contemporary artificial intelligence arose, and it gave me an opportunity to raise the issue of how the problem of models latching onto spurious statistical artifacts in our datasets connects to contemporary arguments for a strong form of empiricism. I would like to sketch the argument below in the hope it will attract feedback and criticism.</summary></entry><entry><title type="html">Does the brain represent words?</title><link href="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html" rel="alternate" type="text/html" title="Does the brain represent words?" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words</id><content type="html" xml:base="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html">&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/abs/1806.00591&quot;&gt;paper&lt;/a&gt; is by Jon Gauthier and Anna 
+&lt;p&gt;This argument is at least more reasonable given the growing evidence I 
+referred to in my counter-argument, although I am not prepared to 
+judge it at this point in time.&lt;/p&gt;
+
+&lt;p&gt;As for system 2 tasks, we will have to wait and see. But at the very
+least there is a reasonable case for taking the results of cognitive
+science, and &lt;a href=&quot;https://philosophy.dept.shef.ac.uk/papers/Defense.pdf&quot;&gt;contemporary nativism&lt;/a&gt;, seriously.&lt;/p&gt;</content><author><name></name></author><summary type="html">I was recently interviewed about our ACL 2019 paper on Data Skeptic. Many thanks to the Data Skeptic team for inviting me to participate in this interview, for asking some great questions, and for cutting the interview as nicely as I think possible given what raw materials I provided.</summary></entry><entry><title type="html">Does the brain represent words?</title><link href="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html" rel="alternate" type="text/html" title="Does the brain represent words?" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words</id><content type="html" xml:base="http://localhost:4000/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html">&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/abs/1806.00591&quot;&gt;paper&lt;/a&gt; is by Jon Gauthier and Anna 
 Ivanova, and is from June 2018.&lt;/p&gt;
 
 &lt;p&gt;My interest in this paper comes from the claim made therein that work in NLP on 
