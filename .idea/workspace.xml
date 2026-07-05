@@ -2,13 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2799109-3354-4376-a6b8-be5b5c1a6d26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiled_github_site.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DESIGN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acl.csl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/memory-networks/papers/2018/03/08/tracking-the-world-state-with-recurrent-entity-networks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/papers/2018/02/07/hinton-learning-distributed-representations-of-concepts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/papers/2018/08/12/consciousness-prior.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apa.csl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/argmin/argmin17/papers/2017/12/26/200k-chilean-political-arguments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/argmin/argmin17/papers/2017/12/28/analyzing-claim-premise-types.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/argmin/papers/2018/08/31/neural-end-to-end-learning-for-computational-argument-mining.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/argmin/papers/2018/09/03/argumentation-mining-on-the-web-from-information-seeking-perspective.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/minima-social-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copy.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/nlitrans-semeval-2018 -CAMERA.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeddings/papers/2018/04/03/word-representation-via-gaussian-embedding.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeddings/papers/2018/04/05/multimodal-word-distributions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeddings/re/papers/2018/03/23/contextual-pattern-embeddings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeddings/re/papers/2018/03/28/improved-representation-learning-for-predicting-commonsense-ontologies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/language-model/papers/2018/02/09/hierarchical-probabilistic-neural-network-language-model.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maxent/2018/02/09/Maximum-Entropy-Modeling-Berger.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlp,/ai/2019/09/28/interview-with-data-skeptic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlp/papers/2018/09/01/learning-with-latent-language.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlp/papers/2018/09/11/alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/papers/entity-embeddings/2018/04/03/translational-embeddings-for-modelling-multi-relational-data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/03/25/relation-extraction-with-matrix-facorization-and-universal-schemas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/03/26/connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/03/27/a-semantic-matching-energy-function-for-learning-with-multi-relational-data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/04/01/indirect-supervision-for-relation-extraction-using-question-answer-pairs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/publications/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pypi/2018/03/30/Pypi-Package-Upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ubuntu/2018/01/04/ubuntu-boot-partition-full.html" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +61,10 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2,
+  "fromUser": false
+}]]></component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -43,6 +81,7 @@
     <option name="width" value="1429" />
     <option name="height" value="1038" />
   </component>
+  <component name="ProjectId" id="3G4iFqOwSGOKJDmwm5VOqw3PS4C" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -62,10 +101,25 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/hanshan/dev/timniven/timniven.github.io",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -78,6 +132,14 @@
       </list>
     </option>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.26222.68" />
+        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -88,6 +150,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561113228673</updated>
+      <workItem from="1783237141943" duration="1310000" />
     </task>
     <servers />
   </component>
@@ -112,6 +175,9 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/deploy.sh">

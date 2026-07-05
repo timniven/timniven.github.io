@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import posts from '../../data/posts.json';
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<Layout title={post.title}>
+  <article>
+    <header>
+      <h1>{post.title}</h1>
+      <p class="post-meta">{formatDate(post.date)}</p>
+    </header>
+    <Fragment set:html={post.html} />
+  </article>
+</Layout>

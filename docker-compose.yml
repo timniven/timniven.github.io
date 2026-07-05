@@ -1,0 +1,20 @@
+services:
+  dev:
+    build: .
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: npm run dev
+
+  build:
+    build: .
+    profiles: ["build"]
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: npm run build
+
+volumes:
+  node_modules:
