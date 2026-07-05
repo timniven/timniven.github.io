@@ -1,19 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import posts from '../data/posts.json';
-
-const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 
-<Layout title="Posts">
-  <h1>Posts</h1>
-  <ul class="post-list">
-    {posts.map((post) => (
-      <li>
-        <span class="post-meta">{formatDate(post.date)}</span><br />
-        <a href={`/posts/${post.slug}/`}>{post.title}</a>
-      </li>
-    ))}
-  </ul>
+<Layout title="Home">
+  <p class="positioning">
+    I lead research and product teams at the intersection of AI,
+    information integrity, and democratic resilience.
+  </p>
+
+  <p>
+    I am animated by doing work that delivers real-world impact. The NGO
+    space demands rigor and intellectual discipline: in order to deliver
+    impact, our theories of how the world works and how to change it must
+    be accurate or we simply fail. Our work depends on evidence-based
+    strategy, validated learning, and scientific experimentation.
+  </p>
+
+  <p>
+    Over the past several years, I've focused on designing, implementing,
+    and overseeing work that strengthens our understanding of foreign
+    information manipulation and interference (FIMI) and improves
+    responses to it. As a former Research Lead and now Deputy CEO, I have
+    overseen successful delivery of projects exceeding USD $10M, funded by
+    partners including the European Union, Open Society Foundation,
+    National Endowment for Democracy, German Ministry of Foreign Affairs,
+    UK FCDO, Global Affairs Canada, the Global Engagement Center, Freedom
+    House, Friedrich Naumann Foundation, and Internews. Our work has been
+    recognised as world-leading in our region and featured in major media
+    including The Wall Street Journal, The Washington Post, The Guardian,
+    and Le Monde.
+  </p>
+
+  <p>
+    A core part of my work has been building coalitions across the
+    Indo-Pacific—connecting civil society, academia, and government—to
+    establish shared conceptual frameworks, research methodologies, and
+    common data formats. This collaboration has enabled intelligence
+    sharing, coordinated responses, and stronger regional resilience.
+  </p>
+
+  <p>
+    With a background in artificial intelligence research, I also lead
+    teams applying AI to defending against information threats. I have
+    led the engineering and product team at Doublethink Lab for over 4
+    years, and have built AI products to find the needles of FIMI in the
+    haystack of social media data, used by our internal analysts and
+    partners around the world. I contributed the AI component to Freedom
+    House's China Dissent Monitor, which successfully identified instances
+    of offline protests within the People's Republic of China based on
+    Weibo posts to a high degree of accuracy. I have also used AI to build
+    a product for researchers attached to the Ukraine government trying to
+    understand information threats to Ukraine emanating from the People's
+    Republic of China.
+  </p>
+
+  <p>
+    I find this work challenging because we still have a lot to learn
+    about how to protect democracies from modern information threats.
+  </p>
 </Layout>

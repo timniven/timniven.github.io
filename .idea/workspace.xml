@@ -2,46 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2799109-3354-4376-a6b8-be5b5c1a6d26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DESIGN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CNAME" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acl.csl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/memory-networks/papers/2018/03/08/tracking-the-world-state-with-recurrent-entity-networks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/papers/2018/02/07/hinton-learning-distributed-representations-of-concepts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai/papers/2018/08/12/consciousness-prior.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apa.csl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/argmin/argmin17/papers/2017/12/26/200k-chilean-political-arguments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/argmin/argmin17/papers/2017/12/28/analyzing-claim-premise-types.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/argmin/papers/2018/08/31/neural-end-to-end-learning-for-computational-argument-mining.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/argmin/papers/2018/09/03/argumentation-mining-on-the-web-from-information-seeking-perspective.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/minima-social-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/nlitrans-semeval-2018 -CAMERA.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeddings/papers/2018/04/03/word-representation-via-gaussian-embedding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeddings/papers/2018/04/05/multimodal-word-distributions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeddings/re/papers/2018/03/23/contextual-pattern-embeddings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeddings/re/papers/2018/03/28/improved-representation-learning-for-predicting-commonsense-ontologies.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/language-model/papers/2018/02/09/hierarchical-probabilistic-neural-network-language-model.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maxent/2018/02/09/Maximum-Entropy-Modeling-Berger.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlp,/ai/2019/09/28/interview-with-data-skeptic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlp/papers/2018/09/01/learning-with-latent-language.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlp/papers/2018/09/11/alignment-acceptance-and-rejection-of-group-identities-in-online-political-discourse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/entity-embeddings/2018/04/03/translational-embeddings-for-modelling-multi-relational-data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/03/25/relation-extraction-with-matrix-facorization-and-universal-schemas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/03/26/connecting-language-and-knowledge-bases-with-embeddings-models-for-relation-extraction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/03/27/a-semantic-matching-energy-function-for-learning-with-multi-relational-data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/relation-extraction/2018/04/01/indirect-supervision-for-relation-extraction-using-question-answer-pairs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/publications/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypi/2018/03/30/Pypi-Package-Upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/representations,/cogsci,/nlp/2019/06/24/does-the-brain-represent-words.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/representations,/cogsci,/nlp/2019/06/27/an-argument-against-less-innate-structure.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ubuntu/2018/01/04/ubuntu-boot-partition-full.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/posts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Layout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.astro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/posts/[...slug].astro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/publications.astro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +28,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -105,21 +72,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/hanshan/dev/timniven/timniven.github.io",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hanshan/dev/timniven/timniven.github.io&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>

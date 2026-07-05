@@ -52,4 +52,82 @@ design.
 - **Space**: err toward more whitespace than feels comfortable. Amateur sites 
   are almost always too cramped; near-nobody over-spaces.
 - Visible pathways, no over-styling.
-- 
+
+---
+
+## Current implementation
+
+The sections above are the brief/intent. This section documents what's actually
+built, so it stays a trustworthy reference rather than drifting from reality as the
+site evolves.
+
+### Site structure
+
+Three-item top nav, identical on every page: **Home**, **Publications**, **Advisory**.
+There is no "Writing"/blog section — one existed briefly during the Astro migration
+(old posts converted to a content collection) and was deliberately removed. Don't
+reintroduce it without being asked.
+
+### Global layout — persistent identity panel
+
+A left identity panel is part of the shared layout and appears on **every page**, not
+just Home: headshot photo, name (寒山 / Tim Niven, PhD), one-line role, and a contact
+list — email (shown as the literal address, not the word "Email"), GitHub, LinkedIn,
+Google Scholar, ORCID. Each contact link except email has a small monochrome grey
+icon to its left — a deliberate, restrained exception to "no icons," kept to four
+small greyscale brand marks in that one panel. The right column holds each page's own
+content, capped at a comfortable reading width. Below ~42rem viewport width the
+layout collapses to one column, identity first.
+
+Note: there's no "Hanshan Intelligence / 寒山智慧工作室" studio branding on this site —
+that's planned as a separate site later. Don't reintroduce it here.
+
+### Typography
+
+Everything — headings, body, header/nav/footer, the identity panel's role line and
+contact links, all page content — uses one serif family (Source Serif 4, with
+Georgia/Times New Roman fallback). There is no separate mono treatment for metadata,
+dates, or labels; that was tried and reversed per direct feedback ("match everything
+to the serif"). A mono face (IBM Plex Mono) is still loaded and used for exactly one
+thing: `code`/`pre` blocks.
+
+### Colour
+
+```
+--bg:      #fefefc   /* main background — near-white */
+--bg-alt:  #eeece7   /* header + footer band — subtly greyer than --bg */
+--fg:      #201d1a   /* near-black text */
+--muted:   #6e6659   /* secondary text, icon colour */
+--accent:  #963f3f   /* single accent — a brighter, more saturated red, used for
+                         every link site-wide and the nav active state */
+--border:  rgba(32, 29, 26, 0.14)
+```
+
+One accent colour, used everywhere links appear. Header and footer get the
+`--bg-alt` band specifically, a deliberate departure from a single flat background.
+Icons in the identity panel are `--muted` (grey), independent of the
+accent-coloured link text next to them.
+
+### Publications page
+
+Content collection at `src/content/publications/*.yaml` (one file per entry).
+Adding a publication is just adding a YAML file. Rendered grouped by year,
+descending, citation-style.
+
+### Advisory page
+
+Short intro, engagement types (FIMI analysis, threat/vulnerability assessment,
+agentic AI adoption), who it's for, one email contact path. This currently reflects
+the FIMI-expert and AI-expert framing from the Context section above; the
+AI-engineer-for-SMBs consulting angle isn't reflected there yet — worth revisiting
+if that's meant to show up on this site rather than a separate one.
+
+### Technical baseline
+
+- Astro, static output, deployed to GitHub Pages via `.github/workflows/deploy.yml`.
+  Repo Settings → Pages source must be "GitHub Actions".
+- Local dev/build is Dockerized (`Dockerfile`, `docker-compose.yml`) so the host only
+  needs Docker — no local Node version dependency. `docker compose up dev` for a
+  live-reloading dev server on port 4321; `docker compose run --rm build` for a
+  production build.
+- Custom domain `timniven.com` via `public/CNAME`.

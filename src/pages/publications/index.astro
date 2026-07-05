@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const pubs = await getCollection('publications');
+
+const byYear = new Map<number, typeof pubs>();
+for (const pub of pubs) {
+  const list = byYear.get(pub.data.year) ?? [];
+  list.push(pub);
+  byYear.set(pub.data.year, list);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<Layout title="Publications">
+  <h1>Publications</h1>
+  {years.map((year) => (
+    <section>
+      <h2>{year}</h2>
+      <ol class="pub-list">
+        {byYear.get(year)!.map((pub) => (
+          <li>
+            {pub.data.authors} ({pub.data.year}). {pub.data.title}.{' '}
+            <em>{pub.data.venue}</em>
+            {pub.data.pages ? `, ${pub.data.pages}` : ''}.
+            {pub.data.url && (
+              <>
+                {' '}
+                <a href={pub.data.url}>{pub.data.url}</a>
+              </>
+            )}
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+</Layout>
+
+<style>
+  .pub-list {
+    padding-left: 1.3em;
+  }
+
+  .pub-list li {
+    margin-bottom: var(--space-4);
+  }
+</style>
