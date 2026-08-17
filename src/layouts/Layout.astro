@@ -68,7 +68,12 @@ const nav = [
         line-height: 1.65;
       }
 
-      a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.15em;
+        overflow-wrap: anywhere;
+      }
       a:hover { text-decoration-thickness: 2px; }
 
       .shell {
@@ -131,6 +136,7 @@ const nav = [
 
       .page-main {
         max-width: var(--content-width);
+        min-width: 0;
       }
 
       .identity .headshot {
