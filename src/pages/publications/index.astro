@@ -2,7 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const pubs = await getCollection('publications');
+const all = await getCollection('publications');
+const pubs = all.filter((p) => p.data.kind === 'publication');
+const media = all
+  .filter((p) => p.data.kind === 'media')
+  .sort((a, b) => b.data.year - a.data.year);
 
 const byYear = new Map<number, typeof pubs>();
 for (const pub of pubs) {
@@ -27,7 +31,7 @@ const years = [...byYear.keys()].sort((a, b) => b - a);
             {pub.data.url && (
               <>
                 {' '}
-                <a href={pub.data.url}>{pub.data.url}</a>
+                <a href={pub.data.url} target="_blank" rel="noopener noreferrer">{pub.data.url}</a>
               </>
             )}
           </li>
@@ -35,6 +39,24 @@ const years = [...byYear.keys()].sort((a, b) => b - a);
       </ol>
     </section>
   ))}
+  {media.length > 0 && (
+    <section>
+      <h2>In the media</h2>
+      <ol class="pub-list">
+        {media.map((item) => (
+          <li>
+            {item.data.title}. <em>{item.data.venue}</em> ({item.data.year}).
+            {item.data.url && (
+              <>
+                {' '}
+                <a href={item.data.url} target="_blank" rel="noopener noreferrer">{item.data.url}</a>
+              </>
+            )}
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
 </Layout>
 
 <style>

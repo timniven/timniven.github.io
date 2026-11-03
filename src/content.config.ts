@@ -4,6 +4,8 @@ import { glob } from 'astro/loaders';
 const publications = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/publications' }),
   schema: z.object({
+    // 'publication' = authored work; 'media' = coverage/interviews where quoted.
+    kind: z.enum(['publication', 'media']).default('publication'),
     authors: z.string(),
     year: z.number(),
     title: z.string(),
